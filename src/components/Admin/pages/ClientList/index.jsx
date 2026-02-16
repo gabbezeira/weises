@@ -20,12 +20,10 @@ const ClientList = () => {
   const [clientToDelete, setClientToDelete] = useState(null);
   const itemsPerPage = 8;
 
-  // Reset search on unmount
   useEffect(() => {
     return () => setSearchTerm('');
   }, [setSearchTerm]);
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = () => setOpenDropdownId(null);
     document.addEventListener('click', handleClickOutside);
@@ -188,12 +186,8 @@ const ClientList = () => {
         </>
       ) : (
         <EmptyState
-          title={searchTerm ? 'No clients found' : 'No clients yet'}
-          description={
-            searchTerm
-              ? `We couldn't find any clients matching "${searchTerm}"`
-              : 'Start by adding your first client to the platform.'
-          }
+          title={t('projects_page.empty.title')}
+          description={t('projects_page.empty.description')}
           icon={Users}
         >
           {!searchTerm && (

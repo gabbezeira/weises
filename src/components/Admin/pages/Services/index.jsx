@@ -601,8 +601,8 @@ const Services = () => {
         </>
       ) : (
         <EmptyState
-          title="No Services Found"
-          description="Create your first service to offer to clients."
+          ttitle={t('projects_page.empty.title')}
+          description={t('projects_page.empty.description')}
           icon={Zap}
         >
           <AddButton onClick={openCreateModal}>
