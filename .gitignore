@@ -27,7 +27,6 @@ backend/.env
 backend/serviceAccountKey.json
 *.json.bak
 backend/
-firebase.*
 firebase.json
 firestore.indexes.json
 firestore.rules
