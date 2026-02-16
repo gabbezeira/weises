@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {
-  Plus,
-  Search,
-  Edit2,
-  Trash2,
-  Zap,
-  Layout,
-  Database,
-  PenTool,
-  Monitor,
-  Shield,
-  Check,
-  X,
-  ChevronDown,
+    Plus,
+    Search,
+    Edit2,
+    Trash2,
+    Zap,
+    Layout,
+    Database,
+    PenTool,
+    Monitor,
+    Shield,
+    Check,
+    X,
+    ChevronDown,
 } from 'lucide-react';
 import { api } from '../../../../services/api';
 import Loader from '../../../ui/Loader';
@@ -23,12 +23,12 @@ import Pagination from '../../../ui/Pagination';
 
 // Icons available for selection
 const ICON_OPTIONS = [
-  { name: 'Zap', icon: Zap },
-  { name: 'Layout', icon: Layout },
-  { name: 'Database', icon: Database },
-  { name: 'PenTool', icon: PenTool },
-  { name: 'Monitor', icon: Monitor },
-  { name: 'Shield', icon: Shield },
+    { name: 'Zap', icon: Zap },
+    { name: 'Layout', icon: Layout },
+    { name: 'Database', icon: Database },
+    { name: 'PenTool', icon: PenTool },
+    { name: 'Monitor', icon: Monitor },
+    { name: 'Shield', icon: Shield },
 ];
 
 const ITEMS_PER_PAGE = 9;
@@ -436,287 +436,287 @@ const Button = styled.button`
 `;
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const [serviceToDelete, setServiceToDelete] = useState(null);
-  const [editingService, setEditingService] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [formData, setFormData] = useState({
-    name: '',
-    description: '',
-    price: '',
-    icon: 'Zap',
-    isActive: true,
-  });
-
-  const fetchServices = async () => {
-    try {
-      setLoading(true);
-      const response = await api.get('/services');
-      if (response.success) {
-        setServices(response.data);
-      }
-    } catch (error) {
-      console.error('Failed to fetch services:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchServices();
-  }, []);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      if (editingService) {
-        await api.put(`/services/${editingService.id}`, formData);
-      } else {
-        await api.post('/services', formData);
-      }
-      setIsModalOpen(false);
-      setEditingService(null);
-      resetForm();
-      fetchServices();
-    } catch (error) {
-      alert(error.message);
-    }
-  };
-
-  const handleDelete = async () => {
-    if (!serviceToDelete) return;
-    try {
-      await api.del(`/services/${serviceToDelete.id}`);
-      setIsDeleteModalOpen(false);
-      setServiceToDelete(null);
-      fetchServices();
-    } catch (error) {
-      console.error('Failed to delete service:', error);
-    }
-  };
-
-  const resetForm = () => {
-    setFormData({
-      name: '',
-      description: '',
-      price: '',
-      icon: 'Zap',
-      isActive: true,
+    const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [serviceToDelete, setServiceToDelete] = useState(null);
+    const [editingService, setEditingService] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [formData, setFormData] = useState({
+        name: '',
+        description: '',
+        price: '',
+        icon: 'Zap',
+        isActive: true,
     });
-  };
 
-  const openCreateModal = () => {
-    setEditingService(null);
-    resetForm();
-    setIsModalOpen(true);
-  };
+    const fetchServices = async () => {
+        try {
+            setLoading(true);
+            const response = await api.get('/services');
+            if (response.success) {
+                setServices(response.data);
+            }
+        } catch (error) {
+            console.error('Failed to fetch services:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  const openEditModal = (service) => {
-    setEditingService(service);
-    setFormData({
-      name: service.name,
-      description: service.description,
-      price: service.price,
-      icon: service.icon || 'Zap',
-      isActive: service.isActive ?? service.active ?? true,
-    });
-    setIsModalOpen(true);
-  };
+    useEffect(() => {
+        fetchServices();
+    }, []);
 
-  const renderIcon = (iconName) => {
-    const IconComponent = ICON_OPTIONS.find((opt) => opt.name === iconName)?.icon || Zap;
-    return <IconComponent size={24} />;
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            if (editingService) {
+                await api.put(`/services/${editingService.id}`, formData);
+            } else {
+                await api.post('/services', formData);
+            }
+            setIsModalOpen(false);
+            setEditingService(null);
+            resetForm();
+            fetchServices();
+        } catch (error) {
+            alert(error.message);
+        }
+    };
 
-  // Pagination Logic
-  const totalPages = Math.ceil(services.length / ITEMS_PER_PAGE);
-  const paginatedServices = services.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
-  );
+    const handleDelete = async () => {
+        if (!serviceToDelete) return;
+        try {
+            await api.del(`/services/${serviceToDelete.id}`);
+            setIsDeleteModalOpen(false);
+            setServiceToDelete(null);
+            fetchServices();
+        } catch (error) {
+            console.error('Failed to delete service:', error);
+        }
+    };
 
-  if (loading) return <Loader />;
+    const resetForm = () => {
+        setFormData({
+            name: '',
+            description: '',
+            price: '',
+            icon: 'Zap',
+            isActive: true,
+        });
+    };
 
-  return (
-    <Container>
-      <Header>
-        <Title>Services Management</Title>
-        <AddButton onClick={openCreateModal}>
-          <Plus size={20} />
-          Add Service
-        </AddButton>
-      </Header>
+    const openCreateModal = () => {
+        setEditingService(null);
+        resetForm();
+        setIsModalOpen(true);
+    };
 
-      {services.length > 0 ? (
-        <>
-          <Grid>
-            {paginatedServices.map((service) => (
-              <Card key={service.id}>
-                <CardHeader>
-                  <IconWrapper>{renderIcon(service.icon)}</IconWrapper>
-                  <StatusBadge $active={service.isActive ?? service.active}>
-                    {(service.isActive ?? service.active) ? 'Active' : 'Inactive'}
-                  </StatusBadge>
-                </CardHeader>
+    const openEditModal = (service) => {
+        setEditingService(service);
+        setFormData({
+            name: service.name,
+            description: service.description,
+            price: service.price,
+            icon: service.icon || 'Zap',
+            isActive: service.isActive ?? service.active ?? true,
+        });
+        setIsModalOpen(true);
+    };
 
-                <div>
-                  <ServiceName>{service.name}</ServiceName>
-                  <div style={{ marginTop: '0.5rem' }}>
-                    <Price>
-                      R${' '}
-                      {Number(service.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-                    </Price>
-                  </div>
-                </div>
+    const renderIcon = (iconName) => {
+        const IconComponent = ICON_OPTIONS.find((opt) => opt.name === iconName)?.icon || Zap;
+        return <IconComponent size={24} />;
+    };
 
-                <Description>{service.description}</Description>
+    // Pagination Logic
+    const totalPages = Math.ceil(services.length / ITEMS_PER_PAGE);
+    const paginatedServices = services.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE,
+    );
 
-                <CardActions>
-                  <ActionButton onClick={() => openEditModal(service)} title="Edit Service">
-                    <Edit2 size={18} />
-                  </ActionButton>
-                  <ActionButton
-                    $danger
-                    onClick={() => {
-                      setServiceToDelete(service);
-                      setIsDeleteModalOpen(true);
-                    }}
-                    title="Delete Service"
-                  >
-                    <Trash2 size={18} />
-                  </ActionButton>
-                </CardActions>
-              </Card>
-            ))}
-          </Grid>
+    if (loading) return <Loader />;
 
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
-          />
-        </>
-      ) : (
-        <EmptyState
-          ttitle={t('projects_page.empty.title')}
-          description={t('projects_page.empty.description')}
-          icon={Zap}
-        >
-          <AddButton onClick={openCreateModal}>
-            <Plus size={20} />
-            Create Service
-          </AddButton>
-        </EmptyState>
-      )}
+    return (
+        <Container>
+            <Header>
+                <Title>Services Management</Title>
+                <AddButton onClick={openCreateModal}>
+                    <Plus size={20} />
+                    Add Service
+                </AddButton>
+            </Header>
 
-      {isModalOpen && (
-        <ModalOverlay onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}>
-          <ModalContent>
-            <ModalHeader>
-              <ModalTitle>{editingService ? 'Edit Service' : 'New Service'}</ModalTitle>
-              <CloseButton onClick={() => setIsModalOpen(false)}>
-                <X size={24} />
-              </CloseButton>
-            </ModalHeader>
+            {services.length > 0 ? (
+                <>
+                    <Grid>
+                        {paginatedServices.map((service) => (
+                            <Card key={service.id}>
+                                <CardHeader>
+                                    <IconWrapper>{renderIcon(service.icon)}</IconWrapper>
+                                    <StatusBadge $active={service.isActive ?? service.active}>
+                                        {(service.isActive ?? service.active) ? 'Active' : 'Inactive'}
+                                    </StatusBadge>
+                                </CardHeader>
 
-            <form
-              onSubmit={handleSubmit}
-              style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}
-            >
-              <ModalBody>
-                <FormGroup>
-                  <Label>Service Name</Label>
-                  <Input
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Website Development"
-                  />
-                </FormGroup>
+                                <div>
+                                    <ServiceName>{service.name}</ServiceName>
+                                    <div style={{ marginTop: '0.5rem' }}>
+                                        <Price>
+                                            R${' '}
+                                            {Number(service.price).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                                        </Price>
+                                    </div>
+                                </div>
 
-                <FormGroup>
-                  <Label>Description</Label>
-                  <TextArea
-                    required
-                    value={formData.description}
-                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                    placeholder="Detailed description of the service..."
-                  />
-                </FormGroup>
+                                <Description>{service.description}</Description>
 
-                <FormGroup>
-                  <Label>Price (R$)</Label>
-                  <Input
-                    required
-                    type="number"
-                    min="0"
-                    step="0.01"
-                    value={formData.price}
-                    onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
-                    placeholder="0.00"
-                  />
-                </FormGroup>
+                                <CardActions>
+                                    <ActionButton onClick={() => openEditModal(service)} title="Edit Service">
+                                        <Edit2 size={18} />
+                                    </ActionButton>
+                                    <ActionButton
+                                        $danger
+                                        onClick={() => {
+                                            setServiceToDelete(service);
+                                            setIsDeleteModalOpen(true);
+                                        }}
+                                        title="Delete Service"
+                                    >
+                                        <Trash2 size={18} />
+                                    </ActionButton>
+                                </CardActions>
+                            </Card>
+                        ))}
+                    </Grid>
 
-                <FormGroup>
-                  <Label>Service Icon</Label>
-                  <IconGrid>
-                    {ICON_OPTIONS.map((opt) => (
-                      <IconOption
-                        key={opt.name}
-                        type="button"
-                        $selected={formData.icon === opt.name}
-                        onClick={() => setFormData({ ...formData, icon: opt.name })}
-                        title={opt.name}
-                      >
-                        <opt.icon size={24} />
-                      </IconOption>
-                    ))}
-                  </IconGrid>
-                </FormGroup>
-
-                <FormGroup>
-                  <Label>Visibility Status</Label>
-                  <ToggleSwitch $checked={formData.isActive}>
-                    <ToggleInput
-                      type="checkbox"
-                      checked={formData.isActive}
-                      onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={setCurrentPage}
                     />
-                    <ToggleSlider $checked={formData.isActive} />
-                    <ToggleText>
-                      <strong>{formData.isActive ? 'Active' : 'Inactive'}</strong>
-                      <span>
-                        {formData.isActive ? 'Visible to all clients' : 'Hidden from clients'}
-                      </span>
-                    </ToggleText>
-                  </ToggleSwitch>
-                </FormGroup>
-              </ModalBody>
+                </>
+            ) : (
+                <EmptyState
+                    title={t('projects_page.empty.title')}
+                    description={t('projects_page.empty.description')}
+                    icon={Zap}
+                >
+                    <AddButton onClick={openCreateModal}>
+                        <Plus size={20} />
+                        Create Service
+                    </AddButton>
+                </EmptyState>
+            )}
 
-              <ModalFooter>
-                <Button type="button" $secondary onClick={() => setIsModalOpen(false)}>
-                  Cancel
-                </Button>
-                <Button type="submit">{editingService ? 'Save Changes' : 'Create Service'}</Button>
-              </ModalFooter>
-            </form>
-          </ModalContent>
-        </ModalOverlay>
-      )}
+            {isModalOpen && (
+                <ModalOverlay onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}>
+                    <ModalContent>
+                        <ModalHeader>
+                            <ModalTitle>{editingService ? 'Edit Service' : 'New Service'}</ModalTitle>
+                            <CloseButton onClick={() => setIsModalOpen(false)}>
+                                <X size={24} />
+                            </CloseButton>
+                        </ModalHeader>
 
-      <DeleteConfirmationModal
-        isOpen={isDeleteModalOpen}
-        onClose={() => setIsDeleteModalOpen(false)}
-        onConfirm={handleDelete}
-        title="Delete Service"
-        message="Are you sure? This action cannot be undone."
-        itemName={serviceToDelete?.name}
-      />
-    </Container>
-  );
+                        <form
+                            onSubmit={handleSubmit}
+                            style={{ display: 'flex', flexDirection: 'column', flex: 1, overflow: 'hidden' }}
+                        >
+                            <ModalBody>
+                                <FormGroup>
+                                    <Label>Service Name</Label>
+                                    <Input
+                                        required
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                        placeholder="e.g. Website Development"
+                                    />
+                                </FormGroup>
+
+                                <FormGroup>
+                                    <Label>Description</Label>
+                                    <TextArea
+                                        required
+                                        value={formData.description}
+                                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                                        placeholder="Detailed description of the service..."
+                                    />
+                                </FormGroup>
+
+                                <FormGroup>
+                                    <Label>Price (R$)</Label>
+                                    <Input
+                                        required
+                                        type="number"
+                                        min="0"
+                                        step="0.01"
+                                        value={formData.price}
+                                        onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
+                                        placeholder="0.00"
+                                    />
+                                </FormGroup>
+
+                                <FormGroup>
+                                    <Label>Service Icon</Label>
+                                    <IconGrid>
+                                        {ICON_OPTIONS.map((opt) => (
+                                            <IconOption
+                                                key={opt.name}
+                                                type="button"
+                                                $selected={formData.icon === opt.name}
+                                                onClick={() => setFormData({ ...formData, icon: opt.name })}
+                                                title={opt.name}
+                                            >
+                                                <opt.icon size={24} />
+                                            </IconOption>
+                                        ))}
+                                    </IconGrid>
+                                </FormGroup>
+
+                                <FormGroup>
+                                    <Label>Visibility Status</Label>
+                                    <ToggleSwitch $checked={formData.isActive}>
+                                        <ToggleInput
+                                            type="checkbox"
+                                            checked={formData.isActive}
+                                            onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
+                                        />
+                                        <ToggleSlider $checked={formData.isActive} />
+                                        <ToggleText>
+                                            <strong>{formData.isActive ? 'Active' : 'Inactive'}</strong>
+                                            <span>
+                                                {formData.isActive ? 'Visible to all clients' : 'Hidden from clients'}
+                                            </span>
+                                        </ToggleText>
+                                    </ToggleSwitch>
+                                </FormGroup>
+                            </ModalBody>
+
+                            <ModalFooter>
+                                <Button type="button" $secondary onClick={() => setIsModalOpen(false)}>
+                                    Cancel
+                                </Button>
+                                <Button type="submit">{editingService ? 'Save Changes' : 'Create Service'}</Button>
+                            </ModalFooter>
+                        </form>
+                    </ModalContent>
+                </ModalOverlay>
+            )}
+
+            <DeleteConfirmationModal
+                isOpen={isDeleteModalOpen}
+                onClose={() => setIsDeleteModalOpen(false)}
+                onConfirm={handleDelete}
+                title="Delete Service"
+                message="Are you sure? This action cannot be undone."
+                itemName={serviceToDelete?.name}
+            />
+        </Container>
+    );
 };
 
 export default Services;
