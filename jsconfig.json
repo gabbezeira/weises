@@ -2,48 +2,20 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@pages/*": [
-        "src/pages/*"
-      ],
-      "@sections/*": [
-        "./src/components/sections/*"
-      ],
-      "@common/*": [
-        "./src/components/common/*"
-      ],
-      "@layout/*": [
-        "./src/components/layout/*"
-      ],
-      "@ui/*": [
-        "./src/components/ui/*"
-      ],
-      "@admin/*": [
-        "./src/components/Admin/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ],
-      "@data/*": [
-        "./src/data/*"
-      ],
-      "@locales/*": [
-        "./src/locales/*"
-      ],
-      "@styles/*": [
-        "./src/styles/*"
-      ]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@sections/*": ["./src/components/sections/*"],
+      "@common/*": ["./src/components/common/*"],
+      "@layout/*": ["./src/components/layout/*"],
+      "@ui/*": ["./src/components/ui/*"],
+      "@admin/*": ["./src/components/Admin/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@data/*": ["./src/data/*"],
+      "@locales/*": ["./src/locales/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }

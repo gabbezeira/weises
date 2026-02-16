@@ -195,7 +195,7 @@ export const StepLabel = styled.div`
     
     strong {
         font-size: 0.875rem;
-        color: ${({ $active, $completed }) => (($active || $completed) ? 'var(--color-text)' : 'var(--color-gray-500)')};
+        color: ${({ $active, $completed }) => ($active || $completed ? 'var(--color-text)' : 'var(--color-gray-500)')};
         font-weight: ${({ $active }) => ($active ? '700' : '500')};
     }
     

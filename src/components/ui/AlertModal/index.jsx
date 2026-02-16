@@ -39,22 +39,22 @@ const IconWrapper = styled.div`
     margin-bottom: 1.5rem;
     
     ${(props) =>
-    props.$type === 'error' &&
-    `
+      props.$type === 'error' &&
+      `
         background: rgba(239, 68, 68, 0.1);
         color: var(--color-red-500);
     `}
     
     ${(props) =>
-    props.$type === 'success' &&
-    `
+      props.$type === 'success' &&
+      `
         background: rgba(16, 185, 129, 0.1);
         color: var(--color-emerald-500);
     `}
 
     ${(props) =>
-    props.$type === 'info' &&
-    `
+      props.$type === 'info' &&
+      `
         background: rgba(59, 130, 246, 0.1);
         color: var(--color-blue-500);
     `}

@@ -209,11 +209,7 @@
       "description": "Una revisión completa de la infraestructura bancaria heredada para soportar millones de transacciones simultáneas con latencia submilisegundo.",
       "challenge": "El cliente enfrentó importantes problemas de escalabilidad durante las horas pico, lo que provocó fallas en las transacciones y pérdida de usuarios.",
       "solution": "Diseñamos una solución basada en microservicios utilizando Node.js y Go, implementada en Kubernetes. Implementamos una arquitectura basada en eventos con Apache Kafka para el procesamiento de transacciones en tiempo real.",
-      "services": [
-        "Ingeniería Backend",
-        "Arquitectura en la Nube",
-        "Sistemas de Seguridad"
-      ],
+      "services": ["Ingeniería Backend", "Arquitectura en la Nube", "Sistemas de Seguridad"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "6 Seniors",
@@ -227,11 +223,7 @@
       "description": "Un panel inteligente que visualiza flujos de datos complejos y utiliza modelos predictivos para pronosticar tendencias comerciales.",
       "challenge": "Los usuarios estaban abrumados por los datos sin procesar y carecían de información procesable.",
       "solution": "Creamos un panel basado en React con D3.js para la visualización e integramos modelos de ML basados en Python para proporcionar análisis predictivos en tiempo real.",
-      "services": [
-        "Visualización de Datos",
-        "Integración ML",
-        "Desarrollo Frontend"
-      ],
+      "services": ["Visualización de Datos", "Integración ML", "Desarrollo Frontend"],
       "stats_values": {
         "methodology": "Scrum",
         "team_size": "4 Expertos",
@@ -245,11 +237,7 @@
       "description": "Un motor de comercio electrónico headless diseñado para velocidad, flexibilidad y altas tasas de conversión.",
       "challenge": "Las cargas lentas de página y una arquitectura monolítica rígida estaban sofocando el crecimiento.",
       "solution": "Desarrollamos una solución headless usando Next.js y Shopify Plus, optimizando para Core Web Vitals y logrando un aumento del 40% en la conversión.",
-      "services": [
-        "Comercio Headless",
-        "Optimización de Rendimiento",
-        "Diseño UX"
-      ],
+      "services": ["Comercio Headless", "Optimización de Rendimiento", "Diseño UX"],
       "stats_values": {
         "methodology": "Kanban",
         "team_size": "5 Seniors",
@@ -263,11 +251,7 @@
       "description": "Una plataforma de telemedicina segura y compatible con HIPAA que conecta a pacientes con especialistas de todo el mundo.",
       "challenge": "La seguridad y la facilidad de uso fueron primordiales para la adopción por parte de pacientes mayores.",
       "solution": "Priorizamos la accesibilidad en el diseño UI/UX e implementamos cifrado de extremo a extremo para todas las videollamadas y el almacenamiento de datos.",
-      "services": [
-        "Cumplimiento HIPAA",
-        "Video en Tiempo Real",
-        "App Móvil"
-      ],
+      "services": ["Cumplimiento HIPAA", "Video en Tiempo Real", "App Móvil"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "3 Expertos",
@@ -281,11 +265,7 @@
       "description": "Seguimiento de activos criptográficos en tiempo real y gestión de carteras.",
       "challenge": "Alta latencia en la obtención de datos.",
       "solution": "Conexiones WebSocket implementadas para actualizaciones de subsegundos.",
-      "services": [
-        "Integración Web3",
-        "Datos en Tiempo Real",
-        "Panel de Control"
-      ],
+      "services": ["Integración Web3", "Datos en Tiempo Real", "Panel de Control"],
       "stats_values": {
         "methodology": "Sprint",
         "team_size": "3 Devs",
@@ -299,11 +279,7 @@
       "description": "Interfaz de control de hogar inteligente para dispositivos IoT.",
       "challenge": "Soporte de protocolo de ecosistema fragmentado.",
       "solution": "Hub de integración unificado del protocolo Matter.",
-      "services": [
-        "Protocolo IoT",
-        "App Móvil",
-        "UX/UI"
-      ],
+      "services": ["Protocolo IoT", "App Móvil", "UX/UI"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "4 Seniors",
@@ -317,11 +293,7 @@
       "description": "Expansión global de la infraestructura bancaria.",
       "challenge": "Escalando a mercados internacionales.",
       "solution": "Arquitectura de nube distribuida.",
-      "services": [
-        "Localización",
-        "Escalado",
-        "Soporte"
-      ],
+      "services": ["Localización", "Escalado", "Soporte"],
       "stats_values": {
         "methodology": "DevOps",
         "team_size": "8 Expertos",
@@ -335,10 +307,7 @@
       "description": "Extensión de visión por computadora para Nexus.",
       "challenge": "Procesamiento de video en tiempo real.",
       "solution": "Procesamiento impulsado por WebAssembly.",
-      "services": [
-        "Visión por Computadora",
-        "WASM"
-      ],
+      "services": ["Visión por Computadora", "WASM"],
       "stats_values": {
         "methodology": "I+D",
         "team_size": "3 PhDs",
@@ -352,10 +321,7 @@
       "description": "Solución de comercio electrónico de grado empresarial.",
       "challenge": "Gestión de inventario de alto volumen.",
       "solution": "Motor de inventario personalizado.",
-      "services": [
-        "Sistema de Inventario",
-        "Desarrollo de API"
-      ],
+      "services": ["Sistema de Inventario", "Desarrollo de API"],
       "stats_values": {
         "methodology": "Waterfall",
         "team_size": "6 Devs",
@@ -369,10 +335,7 @@
       "description": "Portal profesional para proveedores de atención médica.",
       "challenge": "Necesidades complejas de programación.",
       "solution": "Sistema de programación asistido por IA.",
-      "services": [
-        "Portal de Proveedores",
-        "Programación"
-      ],
+      "services": ["Portal de Proveedores", "Programación"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "4 Seniors",

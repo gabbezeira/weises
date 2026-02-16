@@ -52,15 +52,11 @@ const ChangePassword = () => {
       <S.Card
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         <S.Logo src={LogoImg} alt="Weises Logo" />
-        <S.Title>
-          {t('auth.change_password.title')}
-        </S.Title>
-        <S.Subtitle>
-          {t('auth.change_password.subtitle')}
-        </S.Subtitle>
+        <S.Title>{t('auth.change_password.title')}</S.Title>
+        <S.Subtitle>{t('auth.change_password.subtitle')}</S.Subtitle>
 
         {error && (
           <S.ErrorMessage

@@ -130,26 +130,26 @@ export const StatusBadge = styled.span`
     transition: all var(--transition-fast);
     
     ${({ $status }) => {
-        switch ($status) {
-            case 'Active':
-                return `
+      switch ($status) {
+        case 'Active':
+          return `
                     background-color: rgba(34, 197, 94, 0.1);
                     color: var(--color-green-500);
                     border: 1px solid rgba(34, 197, 94, 0.2);
                 `;
-            case 'Cancelled':
-                return `
+        case 'Cancelled':
+          return `
                     background-color: rgba(239, 68, 68, 0.1);
                     color: var(--color-red-500);
                     border: 1px solid rgba(239, 68, 68, 0.2);
                 `;
-            default: // Inactive
-                return `
+        default: // Inactive
+          return `
                     background-color: rgba(107, 114, 128, 0.1);
                     color: var(--color-gray-400);
                     border: 1px solid rgba(107, 114, 128, 0.2);
                 `;
-        }
+      }
     }}
 
     &:hover {
@@ -194,8 +194,8 @@ export const DropdownItem = styled.button`
     }
     
     ${({ $active }) =>
-        $active &&
-        `
+      $active &&
+      `
         background-color: var(--color-primary-10);
         color: var(--color-primary);
         font-weight: 500;

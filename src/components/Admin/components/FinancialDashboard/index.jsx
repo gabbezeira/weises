@@ -247,7 +247,13 @@ const FinancialDashboard = () => {
           <S.CardTitle>{t('financial.dashboard.revenue_sources')}</S.CardTitle>
         </S.CardHeader>
         <div
-          style={{ width: '100%', height: 350, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          style={{
+            width: '100%',
+            height: 350,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
         >
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>

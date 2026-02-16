@@ -209,11 +209,7 @@
       "description": "A complete overhaul of the legacy banking infrastructure to support millions of concurrent transactions with sub-millisecond latency.",
       "challenge": "The client faced significant scalability issues during peak hours, leading to transaction failures and user churn.",
       "solution": "We architected a microservices-based solution using Node.js and Go, deployed on Kubernetes. We implemented an event-driven architecture with Apache Kafka for real-time transaction processing.",
-      "services": [
-        "Backend Engineering",
-        "Cloud Architecture",
-        "Security Systems"
-      ],
+      "services": ["Backend Engineering", "Cloud Architecture", "Security Systems"],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "6 Seniors",
@@ -227,11 +223,7 @@
       "description": "An intelligent dashboard that visualizes complex data streams and uses predictive models to forecast business trends.",
       "challenge": "Users were overwhelmed by raw data and lacked actionable insights.",
       "solution": "We built a React-based dashboard with D3.js for visualization and integrated Python-based ML models to provide real-time predictive analytics.",
-      "services": [
-        "Data Visualization",
-        "ML Integration",
-        "Frontend Dev"
-      ],
+      "services": ["Data Visualization", "ML Integration", "Frontend Dev"],
       "stats_values": {
         "methodology": "Scrum",
         "team_size": "4 Experts",
@@ -245,11 +237,7 @@
       "description": "A headless e-commerce engine designed for speed, flexibility, and high conversion rates.",
       "challenge": "Slow page loads and a rigid monolithic architecture were stifling growth.",
       "solution": "We developed a headless solution using Next.js and Shopify Plus, optimizing for Core Web Vitals and achieving a 40% increase in conversion.",
-      "services": [
-        "Headless Commerce",
-        "Performance Optimization",
-        "UX Design"
-      ],
+      "services": ["Headless Commerce", "Performance Optimization", "UX Design"],
       "stats_values": {
         "methodology": "Kanban",
         "team_size": "5 Seniors",
@@ -263,11 +251,7 @@
       "description": "A secure, HIPAA-compliant telemedicine platform connecting patients with specialists worldwide.",
       "challenge": "Security and ease of use were paramount for adoption by elderly patients.",
       "solution": "We prioritized accessibility in the UI/UX design and implemented end-to-end encryption for all video calls and data storage.",
-      "services": [
-        "HIPAA Compliance",
-        "Real-time Video",
-        "Mobile App"
-      ],
+      "services": ["HIPAA Compliance", "Real-time Video", "Mobile App"],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "3 Experts",
@@ -281,11 +265,7 @@
       "description": "Real-time crypto asset tracking and portfolio management.",
       "challenge": "High latency in data fetching.",
       "solution": "Implemented WebSocket connections for sub-second updates.",
-      "services": [
-        "Web3 Integration",
-        "Real-time Data",
-        "Dashboard"
-      ],
+      "services": ["Web3 Integration", "Real-time Data", "Dashboard"],
       "stats_values": {
         "methodology": "Sprint",
         "team_size": "3 Devs",
@@ -299,11 +279,7 @@
       "description": "Smart home control interface for IoT devices.",
       "challenge": "Fragmented ecosystem protocol support.",
       "solution": "Unified Matter protocol integration hub.",
-      "services": [
-        "IoT Protocol",
-        "Mobile App",
-        "UX/UI"
-      ],
+      "services": ["IoT Protocol", "Mobile App", "UX/UI"],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "4 Seniors",
@@ -317,11 +293,7 @@
       "description": "Global expansion of the banking infrastructure.",
       "challenge": "Scaling to international markets.",
       "solution": "Distributed cloud architecture.",
-      "services": [
-        "Localization",
-        "Scaling",
-        "Support"
-      ],
+      "services": ["Localization", "Scaling", "Support"],
       "stats_values": {
         "methodology": "DevOps",
         "team_size": "8 Experts",
@@ -335,10 +307,7 @@
       "description": "Computer vision extension for Nexus.",
       "challenge": "Real-time video processing.",
       "solution": "WebAssembly powered processing.",
-      "services": [
-        "Computer Vision",
-        "WASM"
-      ],
+      "services": ["Computer Vision", "WASM"],
       "stats_values": {
         "methodology": "R&D",
         "team_size": "3 PhDs",
@@ -352,10 +321,7 @@
       "description": "Enterprise grade e-commerce solution.",
       "challenge": "High volume inventory management.",
       "solution": "Custom inventory engine.",
-      "services": [
-        "Inventory System",
-        "API Development"
-      ],
+      "services": ["Inventory System", "API Development"],
       "stats_values": {
         "methodology": "Waterfall",
         "team_size": "6 Devs",
@@ -369,10 +335,7 @@
       "description": "Professional healthcare provider portal.",
       "challenge": "Complex scheduling needs.",
       "solution": "AI-assisted scheduling system.",
-      "services": [
-        "Provider Portal",
-        "Scheduling"
-      ],
+      "services": ["Provider Portal", "Scheduling"],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "4 Seniors",

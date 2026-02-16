@@ -209,11 +209,7 @@
       "description": "Uma reformulação completa da infraestrutura bancária legada para suportar milhões de transações simultâneas com latência sub-milimétrica.",
       "challenge": "O cliente enfrentava problemas significativos de escalabilidade durante horários de pico, levando a falhas nas transações e perda de usuários.",
       "solution": "Arquitetamos uma solução baseada em microsserviços usando Node.js e Go, implantada em Kubernetes. Implementamos uma arquitetura orientada a eventos com Apache Kafka para processamento de transações em tempo real.",
-      "services": [
-        "Engenharia Backend",
-        "Arquitetura Cloud",
-        "Sistemas de Segurança"
-      ],
+      "services": ["Engenharia Backend", "Arquitetura Cloud", "Sistemas de Segurança"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "6 Seniores",
@@ -227,11 +223,7 @@
       "description": "Um dashboard inteligente que visualiza fluxos de dados complexos e usa modelos preditivos para prever tendências de negócios.",
       "challenge": "Os usuários estavam sobrecarregados por dados brutos e careciam de insights acionáveis.",
       "solution": "Construímos um dashboard baseado em React com D3.js para visualização e integramos modelos de ML em Python para fornecer análises preditivas em tempo real.",
-      "services": [
-        "Visualização de Dados",
-        "Integração ML",
-        "Dev Frontend"
-      ],
+      "services": ["Visualização de Dados", "Integração ML", "Dev Frontend"],
       "stats_values": {
         "methodology": "Scrum",
         "team_size": "4",
@@ -245,11 +237,7 @@
       "description": "Um motor de e-commerce headless projetado para velocidade, flexibilidade e altas taxas de conversão.",
       "challenge": "Carregamentos lentos de página e uma arquitetura monolítica rígida estavam sufocando o crescimento.",
       "solution": "Desenvolvemos uma solução headless usando Next.js e Shopify Plus, otimizando para Core Web Vitals e alcançando um aumento de 40% na conversão.",
-      "services": [
-        "Comércio Headless",
-        "Otimização de Performance",
-        "Design UX"
-      ],
+      "services": ["Comércio Headless", "Otimização de Performance", "Design UX"],
       "stats_values": {
         "methodology": "Kanban",
         "team_size": "5",
@@ -263,11 +251,7 @@
       "description": "Uma plataforma de telemedicina segura e compatível com HIPAA, conectando pacientes a especialistas em todo o mundo.",
       "challenge": "Segurança e facilidade de uso eram primordiais para a adoção por pacientes idosos.",
       "solution": "Priorizamos a acessibilidade no design UI/UX e implementamos criptografia de ponta a ponta para todas as chamadas de vídeo e armazenamento de dados.",
-      "services": [
-        "Conformidade HIPAA",
-        "Vídeo em Tempo Real",
-        "App Mobile"
-      ],
+      "services": ["Conformidade HIPAA", "Vídeo em Tempo Real", "App Mobile"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "3",
@@ -281,11 +265,7 @@
       "description": "Rastreamento de ativos cripto em tempo real e gestão de portfólio.",
       "challenge": "Alta latência na busca de dados.",
       "solution": "Conexões WebSocket implementadas para atualizações em sub-segundos.",
-      "services": [
-        "Integração Web3",
-        "Dados em Tempo Real",
-        "Dashboard"
-      ],
+      "services": ["Integração Web3", "Dados em Tempo Real", "Dashboard"],
       "stats_values": {
         "methodology": "Sprint",
         "team_size": "3",
@@ -299,11 +279,7 @@
       "description": "Interface de controle de casa inteligente para dispositivos IoT.",
       "challenge": "Suporte a protocolo de ecossistema fragmentado.",
       "solution": "Hub de integração unificado do protocolo Matter.",
-      "services": [
-        "Protocolo IoT",
-        "App Mobile",
-        "UX/UI"
-      ],
+      "services": ["Protocolo IoT", "App Mobile", "UX/UI"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "4",
@@ -317,11 +293,7 @@
       "description": "Expansão global da infraestrutura bancária.",
       "challenge": "Escalando para mercados internacionais.",
       "solution": "Arquitetura de nuvem distribuída.",
-      "services": [
-        "Localização",
-        "Escala",
-        "Suporte"
-      ],
+      "services": ["Localização", "Escala", "Suporte"],
       "stats_values": {
         "methodology": "DevOps",
         "team_size": "8",
@@ -335,10 +307,7 @@
       "description": "Extensão de visão computacional para Nexus.",
       "challenge": "Processamento de vídeo em tempo real.",
       "solution": "Processamento impulsionado por WebAssembly.",
-      "services": [
-        "Visão Computacional",
-        "WASM"
-      ],
+      "services": ["Visão Computacional", "WASM"],
       "stats_values": {
         "methodology": "P&D",
         "team_size": "3",
@@ -352,10 +321,7 @@
       "description": "Solução de e-commerce de nível empresarial.",
       "challenge": "Gestão de inventário de alto volume.",
       "solution": "Motor de inventário personalizado.",
-      "services": [
-        "Sistema de Inventário",
-        "Desenvolvimento de API"
-      ],
+      "services": ["Sistema de Inventário", "Desenvolvimento de API"],
       "stats_values": {
         "methodology": "Waterfall",
         "team_size": "6",
@@ -369,10 +335,7 @@
       "description": "Portal profissional para provedores de saúde.",
       "challenge": "Necessidades complexas de agendamento.",
       "solution": "Sistema de agendamento assistido por IA.",
-      "services": [
-        "Portal do Provedor",
-        "Agendamento"
-      ],
+      "services": ["Portal do Provedor", "Agendamento"],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "4",
