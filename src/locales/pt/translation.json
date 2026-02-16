@@ -1,0 +1,815 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "tech": "Tech",
+    "inspiration": "Inspiração",
+    "ready": "Pronto?",
+    "contact": "Contato"
+  },
+  "auth": {
+    "change_password": {
+      "title": "Atualização de segurança",
+      "subtitle": "Para garantir a segurança da sua conta, por favor atualize sua senha.",
+      "new_password": "Nova Senha",
+      "confirm_password": "Confirmar Nova Senha",
+      "placeholder_new": "Digite a nova senha",
+      "placeholder_confirm": "Confirme a nova senha",
+      "btn_submit": "Atualizar Senha",
+      "btn_loading": "Atualizando...",
+      "success": "Senha atualizada com sucesso. Por favor, faça login novamente.",
+      "error_length": "A senha deve ter pelo menos 6 caracteres",
+      "error_match": "As senhas não coincidem",
+      "error_generic": "Falha ao atualizar a senha. Tente novamente."
+    }
+  },
+  "hero": {
+    "badge": "A Software House do Futuro",
+    "title_start": "Construindo o",
+    "title_highlight": "Futuro Inteligente",
+    "description": "Engenhamos produtos digitais escaláveis. Do conceito à implantação, transformamos desafios complexos em software elegante.",
+    "cta": "Comece a Construir"
+  },
+  "home_projects": {
+    "title_start": "Nós Criamos",
+    "title_middle": "Legados",
+    "title_highlight": "Digitais",
+    "description_start": "Uma coleção de projetos que ajudamos a acelerar",
+    "description_highlight": "anos à frente.",
+    "cta": "Estudos de Caso"
+  },
+  "skills": {
+    "title_start": "Eleve sua",
+    "title_highlight": "Infraestrutura.",
+    "features": {
+      "lightning": {
+        "title": "Ultra Rápido",
+        "desc": "Renderização otimizada na borda para carregamento instantâneo."
+      },
+      "security": {
+        "title": "Segurança Empresarial",
+        "desc": "Padrão de criptografia bancária em todos os projetos."
+      },
+      "scale": {
+        "title": "Escala Global",
+        "desc": "Arquitetura distribuída pronta para milhões de usuários."
+      },
+      "ai": {
+        "title": "Integração com IA",
+        "desc": "Aproveitando LLMs para uma lógica de backend mais inteligente."
+      },
+      "realtime": {
+        "title": "Dados em Tempo Real",
+        "desc": "Atualizações via WebSocket sem recarregar a página."
+      },
+      "analytics": {
+        "title": "Pronto para Analytics",
+        "desc": "Observabilidade integrada e métricas de rastreamento."
+      }
+    }
+  },
+  "tech": {
+    "title_start": "Impulsionado por",
+    "title_highlight": "Tech de Ponta.",
+    "description": "É por isso que confiamos nas melhores tecnologias do mercado. De backends robustos a frontends pixel-perfect, nossa stack é projetada para velocidade, escalabilidade e desempenho à prova de futuro."
+  },
+  "inspiration": {
+    "quote": "A inovação distingue um líder de um seguidor.",
+    "role": "Co-fundador @ Apple"
+  },
+  "ready": {
+    "title_start": "Pronto para elevar",
+    "title_middle": "sua",
+    "title_highlight": "Presença Digital?",
+    "description": "Vamos construir algo extraordinário juntos. Peça um orçamento personalizado para o seu projeto hoje.",
+    "cta": "Orçamento via WhatsApp"
+  },
+  "about": {
+    "hero": {
+      "title_start": "A Nova Era do",
+      "title_highlight": "Desenvolvimento de Software.",
+      "description": "Somos uma software house moderna, nascida de uma crença simples: Engenharia de ponta deve ser acessível, segura e puramente focada no SEU valor."
+    },
+    "qualities": {
+      "security": {
+        "title": "Segurança em Primeiro Lugar",
+        "desc": "Proteção de nível empresarial em cada linha de código. Não entregamos sem isso."
+      },
+      "performance": {
+        "title": "Alta Performance",
+        "desc": "Otimizado para velocidade. Criamos máquinas digitais enxutas e poderosas."
+      },
+      "incubation": {
+        "title": "Incubação de Ideias",
+        "desc": "Não apenas construímos; refinamos. Sua visão, amplificada por nossa expertise."
+      },
+      "value": {
+        "title": "Valor Acessível",
+        "desc": "Desenvolvimento premium não precisa custar uma fortuna. Preço justo, qualidade de elite."
+      }
+    },
+    "narrative": {
+      "title": "Construído para a Web Moderna.",
+      "description_start": "Agências tradicionais são lentas, caras e cheias de burocracia. Nós somos diferentes. Somos uma equipe ágil de engenheiros especialistas que elimina intermediários para entregar",
+      "description_highlight": "valor puro",
+      "cards": {
+        "security": {
+          "title": "Segurança Inigualável",
+          "desc": "Proteção de nível empresarial não é um extra, é nossa base. Construímos com arquitetura security-first."
+        },
+        "performance": {
+          "title": "Performance Fulminante",
+          "desc": "Somos obcecados por milissegundos. Nossas stacks são otimizadas para carregamento instantâneo e escala."
+        },
+        "access": {
+          "title": "Acesso Direto ao Engenheiro",
+          "desc": "Sem \"gerentes de contas\" brincando de telefone sem fio. Você trabalha diretamente com os arquitetos."
+        }
+      },
+      "cta": "Comece sua jornada"
+    }
+  },
+  "contact_page": {
+    "hero": {
+      "badge": "Entre em Contato",
+      "title_start": "Vamos Iniciar uma",
+      "title_highlight": "Conversa",
+      "description": "Pronto para transformar suas ideias em realidade? Estamos aqui para ajudar você a construir o futuro."
+    },
+    "info": {
+      "title": "Info de Contato",
+      "email": "Nosso Email",
+      "call": "Ligue para Nós",
+      "visit": "Visite-nos"
+    },
+    "follow": {
+      "title": "Siga-nos"
+    },
+    "form": {
+      "title": "Envie uma Mensagem",
+      "name": "Nome",
+      "name_placeholder": "João Silva",
+      "email": "Email",
+      "email_placeholder": "joao@exemplo.com",
+      "subject": "Assunto",
+      "subject_placeholder": "Orçamento de Projeto",
+      "message": "Mensagem",
+      "message_placeholder": "Conte-nos sobre seu projeto...",
+      "submit": "Enviar Mensagem"
+    }
+  },
+  "projects_page": {
+    "hero": {
+      "title_start": "Nosso",
+      "title_highlight": "Trabalho.",
+      "description": "Explore nosso portfólio de transformações digitais. Construímos produtos que escalam, performam e inspiram."
+    },
+    "empty": {
+      "title": "Nenhum Case Ainda",
+      "description": "Estamos curando nossos trabalhos mais recentes. Fique ligado para atualizações."
+    },
+    "pagination": "Página"
+  },
+  "project_detail": {
+    "back": "Voltar para Projetos",
+    "labels": {
+      "challenge": "O Desafio",
+      "solution": "A Solução",
+      "gallery": "Galeria do Projeto",
+      "services": "Serviços",
+      "stack": "Stack do Studio",
+      "info": "Informações do Projeto",
+      "client": "Cliente",
+      "industry": "Indústria",
+      "duration": "Duração",
+      "year": "Ano",
+      "visit": "Visitar Site ao Vivo",
+      "confidential": "Confidencial"
+    },
+    "stats_labels": {
+      "methodology": "Metodologia",
+      "team_size": "Equipe",
+      "platform": "Plataforma",
+      "stack": "Tecnologias"
+    }
+  },
+  "footer": {
+    "company_desc": "Pioneirismo na próxima geração de experiências digitais. Criamos software que escala com sua ambição.",
+    "explore": "Explorar",
+    "capabilities": "Capacidades",
+    "insights": "Insights",
+    "rights": "TODOS OS DIREITOS RESERVADOS."
+  },
+  "projects": {
+    "fintech-core": {
+      "title": "Neon Banking",
+      "category": "Infraestrutura Fintech",
+      "description": "Uma reformulação completa da infraestrutura bancária legada para suportar milhões de transações simultâneas com latência sub-milimétrica.",
+      "challenge": "O cliente enfrentava problemas significativos de escalabilidade durante horários de pico, levando a falhas nas transações e perda de usuários.",
+      "solution": "Arquitetamos uma solução baseada em microsserviços usando Node.js e Go, implantada em Kubernetes. Implementamos uma arquitetura orientada a eventos com Apache Kafka para processamento de transações em tempo real.",
+      "services": [
+        "Engenharia Backend",
+        "Arquitetura Cloud",
+        "Sistemas de Segurança"
+      ],
+      "stats_values": {
+        "methodology": "Ágil",
+        "team_size": "6 Seniores",
+        "platform": "Mobile/Web",
+        "stack": "6 Techs"
+      }
+    },
+    "ai-analytics": {
+      "title": "Nexus AI",
+      "category": "Plataforma SaaS",
+      "description": "Um dashboard inteligente que visualiza fluxos de dados complexos e usa modelos preditivos para prever tendências de negócios.",
+      "challenge": "Os usuários estavam sobrecarregados por dados brutos e careciam de insights acionáveis.",
+      "solution": "Construímos um dashboard baseado em React com D3.js para visualização e integramos modelos de ML em Python para fornecer análises preditivas em tempo real.",
+      "services": [
+        "Visualização de Dados",
+        "Integração ML",
+        "Dev Frontend"
+      ],
+      "stats_values": {
+        "methodology": "Scrum",
+        "team_size": "4",
+        "platform": "Web App",
+        "stack": "5 Techs"
+      }
+    },
+    "ecommerce-engine": {
+      "title": "Velox Commerce",
+      "category": "E-commerce",
+      "description": "Um motor de e-commerce headless projetado para velocidade, flexibilidade e altas taxas de conversão.",
+      "challenge": "Carregamentos lentos de página e uma arquitetura monolítica rígida estavam sufocando o crescimento.",
+      "solution": "Desenvolvemos uma solução headless usando Next.js e Shopify Plus, otimizando para Core Web Vitals e alcançando um aumento de 40% na conversão.",
+      "services": [
+        "Comércio Headless",
+        "Otimização de Performance",
+        "Design UX"
+      ],
+      "stats_values": {
+        "methodology": "Kanban",
+        "team_size": "5",
+        "platform": "Web",
+        "stack": "4 Techs"
+      }
+    },
+    "health-connect": {
+      "title": "Vita Health",
+      "category": "Saúde",
+      "description": "Uma plataforma de telemedicina segura e compatível com HIPAA, conectando pacientes a especialistas em todo o mundo.",
+      "challenge": "Segurança e facilidade de uso eram primordiais para a adoção por pacientes idosos.",
+      "solution": "Priorizamos a acessibilidade no design UI/UX e implementamos criptografia de ponta a ponta para todas as chamadas de vídeo e armazenamento de dados.",
+      "services": [
+        "Conformidade HIPAA",
+        "Vídeo em Tempo Real",
+        "App Mobile"
+      ],
+      "stats_values": {
+        "methodology": "Ágil",
+        "team_size": "3",
+        "platform": "Web/Mobile",
+        "stack": "4 Techs"
+      }
+    },
+    "crypto-dashboard": {
+      "title": "CoinPulse",
+      "category": "Web3",
+      "description": "Rastreamento de ativos cripto em tempo real e gestão de portfólio.",
+      "challenge": "Alta latência na busca de dados.",
+      "solution": "Conexões WebSocket implementadas para atualizações em sub-segundos.",
+      "services": [
+        "Integração Web3",
+        "Dados em Tempo Real",
+        "Dashboard"
+      ],
+      "stats_values": {
+        "methodology": "Sprint",
+        "team_size": "3",
+        "platform": "Web App",
+        "stack": "3 Techs"
+      }
+    },
+    "smart-home": {
+      "title": "Lumina Home",
+      "category": "App IoT",
+      "description": "Interface de controle de casa inteligente para dispositivos IoT.",
+      "challenge": "Suporte a protocolo de ecossistema fragmentado.",
+      "solution": "Hub de integração unificado do protocolo Matter.",
+      "services": [
+        "Protocolo IoT",
+        "App Mobile",
+        "UX/UI"
+      ],
+      "stats_values": {
+        "methodology": "Ágil",
+        "team_size": "4",
+        "platform": "Mobile",
+        "stack": "3 Techs"
+      }
+    },
+    "fintech-core-2": {
+      "title": "Neon Banking Global",
+      "category": "Infraestrutura Fintech",
+      "description": "Expansão global da infraestrutura bancária.",
+      "challenge": "Escalando para mercados internacionais.",
+      "solution": "Arquitetura de nuvem distribuída.",
+      "services": [
+        "Localização",
+        "Escala",
+        "Suporte"
+      ],
+      "stats_values": {
+        "methodology": "DevOps",
+        "team_size": "8",
+        "platform": "Cloud",
+        "stack": "3 Techs"
+      }
+    },
+    "ai-analytics-2": {
+      "title": "Nexus Vision",
+      "category": "Plataforma SaaS",
+      "description": "Extensão de visão computacional para Nexus.",
+      "challenge": "Processamento de vídeo em tempo real.",
+      "solution": "Processamento impulsionado por WebAssembly.",
+      "services": [
+        "Visão Computacional",
+        "WASM"
+      ],
+      "stats_values": {
+        "methodology": "P&D",
+        "team_size": "3",
+        "platform": "Web",
+        "stack": "3 Techs"
+      }
+    },
+    "ecommerce-engine-2": {
+      "title": "Velox Enterprise",
+      "category": "E-commerce",
+      "description": "Solução de e-commerce de nível empresarial.",
+      "challenge": "Gestão de inventário de alto volume.",
+      "solution": "Motor de inventário personalizado.",
+      "services": [
+        "Sistema de Inventário",
+        "Desenvolvimento de API"
+      ],
+      "stats_values": {
+        "methodology": "Waterfall",
+        "team_size": "6",
+        "platform": "Web",
+        "stack": "2 Techs"
+      }
+    },
+    "health-connect-2": {
+      "title": "Vita Pro",
+      "category": "Saúde",
+      "description": "Portal profissional para provedores de saúde.",
+      "challenge": "Necessidades complexas de agendamento.",
+      "solution": "Sistema de agendamento assistido por IA.",
+      "services": [
+        "Portal do Provedor",
+        "Agendamento"
+      ],
+      "stats_values": {
+        "methodology": "Ágil",
+        "team_size": "4",
+        "platform": "Web",
+        "stack": "2 Techs"
+      }
+    }
+  },
+  "common": {
+    "delete_modal": {
+      "title": "Excluir Item",
+      "message": "Tem certeza que deseja excluir este item? Esta ação não pode ser desfeita.",
+      "confirm": "Excluir",
+      "cancel": "Cancelar"
+    },
+    "pagination": {
+      "page": "Página"
+    },
+    "actions": {
+      "edit": "Editar",
+      "delete": "Excluir",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "back": "Voltar",
+      "create": "Criar",
+      "update": "Atualizar",
+      "upload_image": "Carregar Imagem"
+    }
+  },
+  "admin": {
+    "header": {
+      "welcome": "Bem-vindo",
+      "logout": "Sair",
+      "profile": "Perfil"
+    },
+    "sidebar": {
+      "dashboard": "Painel",
+      "clients": "Clientes",
+      "projects": "Projetos",
+      "services": "Serviços",
+      "financial": "Financeiro",
+      "settings": "Configurações"
+    },
+    "dashboard": {
+      "active_projects": "Projetos Ativos",
+      "total_clients": "Total de Clientes",
+      "pending_tasks": "Tarefas Pendentes",
+      "revenue": "Receita Mensal",
+      "recent_activity": "Atividade Recente",
+      "quick_actions": "Ações Rápidas",
+      "new_client": "Novo Cliente",
+      "new_project": "Novo Projeto",
+      "from_last_month": "último mês"
+    },
+    "clients": {
+      "title": "Clientes",
+      "add_client": "Adicionar Cliente",
+      "search_placeholder": "Buscar...",
+      "status": {
+        "active": "Ativo",
+        "inactive": "Inativo",
+        "cancelled": "Cancelado"
+      },
+      "table": {
+        "client": "Cliente",
+        "contact": "Contato",
+        "status": "Status",
+        "actions": "Ações"
+      },
+      "form": {
+        "edit_title": "Editar Cliente",
+        "new_title": "Novo Cliente",
+        "business_info": "Informações do Negócio",
+        "client_name": "Nome do Cliente",
+        "company_name": "Nome da Empresa",
+        "business_sector": "Setor de Atuação",
+        "contact_details": "Detalhes de Contato",
+        "email": "Endereço de Email",
+        "phone": "Telefone",
+        "contract_metrics": "Contrato & Métricas",
+        "lead_source": "Origem do Lead",
+        "contract_start": "Início do Contrato",
+        "monthly_plan": "Plano Mensal",
+        "monthly_value": "Valor Mensal (R$)",
+        "client_panel_access": "Acesso ao Painel do Cliente",
+        "username": "Nome de Usuário",
+        "password": "Senha",
+        "cancel": "Cancelar",
+        "save": "Salvar Cliente",
+        "update": "Atualizar Cliente"
+      }
+    },
+    "projects": {
+      "title": "Projetos",
+      "add_project": "Adicionar Projeto",
+      "task_board": "Tarefas",
+      "new_task": "Nova Tarefa",
+      "columns": {
+        "todo": "A Fazer",
+        "in_progress": "Em Progresso",
+        "done": "Concluído"
+      },
+      "actions": {
+        "move_back": "Mover para Trás",
+        "move_forward": "Mover para Frente"
+      },
+      "delete_modal": {
+        "title": "Excluir Tarefa",
+        "message": "Tem certeza que deseja excluir esta tarefa? Esta ação não pode ser desfeita."
+      },
+      "not_found": "Projeto não encontrado",
+      "modal": {
+        "edit_title": "Detalhes da Tarefa",
+        "new_title": "Criar Nova Tarefa",
+        "input": {
+          "title": "Título da Tarefa",
+          "title_placeholder": "Digite o título da tarefa",
+          "priority": "Prioridade",
+          "due_date": "Data de Vencimento",
+          "assignee": "Responsável",
+          "assignee_placeholder": "Atribuir a...",
+          "description": "Descrição e Notas",
+          "description_placeholder": "Adicione descrição detalhada, notas ou checklists..."
+        },
+        "priority": {
+          "low": "Baixa",
+          "medium": "Média",
+          "high": "Alta",
+          "critical": "Crítica"
+        }
+      },
+      "private_details": "Detalhes Privados",
+      "delete_project_modal": {
+        "title": "Excluir Projeto",
+        "message": "Tem certeza que deseja excluir este projeto? Todas as tarefas e dados associados serão removidos permanentemente."
+      },
+      "form": {
+        "edit_title": "Editar Projeto",
+        "new_title": "Novo Projeto",
+        "core_info": "Informações Principais",
+        "project_title": "Título do Projeto",
+        "select_client": "Selecione um Cliente",
+        "category": "Categoria",
+        "deadline": "Prazo",
+        "private_info": "Informações Privadas (Apenas Admin)",
+        "project_value": "Valor do Projeto",
+        "credentials": "Credenciais e Chaves de Acesso",
+        "credential_num": "Credencial #",
+        "add_credential": "Adicionar Credencial",
+        "project_details": "Detalhes do Projeto",
+        "description": "Descrição",
+        "challenge": "Desafio",
+        "solution": "Solução",
+        "technical_specs": "Especificações Técnicas",
+        "methodology": "Metodologia",
+        "team_size": "Tamanho da Equipe",
+        "platform": "Plataforma",
+        "year": "Ano",
+        "duration": "Duração",
+        "live_link": "Link ao Vivo",
+        "services": "Serviços",
+        "stack": "Tecnologias",
+        "media": "Mídia",
+        "cover_image": "URL da Imagem de Capa",
+        "gallery_images": "Imagens da Galeria",
+        "progress_timeline": "Progresso e Cronograma do Projeto",
+        "estimated_completion": "Conclusão Estimada",
+        "project_stages": "Etapas do Projeto",
+        "stage_name_placeholder": "Nome da Etapa (ex: Design, Desenvolvimento)",
+        "add_stage": "Adicionar Etapa",
+        "delete_credential_modal": {
+          "title": "Excluir Credencial",
+          "message": "Tem certeza que deseja remover esta credencial? Isso não será salvo até que você atualize o projeto."
+        }
+      },
+      "credentials_modal": {
+        "title": "Detalhes Privados: {{title}}",
+        "open": "Abrir",
+        "username": "Usuário / Email",
+        "password": "Senha / Chave",
+        "copy_username": "Copiar usuário",
+        "copy_password": "Copiar senha",
+        "hide": "Ocultar",
+        "show": "Mostrar",
+        "no_credentials": "Nenhuma credencial armazenada."
+      },
+      "progress_modal": {
+        "title": "Progresso do Projeto",
+        "progress": "Progresso Geral",
+        "completed": "Concluído",
+        "pending": "Pendente",
+        "no_stages": "Nenhuma etapa definida. Adicione etapas no formulário do projeto."
+      },
+      "status": {
+        "planning": "Planejamento",
+        "in_progress": "Em Progresso",
+        "completed": "Concluído",
+        "on_hold": "Em Espera"
+      }
+    }
+  },
+  "financial": {
+    "title": "Financeiro",
+    "overview": {
+      "title": "Visão Geral Financeira",
+      "total_revenue": "Receita Total",
+      "net_profit": "Lucro Líquido",
+      "total_expenses": "Despesas Totais",
+      "expenses_paid": "Despesas Pagas",
+      "gross_profit": "Lucro Bruto",
+      "estimated_taxes": "Impostos Estimados",
+      "rate": "Taxa",
+      "on_revenue": "sobre Receita",
+      "rate_not_set": "Taxa não definida",
+      "after_tax": "Após {{rate}}% de Imposto (Est.)",
+      "sales_services": "Vendas e Serviços",
+      "operational_costs": "Custos Operacionais",
+      "revenue_minus_expenses": "Receita - Despesas",
+      "available_distribution": "Disponível para distribuição"
+    },
+    "filters": {
+      "current_month": "Mês Atual",
+      "current_quarter": "Trimestre Atual",
+      "last_3_months": "Últimos 3 Meses",
+      "last_12_months": "Últimos 12 Meses",
+      "current_year": "Ano Atual",
+      "all_time": "Todo o Período",
+      "detailed_breakdown": "Detalhamento para",
+      "this_month": "Este Mês"
+    },
+    "transactions": {
+      "title": "Transações",
+      "all": "Todas",
+      "income": "Receitas",
+      "expense": "Despesas",
+      "type": "Tipo",
+      "date": "Data",
+      "category": "Categoria",
+      "description": "Descrição",
+      "context": "Contexto",
+      "amount": "Valor",
+      "status": "Status",
+      "actions": "Ações",
+      "empty": {
+        "title": "Nenhuma transação encontrada",
+        "description": "Não encontramos nenhuma transação correspondente a \"{{term}}\".",
+        "title_default": "Nenhuma transação ainda",
+        "description_default": "Comece criando sua primeira transação."
+      },
+      "delete_modal": {
+        "title": "Excluir Transação",
+        "message": "Tem certeza que deseja excluir esta transação? Esta ação não pode ser desfeita."
+      }
+    },
+    "distribution": {
+      "title": "Distribuição Sugerida",
+      "company_reserve": "Reserva da Empresa (Fluxo de Caixa)",
+      "partner_dividends": "Dividendos dos Sócios (Lucro)",
+      "reserve_note": "Recomendado para reinvestimento, fundo de emergência e custos operacionais futuros.",
+      "dividends_note": "Valor disponível para ser distribuído entre os sócios com base na participação acionária."
+    },
+    "dashboard": {
+      "title": "Inteligência Financeira",
+      "subtitle": "Gerencie sua receita, despesas e fluxo de caixa.",
+      "new_transaction": "Nova Transação",
+      "tabs": {
+        "analytics": "Analytics",
+        "profit_dividends": "Lucros e Dividendos",
+        "transactions": "Transações",
+        "fixed_expenses": "Despesas Fixas"
+      },
+      "cash_flow_timeline": "Cronograma de Fluxo de Caixa",
+      "revenue_sources": "Fontes de Receita",
+      "description": "Análises e relatórios baseados no seu histórico de transações.",
+      "filters": {
+        "month": "Mês",
+        "quarter": "Trimestre",
+        "year": "Ano",
+        "all": "Todos"
+      }
+    },
+    "modals": {
+      "fixed_expense": {
+        "title": "Nova Despesa Fixa",
+        "description": "Descrição",
+        "placeholder_desc": "ex: Adobe Creative Cloud",
+        "category": "Categoria",
+        "amount": "Valor (R$)",
+        "day_of_month": "Dia do Vencimento",
+        "hint": "Esta despesa se repetirá mensalmente neste dia.",
+        "save": "Salvar Despesa Fixa"
+      },
+      "transaction": {
+        "title": "Nova Transação",
+        "income": "Receita",
+        "expense": "Despesa",
+        "description": "Descrição",
+        "placeholder_desc": "Do que se trata essa transação?",
+        "category": "Categoria",
+        "date": "Data",
+        "project_opt": "Projeto (Opcional)",
+        "client_opt": "Cliente (Opcional)",
+        "recurring": "Transação Recorrente",
+        "recurring_hint": "Repetir mensalmente",
+        "tax_provision": "Provisão de Imposto",
+        "tax_hint": "Calc. automático ({{rate}}%)",
+        "save": "Salvar {{type}}"
+      }
+    },
+    "categories": {
+      "subscription": "Assinatura",
+      "rent": "Aluguel / Escritório",
+      "server": "Servidor / Hospedagem",
+      "tax": "Impostos / Governo",
+      "salary": "Salário / Equipe",
+      "other": "Outros",
+      "project": "Projeto",
+      "retainer": "Retainer",
+      "consulting": "Consultoria",
+      "operational": "Operacional",
+      "freelance": "Freelance",
+      "marketing": "Marketing",
+      "software": "Software"
+    },
+    "status": {
+      "pending": "Pendente",
+      "paid": "Pago",
+      "overdue": "Atrasado",
+      "cancelled": "Cancelado"
+    }
+  },
+  "client": {
+    "layout": {
+      "title": "Portal do Cliente",
+      "nav": {
+        "overview": "Visão Geral",
+        "projects": "Meus Projetos",
+        "services": "Serviços",
+        "billing": "Faturas e Financeiro"
+      },
+      "request_service": "Solicitar Serviço",
+      "not_found": {
+        "title": "Cliente Não Encontrado",
+        "message": "Não foi possível carregar os dados do cliente. Por favor, tente novamente mais tarde."
+      }
+    },
+    "dashboard": {
+      "welcome": "Bem-vindo de volta, {{name}}",
+      "overview": "Visão geral dos seus projetos e status financeiro em {{company}}.",
+      "stats": {
+        "active_projects": "Projetos Ativos",
+        "completed_projects": "{{count}} projetos concluídos",
+        "next_due_invoice": "Próxima Fatura",
+        "total_invested": "Total Investido",
+        "lifetime_value": "Valor vitalício",
+        "all_paid": "Tudo Pago",
+        "no_pending": "Sem faturas pendentes",
+        "due_date": "Vence em {{date}}"
+      },
+      "projects": {
+        "active_title": "Projetos Ativos",
+        "view_all": "Ver Todos"
+      },
+      "quick_actions": {
+        "title": "Ações Rápidas & Suporte",
+        "request_service_title": "Solicitar Novo Serviço",
+        "request_service_desc": "Inicie um novo projeto ou solicite trabalho pontual.",
+        "view_contracts_title": "Ver Todos os Contratos",
+        "view_contracts_desc": "Acesse seus contratos de serviço e termos."
+      },
+      "support": {
+        "title": "Precisa de Ajuda?",
+        "desc": "Seu gerente de conta dedicado está disponível para ajudar durante o horário comercial.",
+        "chat_btn": "Falar com Gerente",
+        "help_center": "Central de Ajuda & FAQs"
+      }
+    },
+    "projects": {
+      "title": "Meus Projetos",
+      "details": {
+        "back": "Voltar para Projetos",
+        "progress_timeline": {
+          "title": "Progresso do Projeto",
+          "estimated_completion": "Conclusão Estimada: {{date}}"
+        },
+        "tabs": {
+          "overview": "Visão Geral",
+          "credentials": "Credenciais",
+          "contract": "Contrato",
+          "financials": "Financeiro"
+        },
+        "overview": {
+          "about": "Sobre o Projeto",
+          "challenge": "Desafio",
+          "solution": "Solução",
+          "tech_stack": "Tech Stack",
+          "deliverables": "Principais Entregas"
+        },
+        "credentials": {
+          "access": "Acessar",
+          "username": "Usuário",
+          "password": "Senha"
+        },
+        "contract": {
+          "title": "Contrato de Serviço",
+          "view": "Visualizar",
+          "download": "Baixar PDF"
+        },
+        "financials": {
+          "title": "Faturas",
+          "empty": "Nenhuma fatura encontrada para este projeto."
+        }
+      }
+    },
+    "services": {
+      "title": "Central de Serviços",
+      "subtitle": "Explore serviços adicionais para expandir seu negócio.",
+      "available_services": "Serviços Disponíveis",
+      "request_btn": "Solicitar",
+      "faq_title": "Perguntas Frequentes"
+    },
+    "billing": {
+      "title": "Faturas e Cobrança",
+      "subtitle": "Gerencie pagamentos, métodos e serviços extras.",
+      "payment_methods": "Métodos de Pagamento",
+      "card_holder": "Titular do Cartão",
+      "add_card": "Adicionar Cartão de Crédito",
+      "invoice_history": "Histórico de Faturas",
+      "table": {
+        "date": "Data",
+        "description": "Descrição",
+        "amount": "Valor",
+        "status": "Status",
+        "actions": "Ações",
+        "empty": "Nenhuma fatura encontrada.",
+        "pay_now": "Pagar Agora"
+      }
+    }
+  }
+}

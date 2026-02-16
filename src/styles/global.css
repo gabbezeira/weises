@@ -1,0 +1,199 @@
+:root {
+  --color-background: #030303;
+  /*030305*/
+  --color-surface: #0a0a0a;
+  --color-primary: #6932e2;
+  --color-secondary: #a069ff;
+  --color-text: #ededed;
+  --color-muted: #b0b0b0;
+  --color-border: #1f1f1f;
+
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+
+  --color-purple-500: #c084fc;
+  --color-green-500: #22c55e;
+  --color-blue-400: #60a5fa;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+
+  /* Semantic Colors */
+  --color-success: var(--color-green-500);
+  --color-danger: var(--color-red-500);
+  --color-warning: #f59e0b;
+  /* Amber 500 */
+
+  /* Semantic Alpha Variants */
+  --color-success-10: rgba(34, 197, 94, 0.1);
+  --color-danger-10: rgba(239, 68, 68, 0.1);
+  --color-warning-10: rgba(245, 158, 11, 0.1);
+
+  /* Transparent Whites */
+  --color-white-5: rgb(255 255 255 / 0.05);
+  --color-white-10: rgb(255 255 255 / 0.1);
+  --color-white-20: rgb(255 255 255 / 0.2);
+  --color-white-30: rgb(255 255 255 / 0.3);
+
+  /* Primary Alpha Variants */
+  --color-primary-10: rgb(105 50 226 / 0.1);
+  --color-primary-20: rgb(105 50 226 / 0.2);
+  --color-primary-30: rgb(105 50 226 / 0.3);
+  --color-primary-50: rgb(105 50 226 / 0.5);
+
+  /* Sidebar/Panel Backgrounds */
+  --color-panel-bg: #0f0f0f;
+  --color-panel-border: rgb(255 255 255 / 0.1);
+
+  /* Shadows */
+  --shadow-glow-primary: 0 0 15px var(--color-primary-50);
+  --shadow-glow-white: 0 0 20px var(--color-white-30);
+
+  /* Z-Index Layers */
+  --z-index-mobile-overlay: 40;
+  --z-index-sidebar: 50;
+  --z-index-modal: 60;
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Playfair Display", serif;
+
+  --container-max: 80rem;
+  --container-padding: 1.5rem;
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background) !important;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+}
+
+.text-highlight {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right in oklab, white, var(--color-primary), white);
+  background-size: 200% auto;
+  animation: gradient 8s linear infinite;
+  padding: 0 0.2em;
+  margin: 0 -0.1em;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

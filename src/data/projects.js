@@ -1,0 +1,227 @@
+export const projects = [
+  {
+    id: 'fintech-core',
+    title: 'Neon Banking',
+    category: 'Fintech Infrastructure',
+    client: 'Neon Financial',
+    year: '2023',
+    duration: '8 Months',
+    services: ['Backend Engineering', 'Cloud Architecture', 'Security Systems'],
+    description:
+      'A complete overhaul of the legacy banking infrastructure to support millions of concurrent transactions with sub-millisecond latency.',
+    challenge:
+      'The client faced significant scalability issues during peak hours, leading to transaction failures and user churn.',
+    solution:
+      'We architected a microservices-based solution using Node.js and Go, deployed on Kubernetes. We implemented an event-driven architecture with Apache Kafka for real-time transaction processing.',
+    stack: ['React Native', 'Node.js', 'Go', 'PostgreSQL', 'Kafka', 'Kubernetes'],
+    image:
+      'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop',
+    stats: [
+      { value: 'Agile', label: 'Methodology' },
+      { value: '6 Seniors', label: 'Team Size' },
+      { value: 'Mobile/Web', label: 'Platform' },
+      { value: '6 Techs', label: 'Stack' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=1470&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1607799275518-d58665d096b1?q=80&w=1470&auto=format&fit=crop',
+    ],
+  },
+  {
+    id: 'ai-analytics',
+    title: 'Nexus AI',
+    category: 'SaaS Platform',
+    client: 'Nexus Data',
+    year: '2024',
+    duration: '5 Months',
+    services: ['Data Visualization', 'ML Integration', 'Frontend Dev'],
+    description:
+      'An intelligent dashboard that visualizes complex data streams and uses predictive models to forecast business trends.',
+    challenge: 'Users were overwhelmed by raw data and lacked actionable insights.',
+    solution:
+      'We built a React-based dashboard with D3.js for visualization and integrated Python-based ML models to provide real-time predictive analytics.',
+    stack: ['React', 'Python', 'TensorFlow', 'D3.js', 'AWS'],
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
+    stats: [
+      { value: 'Scrum', label: 'Methodology' },
+      { value: '4 Experts', label: 'Team Size' },
+      { value: 'Web App', label: 'Platform' },
+      { value: '5 Techs', label: 'Stack' },
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1607799275518-d58665d096b1?q=80&w=1470&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop',
+    ],
+  },
+  {
+    id: 'ecommerce-engine',
+    title: 'Velox Commerce',
+    category: 'E-commerce',
+    client: 'Velox Retail',
+    year: '2023',
+    duration: '6 Months',
+    services: ['Headless Commerce', 'Performance Optimization', 'UX Design'],
+    description:
+      'A headless e-commerce engine designed for speed, flexibility, and high conversion rates.',
+    challenge: 'Slow page loads and a rigid monolithic architecture were stifling growth.',
+    solution:
+      'We developed a headless solution using Next.js and Shopify Plus, optimizing for Core Web Vitals and achieving a 40% increase in conversion.',
+    stack: ['Next.js', 'Shopify Plus', 'Tailwind CSS', 'Vercel'],
+    image:
+      'https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=1964&auto=format&fit=crop',
+    stats: [
+      { value: 'Kanban', label: 'Methodology' },
+      { value: '5 Seniors', label: 'Team Size' },
+      { value: 'Web', label: 'Platform' },
+      { value: '4 Techs', label: 'Stack' },
+    ],
+  },
+  {
+    id: 'health-connect',
+    title: 'Vita Health',
+    category: 'Healthcare',
+    client: 'Vita Medical',
+    year: '2024',
+    duration: '4 Months',
+    services: ['HIPAA Compliance', 'Real-time Video', 'Mobile App'],
+    description:
+      'A secure, HIPAA-compliant telemedicine platform connecting patients with specialists worldwide.',
+    challenge: 'Security and ease of use were paramount for adoption by elderly patients.',
+    solution:
+      'We prioritized accessibility in the UI/UX design and implemented end-to-end encryption for all video calls and data storage.',
+    stack: ['React', 'WebRTC', 'Firebase', 'Stripe'],
+    image:
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470&auto=format&fit=crop',
+    stats: [
+      { value: 'Agile', label: 'Methodology' },
+      { value: '3 Experts', label: 'Team Size' },
+      { value: 'Web/Mobile', label: 'Platform' },
+      { value: '4 Techs', label: 'Stack' },
+    ],
+  },
+  {
+    id: 'crypto-dashboard',
+    title: 'CoinPulse',
+    category: 'Web3',
+    year: '2024',
+    duration: '3 Months',
+    services: ['Web3 Integration', 'Real-time Data', 'Dashboard'],
+    description: 'Real-time crypto asset tracking and portfolio management.',
+    challenge: 'High latency in data fetching.',
+    solution: 'Implemented WebSocket connections for sub-second updates.',
+    stack: ['React', 'WebSockets', 'ChartJS'],
+    image:
+      'https://images.unsplash.com/photo-1621416894569-0f39ed31d247?q=80&w=1469&auto=format&fit=crop',
+    stats: [
+      { value: 'Sprint', label: 'Methodology' },
+      { value: '3 Devs', label: 'Team Size' },
+      { value: 'Web App', label: 'Platform' },
+      { value: '3 Techs', label: 'Stack' },
+    ],
+  },
+  {
+    id: 'smart-home',
+    title: 'Lumina Home',
+    category: 'IoT App',
+    year: '2023',
+    duration: '5 Months',
+    services: ['IoT Protocol', 'Mobile App', 'UX/UI'],
+    description: 'Smart home control interface for IoT devices.',
+    challenge: 'Fragmented ecosystem protocol support.',
+    solution: 'Unified Matter protocol integration hub.',
+    stack: ['React Native', 'InFluxDB', 'MQTT'],
+    image:
+      'https://images.unsplash.com/photo-1558002038-1091a166111c?q=80&w=1471&auto=format&fit=crop',
+    stats: [
+      { value: 'Agile', label: 'Methodology' },
+      { value: '4 Seniors', label: 'Team Size' },
+      { value: 'Mobile', label: 'Platform' },
+      { value: '3 Techs', label: 'Stack' },
+    ],
+  },
+  // Duplicates for Pagination Testing
+  {
+    id: 'fintech-core-2',
+    title: 'Neon Banking Global',
+    category: 'Fintech Infrastructure',
+    client: 'Neon Financial',
+    year: '2024',
+    duration: 'Ongoing',
+    services: ['Localization', 'Scaling', 'Support'],
+    description: 'Global expansion of the banking infrastructure.',
+    challenge: 'Scaling to international markets.',
+    solution: 'Distributed cloud architecture.',
+    stack: ['React Native', 'Node.js', 'Go'],
+    image:
+      'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1470&auto=format&fit=crop',
+    stats: [
+      { value: 'DevOps', label: 'Methodology' },
+      { value: '8 Experts', label: 'Team Size' },
+      { value: 'Cloud', label: 'Platform' },
+      { value: '3 Techs', label: 'Stack' },
+    ],
+  },
+  {
+    id: 'ai-analytics-2',
+    title: 'Nexus Vision',
+    category: 'SaaS Platform',
+    year: '2024',
+    duration: '3 Months',
+    services: ['Computer Vision', 'WASM'],
+    description: 'Computer vision extension for Nexus.',
+    challenge: 'Real-time video processing.',
+    solution: 'WebAssembly powered processing.',
+    stack: ['React', 'WASM', 'OpenCV'],
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
+    stats: [
+      { value: 'R&D', label: 'Methodology' },
+      { value: '3 PhDs', label: 'Team Size' },
+      { value: 'Web', label: 'Platform' },
+      { value: '3 Techs', label: 'Stack' },
+    ],
+  },
+  {
+    id: 'ecommerce-engine-2',
+    title: 'Velox Enterprise',
+    category: 'E-commerce',
+    year: '2023',
+    duration: '6 Months',
+    services: ['Inventory System', 'API Development'],
+    description: 'Enterprise grade e-commerce solution.',
+    challenge: 'High volume inventory management.',
+    solution: 'Custom inventory engine.',
+    stack: ['Next.js', 'Rust'],
+    image:
+      'https://images.unsplash.com/photo-1661956602116-aa6865609028?q=80&w=1964&auto=format&fit=crop',
+    stats: [
+      { value: 'Waterfall', label: 'Methodology' },
+      { value: '6 Devs', label: 'Team Size' },
+      { value: 'Web', label: 'Platform' },
+      { value: '2 Techs', label: 'Stack' },
+    ],
+  },
+  {
+    id: 'health-connect-2',
+    title: 'Vita Pro',
+    category: 'Healthcare',
+    year: '2024',
+    duration: '4 Months',
+    services: ['Provider Portal', 'Scheduling'],
+    description: 'Professional healthcare provider portal.',
+    challenge: 'Complex scheduling needs.',
+    solution: 'AI-assisted scheduling system.',
+    stack: ['React', 'Python'],
+    image:
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1470&auto=format&fit=crop',
+    stats: [
+      { value: 'Agile', label: 'Methodology' },
+      { value: '4 Seniors', label: 'Team Size' },
+      { value: 'Web', label: 'Platform' },
+      { value: '2 Techs', label: 'Stack' },
+    ],
+  },
+];
