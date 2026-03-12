@@ -10,7 +10,6 @@ const Dashboard = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  // Calculate Total Revenue (Realized Income)
   const totalRevenue = transactions
     .filter((t) => t.type === 'income' && t.status === 'paid')
     .reduce((acc, t) => acc + t.amount, 0);

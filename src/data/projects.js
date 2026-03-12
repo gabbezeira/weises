@@ -142,7 +142,6 @@ export const projects = [
       { value: '3 Techs', label: 'Stack' },
     ],
   },
-  // Duplicates for Pagination Testing
   {
     id: 'fintech-core-2',
     title: 'Neon Banking Global',

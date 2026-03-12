@@ -85,7 +85,7 @@ export const BackLinkInner = styled(Link)`
     &:hover {
 
     svg {
-        display: block; // Ensure no line-height weirdness on icon
+        display: block;
     }
 `;
 

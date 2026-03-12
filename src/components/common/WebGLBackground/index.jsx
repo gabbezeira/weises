@@ -16,8 +16,8 @@ const FRAGMENT_SHADER = `
 
     // Colors
     const vec3 c_bg = vec3(5.0, 5.0, 5.0) / 255.0;
-    const vec3 c_primary = vec3(105.0, 50.0, 226.0) / 255.0; // #6932e2
-    const vec3 c_secondary = vec3(160.0, 105.0, 255.0) / 255.0; // #a069ff
+    const vec3 c_primary = vec3(105.0, 50.0, 226.0) / 255.0;
+    const vec3 c_secondary = vec3(160.0, 105.0, 255.0) / 255.0;
 
     // Random noise for dithering
     float random(vec2 st) {

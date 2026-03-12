@@ -13,7 +13,7 @@ const FixedExpenseModal = ({ isOpen, onClose }) => {
     description: '',
     category: 'Subscription',
     amount: '',
-    dayOfMonth: new Date().getDate(), // Default to today's day
+    dayOfMonth: new Date().getDate(),
   });
 
   if (!isOpen) return null;
@@ -28,7 +28,6 @@ const FixedExpenseModal = ({ isOpen, onClose }) => {
     const amount = parseFloat(formData.amount);
     if (!amount) return;
 
-    // Calculate next occurrence date based on day of month
     const today = new Date();
     let nextDate = new Date(today.getFullYear(), today.getMonth(), formData.dayOfMonth);
     if (nextDate < today) {

@@ -47,7 +47,6 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     try {
       await signOut(auth);
-      // State will be updated by onAuthStateChanged, but we clear it here too for immediate UI feedback
       setUser(null);
       setProfile(null);
     } catch (error) {

@@ -23,7 +23,7 @@ const ClientForm = () => {
     hasMonthlyPlan: false,
     monthlyValue: '',
     clientPanelAccess: false,
-    password: '', // Only sent if creating/updating user
+    password: '',
     contractStart: '',
     leadSource: '',
   });
@@ -32,8 +32,6 @@ const ClientForm = () => {
     if (isEditMode) {
       const client = clients.find((c) => c.id === id);
       if (client) {
-        // Determine if they previously had access (backend doesn't explicitly return 'username' now, but sends 'clientPanelAccess')
-        // If the backend doesn't return existing password (security), valid. We just allow setting a new one.
         setFormData((prev) => ({
           ...prev,
           ...client,
@@ -42,7 +40,7 @@ const ClientForm = () => {
           contractStart: client.contractStart || '',
           leadSource: client.leadSource || '',
           phone: client.phone || '',
-          password: '', // Reset password field on load
+          password: '',
         }));
       }
     }
@@ -76,7 +74,6 @@ const ClientForm = () => {
       navigate('/admin/clients');
     } catch (error) {
       console.error('Failed to save client:', error);
-      // Ideally show a toast
     }
   };
 
@@ -86,7 +83,6 @@ const ClientForm = () => {
         {isEditMode ? t('admin.clients.form.edit_title') : t('admin.clients.form.new_title')}
       </S.Title>
       <S.Form onSubmit={handleSubmit}>
-        {/* Basic Info */}
         <S.Section>
           <S.SectionTitle>{t('admin.clients.form.business_info')}</S.SectionTitle>
           <S.Grid>

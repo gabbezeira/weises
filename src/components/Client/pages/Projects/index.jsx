@@ -14,13 +14,6 @@ const ClientProjects = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  // Import Loader and EmptyState (assuming they are available in relative paths)
-  // Note: I need to add imports at the top, so I will do a multi-replace or just replace the whole file to be safe and clean.
-  // Actually, I'll use replace_file_content for the body, but I need to add imports.
-  // Let's just replace the whole file content to ensure imports are correct.
-
-  // WAIT, I should use the proper tool usage. I'll act as if I am writing the whole file.
-
   const totalPages = Math.ceil(clientProjects.length / itemsPerPage);
   const paginatedProjects = clientProjects.slice(
     (currentPage - 1) * itemsPerPage,

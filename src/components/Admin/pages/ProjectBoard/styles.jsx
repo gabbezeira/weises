@@ -169,16 +169,16 @@ export const PriorityBadge = styled.span`
     font-weight: 600;
 
     ${({ $priority }) => {
-      switch ($priority) {
-        case 'high':
-          return `background: rgba(239, 68, 68, 0.1); color: var(--color-red-400);`;
-        case 'critical':
-          return `background: rgba(220, 38, 38, 0.1); color: var(--color-red-600);`;
-        case 'medium':
-          return `background: rgba(245, 158, 11, 0.1); color: #fbbf24;`; // Yellow/Orange
-        default:
-          return `background: rgba(107, 114, 128, 0.1); color: var(--color-gray-400);`;
-      }
+        switch ($priority) {
+            case 'high':
+                return `background: rgba(239, 68, 68, 0.1); color: var(--color-red-400);`;
+            case 'critical':
+                return `background: rgba(220, 38, 38, 0.1); color: var(--color-red-600);`;
+            case 'medium':
+                return `background: rgba(245, 158, 11, 0.1); color: #fbbf24;`;
+            default:
+                return `background: rgba(107, 114, 128, 0.1); color: var(--color-gray-400);`;
+        }
     }}
 `;
 
@@ -229,7 +229,6 @@ export const TaskActionButton = styled.button`
     }
 `;
 
-// Modal Styles
 export const ModalOverlay = styled.div`
     position: fixed;
     inset: 0;

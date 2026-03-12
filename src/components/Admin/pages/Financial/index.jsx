@@ -3,11 +3,11 @@ import { Plus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import FinancialDashboard from '../../components/FinancialDashboard';
-import FinancialStats from '../../components/FinancialStats'; // New Import
+import FinancialStats from '../../components/FinancialStats';
 import TransactionList from '../../components/TransactionList';
 import TransactionFormModal from '../../components/TransactionFormModal';
 import FixedExpenseModal from '../../components/FixedExpenseModal';
-import ProfitDividends from '../../components/ProfitDividends'; // New Import
+import ProfitDividends from '../../components/ProfitDividends';
 import FixedExpenseList from '../../components/FixedExpenseList';
 import * as S from './styles';
 
@@ -33,7 +33,6 @@ const Financial = () => {
         </div>
       </S.Header>
 
-      {/* Always visible Stats */}
       <FinancialStats />
 
       <S.Tabs>

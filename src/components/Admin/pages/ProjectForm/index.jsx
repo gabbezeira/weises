@@ -38,10 +38,8 @@ const ProjectForm = () => {
     gallery1: '',
     gallery2: '',
     gallery3: '',
-    // Private Details
     projectValue: '',
     credentials: [],
-    // Progress
     estimatedCompletion: '',
     stages: [],
   });
@@ -67,7 +65,6 @@ const ProjectForm = () => {
     if (isEditMode) {
       const project = projects.find((p) => p.id === id);
 
-      // Function to fetch credentials separately
       const fetchCredentials = async () => {
         try {
           const response = await api.get(`/projects/${id}/credentials`);
@@ -89,16 +86,14 @@ const ProjectForm = () => {
           description: project.description || '',
           challenge: project.challenge || '',
           solution: project.solution || '',
-          projectValue: project.privateDetails?.value 
+          projectValue: project.privateDetails?.value
             ? parseFloat(project.privateDetails.value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
             : '',
-          // credentials will be populated by the async fetch below if not present
           credentials: [],
           estimatedCompletion: project.estimatedCompletion || '',
           stages: project.stages || [],
         });
 
-        // Fetch credentials from subcollection
         fetchCredentials();
       }
     }
@@ -142,7 +137,6 @@ const ProjectForm = () => {
     }));
   };
 
-  // --- Credentials Management ---
   const addCredential = () => {
     setFormData((prev) => ({
       ...prev,
@@ -160,8 +154,6 @@ const ProjectForm = () => {
     }));
   };
 
-
-  // --- Stages Management ---
   const addStage = () => {
     setFormData((prev) => ({
       ...prev,
@@ -218,7 +210,6 @@ const ProjectForm = () => {
         credentials: formData.credentials,
       },
     };
-    // Cleanup temp fields
     delete projectData.gallery1;
     delete projectData.gallery2;
     delete projectData.gallery3;
@@ -256,7 +247,6 @@ const ProjectForm = () => {
       </S.Header>
 
       <S.Form id="project-form" onSubmit={handleSubmit}>
-        {/* Core Information */}
         <S.Section>
           <S.SectionTitle>{t('admin.projects.form.core_info')}</S.SectionTitle>
           <S.FormGroup>

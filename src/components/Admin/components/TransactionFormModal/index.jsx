@@ -10,7 +10,6 @@ const TransactionFormModal = ({ isOpen, onClose }) => {
   const { addTransaction, clients, projects } = useAdmin();
   const [shouldRender, setShouldRender] = useState(false);
 
-  // Animation mount logic
   useEffect(() => {
     if (isOpen) setShouldRender(true);
   }, [isOpen]);

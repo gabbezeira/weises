@@ -137,7 +137,7 @@ const ProjectBoard = () => {
                               handleMoveTask(task, 'prev');
                             }}
                             title={t('admin.projects.actions.move_back')}
-                            $secondary // Style variant for visual distinction if needed
+                            $secondary
                           >
                             <ArrowLeft size={14} />
                           </S.TaskActionButton>

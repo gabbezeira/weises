@@ -26,7 +26,6 @@ const LanguageSelector = () => {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Fallback to 'en' if language is not supported or region specific (e.g., pt-BR -> pt)
   const currentLang = (i18n.language || 'en').split('-')[0];
 
   const changeLanguage = (lng) => {

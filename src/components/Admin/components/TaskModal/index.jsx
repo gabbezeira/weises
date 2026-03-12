@@ -25,7 +25,6 @@ const TaskModal = ({ isOpen, onClose, project, existingTask, addTask, updateTask
         dueDate: existingTask.dueDate || '',
       });
     } else {
-      // Reset form for new task
       setFormData({
         title: '',
         priority: 'medium',
