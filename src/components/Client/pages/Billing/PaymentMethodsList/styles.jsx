@@ -320,7 +320,18 @@ export const SubmitBtn = styled.button`
 `;
 
 
-const cardBase = css`
+const BRAND_COLORS = {
+  visa: 'linear-gradient(135deg, #1a1f71 0%, #00468c 100%)',
+  mastercard: 'linear-gradient(135deg, #1d1d1d 0%, #3d0c00 100%)',
+  amex: 'linear-gradient(135deg, #007bc1 0%, #00508f 100%)',
+  discover: 'linear-gradient(135deg, #f26b22 0%, #c74c00 100%)',
+  unionpay: 'linear-gradient(135deg, #b71c1c 0%, #880e4f 100%)',
+  default: 'linear-gradient(135deg, #1a1035 0%, #2d1f5a 100%)',
+};
+
+const getBrandGradient = (brand) => BRAND_COLORS[brand?.toLowerCase()] ?? BRAND_COLORS.default;
+
+export const cardBase = css`
   border-radius: 16px;
   padding: 1.375rem 1.5rem;
   color: #fff;
