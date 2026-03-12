@@ -134,11 +134,11 @@ const ProjectList = () => {
         </S.ProjectsGrid>
       ) : (
         <EmptyState
-          title={searchTerm ? 'No projects found' : 'No projects yet'}
+          title={searchTerm ? t('admin.projects.empty_search_title', 'Nenhum projeto encontrado') : t('admin.projects.empty_title', 'Sem projetos ainda')}
           description={
             searchTerm
-              ? `We couldn't find any projects matching "${searchTerm}"`
-              : 'Start managing your creative projects here.'
+              ? t('admin.projects.empty_search_desc', `Não encontramos projetos para "${searchTerm}"`)
+              : t('admin.projects.empty_desc', 'Comece gerenciando seus projetos criativos aqui.')
           }
           icon={Layout}
         >

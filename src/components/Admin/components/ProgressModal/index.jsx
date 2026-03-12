@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check, Plus, Trash2 } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 const ProgressModal = ({ project, onClose, onSave }) => {
   const { t } = useTranslation();
   const [stages, setStages] = useState([]);
-  const [newStageName, setNewStageName] = useState('');
-  const [newStageDate, setNewStageDate] = useState('');
 
   useEffect(() => {
     if (project?.stages) {
@@ -27,23 +25,6 @@ const ProgressModal = ({ project, onClose, onSave }) => {
     setStages((prev) =>
       prev.map((s) => (s.id === stageId ? { ...s, completed: !s.completed } : s)),
     );
-  };
-
-  const handleAddStage = () => {
-    if (!newStageName) return;
-    const newStage = {
-      id: Date.now().toString(),
-      name: newStageName,
-      date: newStageDate,
-      completed: false,
-    };
-    setStages((prev) => [...prev, newStage]);
-    setNewStageName('');
-    setNewStageDate('');
-  };
-
-  const handleRemoveStage = (stageId) => {
-    setStages((prev) => prev.filter((s) => s.id !== stageId));
   };
 
   const completedCount = stages.filter((s) => s.completed).length;
@@ -67,110 +48,46 @@ const ProgressModal = ({ project, onClose, onSave }) => {
 
         <S.Content>
           <S.ProgressText>
-            <span>{t('admin.projects.progress_modal.progress')}</span>
+            <span>{t('admin.projects.progress_modal.progress') || 'Progress'}</span>
             <span>{progressPercent}%</span>
           </S.ProgressText>
           <S.ProgressBar>
             <S.ProgressFill $percent={progressPercent} />
           </S.ProgressBar>
 
-          <div
-            style={{
-              marginBottom: '1.5rem',
-              display: 'flex',
-              gap: '0.5rem',
-              alignItems: 'flex-end',
-            }}
-          >
-            <div style={{ flex: 1 }}>
-              <label
-                style={{
-                  fontSize: '0.75rem',
-                  color: 'var(--color-gray-500)',
-                  marginBottom: '0.25rem',
-                  display: 'block',
-                }}
-              >
-                Stage Name
-              </label>
-              <S.Input
-                value={newStageName}
-                onChange={(e) => setNewStageName(e.target.value)}
-                placeholder="New Stage Name"
-                style={{ width: '100%' }}
-              />
-            </div>
-            <div style={{ width: '140px' }}>
-              <label
-                style={{
-                  fontSize: '0.75rem',
-                  color: 'var(--color-gray-500)',
-                  marginBottom: '0.25rem',
-                  display: 'block',
-                }}
-              >
-                Date
-              </label>
-              <S.Input
-                type="date"
-                value={newStageDate}
-                onChange={(e) => setNewStageDate(e.target.value)}
-                style={{ width: '100%' }}
-              />
-            </div>
-            <S.SaveButton
-              onClick={handleAddStage}
-              disabled={!newStageName}
-              style={{ height: '40px', padding: '0 1rem' }}
-            >
-              <Plus size={16} />
-            </S.SaveButton>
-          </div>
+          {stages.length === 0 && (
+            <S.EmptyState>
+              {t('admin.projects.progress_modal.no_stages')}
+            </S.EmptyState>
+          )}
 
           <S.StagesList>
-            {stages.length > 0 ? (
-              stages.map((stage) => (
-                <S.StageRow key={stage.id}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1 }}>
-                    <S.StageCheckbox
-                      $checked={stage.completed}
-                      onClick={() => toggleStage(stage.id)}
-                    >
-                      {stage.completed && <Check size={14} />}
-                    </S.StageCheckbox>
-                    <S.StageInfo>
-                      <S.StageName $completed={stage.completed}>{stage.name}</S.StageName>
-                      {stage.date && (
-                        <S.StageDate>{new Date(stage.date).toLocaleDateString()}</S.StageDate>
-                      )}
-                    </S.StageInfo>
-                  </div>
+            {stages.map((stage) => (
+              <S.StageRow key={stage.id}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1 }}>
+                  <S.StageCheckbox
+                    $checked={stage.completed}
+                    onClick={() => toggleStage(stage.id)}
+                  >
+                    {stage.completed && <Check size={14} />}
+                  </S.StageCheckbox>
+                  <S.StageInfo>
+                    <S.StageName $completed={stage.completed}>{stage.name}</S.StageName>
+                    {stage.date && (
+                      <S.StageDate>{new Date(stage.date).toLocaleDateString()}</S.StageDate>
+                    )}
+                  </S.StageInfo>
+                </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <S.StageStatus $completed={stage.completed}>
-                      {stage.completed
-                        ? t('admin.projects.progress_modal.completed')
-                        : t('admin.projects.progress_modal.pending')}
-                    </S.StageStatus>
-                    <button
-                      onClick={() => handleRemoveStage(stage.id)}
-                      style={{
-                        background: 'none',
-                        border: 'none',
-                        color: 'var(--color-red-500)',
-                        cursor: 'pointer',
-                        opacity: 0.6,
-                      }}
-                      title="Remove Stage"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                </S.StageRow>
-              ))
-            ) : (
-              <S.EmptyState>{t('admin.projects.progress_modal.no_stages')}</S.EmptyState>
-            )}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <S.StageStatus $completed={stage.completed}>
+                    {stage.completed
+                      ? t('admin.projects.progress_modal.completed') || 'Completed'
+                      : t('admin.projects.progress_modal.pending') || 'Pending'}
+                  </S.StageStatus>
+                </div>
+              </S.StageRow>
+            ))}
           </S.StagesList>
         </S.Content>
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAdmin } from '../../../../context/AdminContext';
-import { Edit2, Trash2, Users, Plus } from 'lucide-react';
+import { Edit2, Trash2, Users, Plus, CreditCard } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Pagination from '../../../ui/Pagination';
@@ -154,6 +154,11 @@ const ClientList = () => {
                                         </S.Td>
                                         <S.Td>
                                             <S.Actions>
+                                                <Link to={`/admin/clients/${client.id}/billing`}>
+                                                    <S.ActionButton title="Billing & Invoices">
+                                                        <CreditCard size={16} />
+                                                    </S.ActionButton>
+                                                </Link>
                                                 <Link to={`/admin/clients/edit/${client.id}`}>
                                                     <S.ActionButton title={t('common.actions.edit')}>
                                                         <Edit2 size={16} />
@@ -180,10 +185,10 @@ const ClientList = () => {
                 </>
             ) : (
                 <EmptyState
-                    title={searchTerm ? 'No clients found' : 'No clients yet'}
+                    title={searchTerm ? t('admin.clients.empty_search_title', 'Nenhum cliente encontrado') : t('admin.clients.empty_title', 'Nenhum cliente ainda')}
                     description={searchTerm
-                        ? `We couldn't find any clients matching "${searchTerm}"`
-                        : "Start by adding your first client to the platform."}
+                        ? t('admin.clients.empty_search_desc', `Não encontramos clientes para "${searchTerm}"`)
+                        : t('admin.clients.empty_desc', "Comece adicionando seu primeiro cliente na plataforma.")}
                     icon={Users}
                 >
                     {!searchTerm && (

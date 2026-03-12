@@ -56,6 +56,8 @@ const Projects = () => {
 
   const getVisibleProjects = () => {
     if (projects.length === 0) return [];
+    if (projects.length <= visibleCount) return projects;
+
     const visible = [];
     for (let i = 0; i < visibleCount; i++) {
       visible.push(projects[(activeIndex + i) % projects.length]);
@@ -65,7 +67,7 @@ const Projects = () => {
 
   const visibleProjects = getVisibleProjects();
 
-  if (loading) return null; // Or a subtle loader
+  if (loading) return null;
 
   return (
     <S.Section id="projects">

@@ -25,6 +25,7 @@ const AdminLayout = lazy(() => import('@admin/layout/AdminLayout/index'));
 const Dashboard = lazy(() => import('@admin/pages/Dashboard'));
 const ClientList = lazy(() => import('@admin/pages/ClientList'));
 const ClientForm = lazy(() => import('@admin/pages/ClientForm'));
+const AdminClientBilling = lazy(() => import('@admin/pages/ClientBilling'));
 const ProjectList = lazy(() => import('@admin/pages/ProjectList'));
 const ProjectForm = lazy(() => import('@admin/pages/ProjectForm'));
 const ProjectBoard = lazy(() => import('@admin/pages/ProjectBoard'));
@@ -38,6 +39,7 @@ const ClientLayout = lazy(() => import('./components/Client/layout'));
 const ClientDashboard = lazy(() => import('./components/Client/pages/Dashboard'));
 const ClientProjects = lazy(() => import('./components/Client/pages/Projects'));
 const ClientBilling = lazy(() => import('./components/Client/pages/Billing'));
+const ClientSubscriptions = lazy(() => import('./components/Client/pages/Subscriptions'));
 const ClientServices = lazy(() => import('./components/Client/pages/Services'));
 const ClientProjectDetail = lazy(() => import('./components/Client/pages/ProjectDetail'));
 
@@ -50,7 +52,8 @@ const AnimatedRoutes = () => {
     if (
       location.pathname.startsWith('/admin') ||
       location.pathname.startsWith('/client') ||
-      location.pathname.startsWith('/login')
+      location.pathname.startsWith('/login') ||
+      location.pathname.startsWith('/change-password')
     ) {
       setDisplayLocation(location);
       return;
@@ -93,6 +96,7 @@ const AnimatedRoutes = () => {
         {transitionStage !== 'idle' &&
           !location.pathname.startsWith('/admin') &&
           !location.pathname.startsWith('/client') &&
+          !location.pathname.startsWith('/change-password') &&
           !location.pathname.startsWith('/login') && <LoadingScreen />}
       </AnimatePresence>
 
@@ -121,6 +125,7 @@ const AnimatedRoutes = () => {
             <Route path="clients" element={<ClientList />} />
             <Route path="clients/new" element={<ClientForm />} />
             <Route path="clients/edit/:id" element={<ClientForm />} />
+            <Route path="clients/:id/billing" element={<AdminClientBilling />} />
             <Route path="projects" element={<ProjectList />} />
             <Route path="projects/new" element={<ProjectForm />} />
             <Route path="projects/edit/:id" element={<ProjectForm />} />
@@ -148,6 +153,7 @@ const AnimatedRoutes = () => {
             <Route path="projects/:id" element={<ClientProjectDetail />} />
             <Route path="services" element={<ClientServices />} />
             <Route path="billing" element={<ClientBilling />} />
+            <Route path="subscriptions" element={<ClientSubscriptions />} />
           </Route>
 
           <Route
@@ -183,12 +189,12 @@ const App = () => {
   const location = useLocation();
   const isAdminRoute =
     location.pathname.startsWith('/admin') || location.pathname.startsWith('/client');
-  const isLoginRoute = location.pathname.startsWith('/login');
+  const isAuthRoute = location.pathname.startsWith('/login') || location.pathname.startsWith('/change-password');
 
   return (
     <S.AppLayout>
       <WebGLBackground />
-      {!isAdminRoute && !isLoginRoute && <Navbar />}
+      {!isAdminRoute && !isAuthRoute && <Navbar />}
       <S.Main>
         <ErrorBoundary
           fallback={(error, errorInfo) => (
@@ -198,7 +204,7 @@ const App = () => {
           <AnimatedRoutes />
         </ErrorBoundary>
       </S.Main>
-      {!isAdminRoute && !isLoginRoute && <Footer />}
+      {!isAdminRoute && !isAuthRoute && <Footer />}
     </S.AppLayout>
   );
 };

@@ -40,7 +40,6 @@ export const Dropdown = styled(motion.div)`
     border-radius: var(--radius-md);
     padding: 0.5rem;
     min-width: 140px;
-    box-shadow: var(--shadow-glow-white);
     z-index: 50;
     overflow: hidden;
 `;

@@ -158,7 +158,8 @@
       "message": "Message",
       "message_placeholder": "Tell us about your project...",
       "submit": "Send Message"
-    }
+    },
+    "email_link": "hello@weises.tech"
   },
   "projects_page": {
     "hero": {
@@ -193,7 +194,8 @@
       "team_size": "Team Size",
       "platform": "Platform",
       "stack": "Stack"
-    }
+    },
+    "not_found": "Project not found"
   },
   "footer": {
     "company_desc": "Pioneering the next generation of digital experiences. We build software that scales with your ambition.",
@@ -209,7 +211,11 @@
       "description": "A complete overhaul of the legacy banking infrastructure to support millions of concurrent transactions with sub-millisecond latency.",
       "challenge": "The client faced significant scalability issues during peak hours, leading to transaction failures and user churn.",
       "solution": "We architected a microservices-based solution using Node.js and Go, deployed on Kubernetes. We implemented an event-driven architecture with Apache Kafka for real-time transaction processing.",
-      "services": ["Backend Engineering", "Cloud Architecture", "Security Systems"],
+      "services": [
+        "Backend Engineering",
+        "Cloud Architecture",
+        "Security Systems"
+      ],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "6 Seniors",
@@ -223,7 +229,11 @@
       "description": "An intelligent dashboard that visualizes complex data streams and uses predictive models to forecast business trends.",
       "challenge": "Users were overwhelmed by raw data and lacked actionable insights.",
       "solution": "We built a React-based dashboard with D3.js for visualization and integrated Python-based ML models to provide real-time predictive analytics.",
-      "services": ["Data Visualization", "ML Integration", "Frontend Dev"],
+      "services": [
+        "Data Visualization",
+        "ML Integration",
+        "Frontend Dev"
+      ],
       "stats_values": {
         "methodology": "Scrum",
         "team_size": "4 Experts",
@@ -237,7 +247,11 @@
       "description": "A headless e-commerce engine designed for speed, flexibility, and high conversion rates.",
       "challenge": "Slow page loads and a rigid monolithic architecture were stifling growth.",
       "solution": "We developed a headless solution using Next.js and Shopify Plus, optimizing for Core Web Vitals and achieving a 40% increase in conversion.",
-      "services": ["Headless Commerce", "Performance Optimization", "UX Design"],
+      "services": [
+        "Headless Commerce",
+        "Performance Optimization",
+        "UX Design"
+      ],
       "stats_values": {
         "methodology": "Kanban",
         "team_size": "5 Seniors",
@@ -251,7 +265,11 @@
       "description": "A secure, HIPAA-compliant telemedicine platform connecting patients with specialists worldwide.",
       "challenge": "Security and ease of use were paramount for adoption by elderly patients.",
       "solution": "We prioritized accessibility in the UI/UX design and implemented end-to-end encryption for all video calls and data storage.",
-      "services": ["HIPAA Compliance", "Real-time Video", "Mobile App"],
+      "services": [
+        "HIPAA Compliance",
+        "Real-time Video",
+        "Mobile App"
+      ],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "3 Experts",
@@ -265,7 +283,11 @@
       "description": "Real-time crypto asset tracking and portfolio management.",
       "challenge": "High latency in data fetching.",
       "solution": "Implemented WebSocket connections for sub-second updates.",
-      "services": ["Web3 Integration", "Real-time Data", "Dashboard"],
+      "services": [
+        "Web3 Integration",
+        "Real-time Data",
+        "Dashboard"
+      ],
       "stats_values": {
         "methodology": "Sprint",
         "team_size": "3 Devs",
@@ -279,7 +301,11 @@
       "description": "Smart home control interface for IoT devices.",
       "challenge": "Fragmented ecosystem protocol support.",
       "solution": "Unified Matter protocol integration hub.",
-      "services": ["IoT Protocol", "Mobile App", "UX/UI"],
+      "services": [
+        "IoT Protocol",
+        "Mobile App",
+        "UX/UI"
+      ],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "4 Seniors",
@@ -293,7 +319,11 @@
       "description": "Global expansion of the banking infrastructure.",
       "challenge": "Scaling to international markets.",
       "solution": "Distributed cloud architecture.",
-      "services": ["Localization", "Scaling", "Support"],
+      "services": [
+        "Localization",
+        "Scaling",
+        "Support"
+      ],
       "stats_values": {
         "methodology": "DevOps",
         "team_size": "8 Experts",
@@ -307,7 +337,10 @@
       "description": "Computer vision extension for Nexus.",
       "challenge": "Real-time video processing.",
       "solution": "WebAssembly powered processing.",
-      "services": ["Computer Vision", "WASM"],
+      "services": [
+        "Computer Vision",
+        "WASM"
+      ],
       "stats_values": {
         "methodology": "R&D",
         "team_size": "3 PhDs",
@@ -321,7 +354,10 @@
       "description": "Enterprise grade e-commerce solution.",
       "challenge": "High volume inventory management.",
       "solution": "Custom inventory engine.",
-      "services": ["Inventory System", "API Development"],
+      "services": [
+        "Inventory System",
+        "API Development"
+      ],
       "stats_values": {
         "methodology": "Waterfall",
         "team_size": "6 Devs",
@@ -335,7 +371,10 @@
       "description": "Professional healthcare provider portal.",
       "challenge": "Complex scheduling needs.",
       "solution": "AI-assisted scheduling system.",
-      "services": ["Provider Portal", "Scheduling"],
+      "services": [
+        "Provider Portal",
+        "Scheduling"
+      ],
       "stats_values": {
         "methodology": "Agile",
         "team_size": "4 Seniors",
@@ -425,6 +464,23 @@
         "cancel": "Cancel",
         "save": "Save Client",
         "update": "Update Client"
+      },
+      "billing": {
+        "back": "Back to Clients",
+        "title": "Billing & Invoices",
+        "new_charge": "New Charge",
+        "add_service": "Add Service",
+        "empty": "No invoices found for this client.",
+        "mark_paid": "Mark Paid",
+        "mark_paid_confirm": "Are you sure you want to mark this invoice as paid? This will automatically generate an income transaction.",
+        "table": {
+          "date": "Date",
+          "description": "Description",
+          "project": "Project",
+          "amount": "Amount",
+          "status": "Status",
+          "actions": "Actions"
+        }
       }
     },
     "projects": {
@@ -519,20 +575,187 @@
         "copy_password": "Copy password",
         "hide": "Hide",
         "show": "Show",
-        "no_credentials": "No credentials stored."
+        "no_credentials": "No credentials stored.",
+        "decrypting": "Decrypting keys..."
       },
       "progress_modal": {
         "title": "Project Progress",
         "progress": "Overall Progress",
         "completed": "Done",
         "pending": "Pending",
-        "no_stages": "No stages defined. Add stages in the project form."
+        "no_stages": "No stages defined. Please edit the project to add stages."
       },
       "status": {
         "planning": "Planning",
         "in_progress": "In Progress",
         "completed": "Completed",
         "on_hold": "On Hold"
+      }
+    },
+    "services": {
+      "title": "Services Management",
+      "add_service": "Add Service",
+      "edit_service": "Edit Service",
+      "delete_service": "Delete Service",
+      "create_service": "Create Service",
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "empty_title": "No services found",
+      "empty_desc": "Get started by adding predefined services.",
+      "name": "Service Name",
+      "description": "Description",
+      "price": "Price (R$)",
+      "icon": "Service Icon",
+      "visibility": "Visibility Status",
+      "save": "Save Service",
+      "modal": {
+        "new_title": "New Service",
+        "edit_title": "Edit Service",
+        "name_placeholder": "e.g. Website Development",
+        "desc_placeholder": "Detailed description of the service...",
+        "active_text": "Active",
+        "active_desc": "Visible to all clients",
+        "inactive_text": "Inactive",
+        "inactive_desc": "Hidden from clients",
+        "cancel": "Cancel"
+      },
+      "delete_modal": {
+        "title": "Delete Service",
+        "message": "Are you sure? This action cannot be undone."
+      }
+    },
+    "billing": {
+      "new_charge_title": "New Custom Invoice for",
+      "new_charge_desc": "Create on-demand invoices for extra services. The amount will be automatically integrated into your financials upon payment.",
+      "add_service_title": "Add Service to",
+      "add_service_desc": "Select a predefined service from your catalog, generate the invoice, and attach it to this client's billing cycle.",
+      "select_service": "Select a Service",
+      "generate_options_title": "Generate Billing",
+      "generate_options_desc": "The project value is <strong>{{value}}</strong>. How would you like to bill the client?",
+      "generate_btn": "Generate Invoice(s)",
+      "no_project": "-- No linked project --",
+      "custom_service": "-- Custom Item / Ad-hoc --",
+      "options": {
+        "payment_structure": "Payment Structure",
+        "single": "Single Payment",
+        "single_desc": "Generate 1 invoice for the full amount immediately.",
+        "split": "50/50 Split",
+        "split_desc": "Generate 1 deposit invoice now and 1 upon completion.",
+        "installments": "Monthly Installments",
+        "installments_desc": "Split evenly into multiple monthly invoices.",
+        "months_label": "Months",
+        "no_value_title": "Billing Options",
+        "no_value_desc": "No financial value set for this project.",
+        "pix": "Pix",
+        "credit_card": "Credit Card"
+      },
+      "fields": {
+        "description": "Description / Title",
+        "amount": "Total Amount",
+        "due_date": "Due Date",
+        "split_due_date": "Final Payment Due Date",
+        "project_link": "Link to Project",
+        "payment_structure": "Payment Structure",
+        "payment_method": "Payment Method"
+      },
+      "placeholders": {
+        "description": "e.g. Extra Server Setup",
+        "amount": "150.00"
+      }
+    },
+    "settings": {
+      "wiki": {
+        "title": "System Wiki",
+        "how_db_works": "How the Database Works",
+        "security_section": {
+          "users_profile": "Users Profile",
+          "full_access_users": "Full Access (Create, Edit, Delete)",
+          "read_own_profile": "Read Own Profile Only",
+          "cannot_read_others": "Cannot Read Others",
+          "projects": "Projects",
+          "full_access_projects": "Full Access to All Projects",
+          "read_assigned_projects": "Read Assigned Projects",
+          "cannot_edit_specs": "Cannot Edit Project Specs",
+          "credentials": "Project Credentials",
+          "decrypt_all": "Decrypt & View All Credentials",
+          "decrypt_own": "Decrypt (Own Projects Only)",
+          "finance": "Financials & Invoices",
+          "full_access_finance": "Full Access (Create Invoices, Edit Status)",
+          "view_own_invoices": "View Own Invoices & Transactions",
+          "cannot_create_invoices": "Cannot Create or Delete Invoices",
+          "catalog": "Services Catalog",
+          "manage_catalog": "Manage Catalog (Add, Delete Services)",
+          "view_services": "View Available Services",
+          "cannot_edit_pricing": "Cannot Edit Pricing",
+          "admin_privileges": "Admin Privileges",
+          "admin": "Admin",
+          "client_privileges": "Client Privileges",
+          "client": "Client"
+        },
+        "tabs": {
+          "architecture": "System Architecture",
+          "database": "Database & Storage",
+          "api": "API Reference",
+          "security": "Security & Access"
+        },
+        "api": {
+          "title": "System API Reference",
+          "desc1": "Full documentation of the REST API endpoints available in the system. Authentication is handled via Firebase Auth Tokens passed in the ",
+          "desc2": " header. Use this documentation to understand the structure of the data and extend the project effectively.",
+          "auth_group": "Authentication & Users",
+          "projects_group": "Creative Projects",
+          "clients_group": "Clients (CRM)",
+          "tasks_group": "Tasks & Management",
+          "finance_group": "Finance",
+          "services_group": "Services Catalog",
+          "stripe_group": "Stripe Integration",
+          "query_params": "Query / Path Parameters",
+          "required": "Required",
+          "no_params": "No parameters required for this endpoint.",
+          "req_body": "Request Body (JSON)",
+          "res_example": "Response Example"
+        },
+        "architecture": "Architecture",
+        "security": "Security",
+        "database": "Database",
+        "admin_panel": "Admin Panel (React)",
+        "admin_panel_desc": "Administrative dashboard for managing users, projects, and finances.",
+        "client_portal": "Client Portal (React)",
+        "client_portal_desc": "Restricted access area for clients to view projects and invoices.",
+        "backend_api": "Backend API (Node.js)",
+        "backend_api_desc": "Express server running business logic, middleware, and security guards.",
+        "firestore": "Google Firestore",
+        "firestore_desc": "NoSQL Realtime Database storing User, Project, and Financial data.",
+        "auth": "Firebase Auth",
+        "auth_desc": "Identity Provider handling Authentication and JWT definition.",
+        "storage": "Firebase Storage",
+        "storage_desc": "Object storage for Project Covers, Gallery Images, and User Avatars.",
+        "tech_stack": "Tech Stack & Integrations",
+        "integrations": "Integrations",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database_tech": "Database",
+        "rbac": "Role-Based Access Control (RBAC)",
+        "rbac_desc": "Defined in firestore.rules and middleware/roleGuard.js",
+        "resource": "Resource",
+        "users": "Users",
+        "projects": "Projects",
+        "credentials": "Private Credentials",
+        "financials": "Financials (Transactions)",
+        "catalog": "Services Catalog",
+        "firestore_schema": "Firestore (NoSQL Schema)",
+        "schema_desc": "This database (Firestore) works like a giant filing cabinet. Each main \"Folder\" is called a Collection, and inside it are \"Files\" called Documents.",
+        "key_collections": "Key Collections:",
+        "users_desc": "Access profiles and CRM. We check the user 'role' here to see if they are an Admin or a Client.",
+        "projects_desc": "The central hub. Data specific to a project (like passwords or stages) lives inside it as Sub-collections.",
+        "tasks_desc": "The Kanban board. Standalone documents that contain a 'projectId' reference linking them together.",
+        "transactions_desc": "Your cash flow. Core financial records that can be linked to projects or clients.",
+        "search_schema": "Search collections, docs, or fields...",
+        "storage_buckets": "Storage Buckets",
+        "dev_tip": "Tip for Devs:",
+        "dev_tip_desc": "Firebase queries act on the collection level. Always build indexes in the Firebase Console if filtering by multiple fields simultaneously."
       }
     }
   },
@@ -612,6 +835,19 @@
         "all": "All"
       }
     },
+    "fixed_expenses": {
+      "total": "Total Fixed Monthly Costs",
+      "add": "Add Fixed Expense",
+      "empty_title": "No fixed expenses yet",
+      "empty_desc": "Add recurring expenses like rent, salaries, or subscriptions to track your monthly fixed costs.",
+      "table": {
+        "next_due": "Next Due Date",
+        "category": "Category",
+        "description": "Description",
+        "amount": "Amount",
+        "actions": "Actions"
+      }
+    },
     "modals": {
       "fixed_expense": {
         "title": "New Fixed Expense",
@@ -641,6 +877,7 @@
       }
     },
     "categories": {
+      "invoice": "Invoice",
       "subscription": "Subscription",
       "rent": "Rent / Office",
       "server": "Server / Hosting",
@@ -659,7 +896,8 @@
       "pending": "Pending",
       "paid": "Paid",
       "overdue": "Overdue",
-      "cancelled": "Cancelled"
+      "cancelled": "Cancelled",
+      "completed": "Completed"
     }
   },
   "client": {
@@ -683,10 +921,14 @@
       "stats": {
         "active_projects": "Active Projects",
         "completed_projects": "{{count}} projects completed",
+        "pending": "Payment Pending",
+        "overdue": "Payment Overdue",
+        "billing_status": "Billing Status",
+        "pending_count": "invoice(s) awaiting payment",
         "next_due_invoice": "Next Due Invoice",
         "total_invested": "Total Invested",
         "lifetime_value": "Lifetime value",
-        "all_paid": "All Paid",
+        "all_paid": "All Up to Date",
         "no_pending": "No pending invoices",
         "due_date": "Due {{date}}"
       },
@@ -714,7 +956,9 @@
         "back": "Back to Projects",
         "progress_timeline": {
           "title": "Project Progress",
-          "estimated_completion": "Estimated Completion: {{date}}"
+          "estimated_completion": "Estimated Completion: {{date}}",
+          "empty": "Project timeline not scheduled yet.",
+          "pending": "Pending"
         },
         "tabs": {
           "overview": "Overview",
@@ -727,15 +971,25 @@
           "challenge": "Challenge",
           "solution": "Solution",
           "tech_stack": "Tech Stack",
-          "deliverables": "Key Deliverables"
+          "deliverables": "Key Deliverables",
+          "no_challenge": "No challenge description available.",
+          "no_solution": "No solution description available.",
+          "deliverables_list": {
+            "design": "Design System",
+            "backend": "Backend API",
+            "frontend": "Frontend Interface"
+          }
         },
         "credentials": {
           "access": "Access",
           "username": "Username",
-          "password": "Password"
+          "password": "Password",
+          "open_modal": "View All Credentials"
         },
         "contract": {
           "title": "Service Agreement",
+          "document_title": "Website Development Agreement",
+          "document_desc": "Signed on January 10, 2026. This document outlines the scope, deliverables, timeline, and payment terms for the project.",
           "view": "View",
           "download": "Download PDF"
         },
@@ -750,24 +1004,131 @@
       "subtitle": "Explore additional services to grow your business.",
       "available_services": "Available Services",
       "request_btn": "Request",
-      "faq_title": "Frequently Asked Questions"
+      "faq_title": "Frequently Asked Questions",
+      "faq": {
+        "q1": "How do I request a service?",
+        "a1": "Simply click the 'Request' button on any service card. A ticket will be created and our team will contact you to confirm details.",
+        "q2": "What payment methods are accepted?",
+        "a2": "We accept all major credit cards, bank transfers, and Pix. You can manage payment methods in the Billing section.",
+        "q3": "Can I cancel a requested service?",
+        "a3": "Yes, if the service has not started yet. Please contact support via the Dashboard widget.",
+        "q4": "Are these prices final?",
+        "a4": "These are starting prices. Complex requirements may require a custom quote."
+      }
     },
     "billing": {
-      "title": "Invoices & Billing",
-      "subtitle": "Manage payments, methods, and extra services.",
+      "title": "Billing",
+      "subtitle": "Manage your invoices and payment methods.",
       "payment_methods": "Payment Methods",
       "card_holder": "Card Holder",
       "add_card": "Add Credit Card",
       "invoice_history": "Invoice History",
+      "tabs": {
+        "invoices": "Invoices",
+        "methods": "Payment Methods"
+      },
+      "stats": {
+        "pending": "pending",
+        "overdue": "overdue",
+        "total": "invoice(s)"
+      },
+      "status": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "overdue": "Overdue"
+      },
       "table": {
         "date": "Date",
+        "due_date": "Due Date",
         "description": "Description",
         "amount": "Amount",
         "status": "Status",
         "actions": "Actions",
         "empty": "No invoices found.",
-        "pay_now": "Pay Now"
+        "pay_now": "Pay"
+      },
+      "payment": {
+        "title": "Make Payment",
+        "credit_card": "Credit Card",
+        "stripe_error": "Card charge failed.",
+        "success": "Payment approved successfully!",
+        "processing": "Processing Payment...",
+        "pay_now": "Pay Now",
+        "select_card": "Select Card:",
+        "select_card_first": "Please select a card first.",
+        "fee_hint": "By confirming payment, the provider fee will be fully passed on to the final amount.",
+        "no_cards": "You have no saved cards. Close this modal and add one in the \"Payment Methods\" tab.",
+        "receipt": {
+          "original": "Original Amount",
+          "fee": "Processing Fee (Stripe)",
+          "total": "Total Charged"
+        },
+        "pix": {
+          "step1": "1. Open your bank app and go to Pix.",
+          "step2": "2. Choose the Copy & Paste option.",
+          "step3": "After paying, send the receipt to our WhatsApp:",
+          "copy_title": "Copy Pix Key",
+          "copied": "Pix key copied successfully!"
+        }
+      },
+      "methods": {
+        "title": "Saved Cards",
+        "subtitle_plural": "{{count}} card(s) on your account",
+        "subtitle_empty": "No cards registered",
+        "add": "Add Card",
+        "security": "Protected by Stripe PCI DSS",
+        "field_number": "Card Number",
+        "field_expiry": "Expiry",
+        "field_cvc": "CVC",
+        "field_cep": "Billing ZIP Code",
+        "field_cep_placeholder": "00000",
+        "save_card": "Save Card",
+        "saving": "Saving...",
+        "cancel": "Cancel",
+        "remove_confirm": "Remove this card?",
+        "remove_error": "Error removing card",
+        "empty_title": "No saved cards",
+        "empty_desc": "Click to add a new card securely.",
+        "success": "Card saved successfully!",
+        "card_expiry_label": "Expires",
+        "loading": "Loading payment methods..."
       }
+    },
+    "subscriptions": {
+      "title": "Subscriptions",
+      "description": "Manage your active subscription plans.",
+      "empty": "No subscriptions found.",
+      "monthly_plan": "Monthly Plan",
+      "next_billing": "Next billing",
+      "payment_method": "Payment Method",
+      "default_card": "Account Default",
+      "cancel": "Cancel Subscription",
+      "canceling": "Canceling...",
+      "confirm_cancel": "Are you sure you want to cancel this subscription?",
+      "interval": {
+        "month": "month",
+        "year": "year"
+      },
+      "status": {
+        "active": "Active",
+        "past_due": "Past Due",
+        "canceled": "Canceled",
+        "trialing": "Trialing",
+        "incomplete": "Incomplete",
+        "unpaid": "Unpaid"
+      }
+    }
+  },
+  "login": {
+    "sign_in_account": "Sign in to your account",
+    "email": "Email",
+    "password": "Password",
+    "sign_in": "Sign In",
+    "back_website": "Back to website",
+    "errors": {
+      "invalid_credentials": "Invalid email or password.",
+      "too_many_requests": "Too many attempts. Please try again later.",
+      "unexpected": "An unexpected error occurred. Please try again."
     }
   }
 }

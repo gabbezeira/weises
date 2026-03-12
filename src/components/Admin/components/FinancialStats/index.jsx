@@ -14,11 +14,9 @@ const FinancialStats = () => {
     const currentMonth = now.getMonth();
     const currentYear = now.getFullYear();
 
-    // Define end of current month
     const endOfCurrentMonth = new Date(currentYear, currentMonth + 1, 0, 23, 59, 59, 999);
 
     return txs.filter((t) => {
-      // For now, keeping strictly 'paid'. If user wants accrual, we'd need a toggle.
       if (t.status !== 'paid') return false;
 
       const txDate = new Date(t.date);
@@ -37,7 +35,6 @@ const FinancialStats = () => {
       }
 
       if (timeFilter === 'year') {
-        // "Year" usually implies Current Year (YTD) in financial contexts
         return txYear === currentYear;
       }
 
@@ -51,27 +48,19 @@ const FinancialStats = () => {
 
   const filteredTransactions = filterTransactions(transactions);
 
-  // 1. Total Revenue (Income & Paid)
   const totalRevenue = filteredTransactions
     .filter((t) => t.type === 'income')
     .reduce((acc, t) => acc + t.amount, 0);
-
-  // 2. Total Expenses (Paid)
   const totalExpenses = filteredTransactions
     .filter((t) => t.type === 'expense')
     .reduce((acc, t) => acc + t.amount, 0);
 
-  // 3. Tax Calculation
   const totalTaxRate = Object.values(taxSettings).reduce((acc, val) => acc + val, 0);
   const estimatedTax = totalRevenue * (totalTaxRate / 100);
 
-  // 4. Net Profit (Revenue - Expenses - Estimated Tax)
   const netProfit = totalRevenue - totalExpenses - estimatedTax;
-
-  // 5. Clients Logic
   const activeClients = clients.filter((c) => c.status === 'Active').length;
 
-  // 6. Projects Logic
   const activeProjects = projects.filter((p) => p.status === 'In Progress').length;
   const planningProjects = projects.filter((p) => p.status === 'Planning').length;
 
@@ -91,10 +80,10 @@ const FinancialStats = () => {
       color: 'var(--color-success)',
     },
     {
-      title: t('financial.overview.total_expenses') || 'Total Expenses', // Fallback if translation missing
+      title: t('financial.overview.total_expenses') || 'Total Expenses',
       value: `R$ ${totalExpenses.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`,
       subtext: t('financial.overview.expenses_paid'),
-      icon: TrendingDown, // Need to import this
+      icon: TrendingDown,
       color: 'var(--color-danger)',
     },
     {

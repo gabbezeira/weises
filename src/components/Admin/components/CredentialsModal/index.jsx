@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { X, Copy, Eye, EyeOff, ExternalLink } from 'lucide-react';
+import Loader from '@ui/Loader';
 import Pagination from '@ui/Pagination';
-import * as S from './styles';
+import { Copy, ExternalLink, Eye, EyeOff, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useTranslation } from 'react-i18next';
 import { api } from '../../../../services/api';
+import * as S from './styles';
 
 const CredentialsModal = ({ project, onClose }) => {
   const { t } = useTranslation();
@@ -21,6 +23,13 @@ const CredentialsModal = ({ project, onClose }) => {
 
   const [fetchedCredentials, setFetchedCredentials] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  React.useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
 
   React.useEffect(() => {
     const fetchCredentials = async () => {
@@ -54,7 +63,7 @@ const CredentialsModal = ({ project, onClose }) => {
     }
   };
 
-  return (
+  return createPortal(
     <S.Overlay onClick={onClose}>
       <S.Modal onClick={(e) => e.stopPropagation()}>
         <S.Header>
@@ -69,7 +78,9 @@ const CredentialsModal = ({ project, onClose }) => {
               {t('admin.projects.form.credentials')} ({fetchedCredentials.length || 0})
             </S.SectionTitle>
             {loading ? (
-              <p>Loading...</p>
+              <Loader
+                text={t('admin.projects.credentials_modal.decrypting', 'Decrypting keys...')}
+              />
             ) : fetchedCredentials.length > 0 ? (
               <>
                 {currentCredentials.map((cred) => (
@@ -150,7 +161,8 @@ const CredentialsModal = ({ project, onClose }) => {
           </S.Section>
         </S.Content>
       </S.Modal>
-    </S.Overlay>
+    </S.Overlay>,
+    document.body,
   );
 };
 

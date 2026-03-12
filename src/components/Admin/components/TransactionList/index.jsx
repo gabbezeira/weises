@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { ArrowDownLeft, ArrowUpRight, Receipt, SearchX, Trash2 } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import DeleteConfirmationModal from '../../../../components/common/DeleteConfirmationModal';
 import { useAdmin } from '../../../../context/AdminContext';
-import { ArrowUpRight, ArrowDownLeft, Trash2, SearchX, Receipt } from 'lucide-react';
+import Pagination from '../../../ui/Pagination';
 import EmptyState from '../EmptyState';
 import * as S from './styles';
-import Pagination from '../../../ui/Pagination';
-import DeleteConfirmationModal from '../../../../components/common/DeleteConfirmationModal';
 
 const TransactionList = () => {
   const { t } = useTranslation();
@@ -83,6 +83,18 @@ const TransactionList = () => {
       left: rect.left,
     });
     setOpenDropdownId(openDropdownId === id ? null : id);
+  };
+
+  const getTranslatedStatus = (status) => {
+    if (!status) return t('financial.status.pending');
+
+    // Map raw backend statuses to our frontend translation keys
+    const raw = status.toLowerCase();
+    let key = raw;
+    if (raw === 'completed' || raw === 'succeeded') key = 'paid';
+    if (raw === 'canceled') key = 'cancelled';
+
+    return t(`financial.status.${key}`, status);
   };
 
   return (
@@ -167,10 +179,26 @@ const TransactionList = () => {
                   <S.Td>
                     <S.StatusWrapper>
                       <S.StatusBadge
-                        $status={tx.status}
+                        $status={
+                          getTranslatedStatus(tx.status) === t('financial.status.paid')
+                            ? 'paid'
+                            : getTranslatedStatus(tx.status) === t('financial.status.pending')
+                              ? 'pending'
+                              : getTranslatedStatus(tx.status) === t('financial.status.overdue')
+                                ? 'overdue'
+                                : getTranslatedStatus(tx.status) === t('financial.status.cancelled')
+                                  ? 'cancelled'
+                                  : tx.status
+                        }
+                        $isStripe={
+                          tx.status.toLowerCase() === 'completed' ||
+                          tx.status.toLowerCase() === 'succeeded' ||
+                          tx.description.toLowerCase().includes('stripe') ||
+                          tx.description.toLowerCase().includes('card')
+                        }
                         onClick={(e) => handleDropdownTrigger(e, tx.id)}
                       >
-                        {t(`financial.status.${tx.status}`)}
+                        {getTranslatedStatus(tx.status)}
                       </S.StatusBadge>
 
                       {openDropdownId === tx.id && (
@@ -181,7 +209,10 @@ const TransactionList = () => {
                           {['pending', 'paid', 'overdue', 'cancelled'].map((status) => (
                             <S.DropdownItem
                               key={status}
-                              $active={tx.status === status}
+                              $active={
+                                tx.status.toLowerCase() === status ||
+                                (tx.status.toLowerCase() === 'completed' && status === 'paid')
+                              }
                               onClick={() => handleStatusChange(tx.id, status)}
                             >
                               {t(`financial.status.${status}`)}

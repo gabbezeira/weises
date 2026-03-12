@@ -56,16 +56,16 @@ export const StatusBadge = styled.span`
     white-space: nowrap;
     
     ${({ $status }) => {
-      switch ($status) {
-        case 'In Progress':
-          return `background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2);`;
-        case 'Completed':
-          return `background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.2);`;
-        case 'Planning':
-          return `background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.2);`;
-        default:
-          return `background: var(--color-surface); color: var(--color-gray-400); border: 1px solid var(--color-border);`;
-      }
+        switch ($status) {
+            case 'In Progress':
+                return `background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2);`;
+            case 'Completed':
+                return `background: rgba(34, 197, 94, 0.1); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.2);`;
+            case 'Planning':
+                return `background: rgba(168, 85, 247, 0.1); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.2);`;
+            default:
+                return `background: var(--color-surface); color: var(--color-gray-400); border: 1px solid var(--color-border);`;
+        }
     }}
 `;
 

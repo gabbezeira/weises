@@ -16,6 +16,8 @@ export const AdminProvider = ({ children }) => {
   const [projects, setProjects] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [transactions, setTransactions] = useState([]);
+  const [invoices, setInvoices] = useState([]);
+  const [services, setServices] = useState([]);
   const [taxSettings, setTaxSettingsState] = useState({
     iss: 6,
     irrf: 0,
@@ -30,13 +32,14 @@ export const AdminProvider = ({ children }) => {
   const fetchAll = useCallback(async () => {
     setIsLoading(true);
     try {
-      const [clientsRes, projectsRes, tasksRes, transactionsRes, taxRes] = await Promise.all([
+      const [clientsRes, projectsRes, tasksRes, transactionsRes, invoicesRes, servicesRes, taxRes] = await Promise.all([
         api.get('/clients').catch(() => ({ data: [] })),
         api.get('/projects').catch(() => ({ data: [] })),
         api.get('/tasks').catch(() => ({ data: [] })),
         api.get('/transactions').catch(() => ({ data: [] })),
-        api
-          .get('/settings/tax')
+        api.get('/invoices').catch(() => ({ data: [] })),
+        api.get('/services').catch(() => ({ data: [] })),
+        api.get('/settings/tax')
           .catch(() => ({ data: { iss: 6, irrf: 0, csll: 0, cofins: 0, pis: 0, others: 0 } })),
       ]);
 
@@ -44,6 +47,8 @@ export const AdminProvider = ({ children }) => {
       setProjects(projectsRes.data || []);
       setTasks(tasksRes.data || []);
       setTransactions(transactionsRes.data || []);
+      setInvoices(invoicesRes.data || []);
+      setServices(servicesRes.data || []);
       setTaxSettingsState(taxRes.data || {});
     } catch (err) {
       console.error('[AdminContext] Failed to fetch data:', err);
@@ -145,34 +150,6 @@ export const AdminProvider = ({ children }) => {
       const newProject = res.data;
       setProjects((prev) => [newProject, ...prev]);
 
-      if (
-        project.privateDetails?.value &&
-        (project.status === 'In Progress' || project.status === 'Completed')
-      ) {
-        const amount = parseCurrency(project.privateDetails.value);
-        if (amount > 0) {
-          const totalTax = Object.values(taxSettings).reduce(
-            (sum, v) => sum + (parseFloat(v) || 0),
-            0,
-          );
-
-          await api.post('/transactions', {
-            date: new Date().toISOString().split('T')[0],
-            type: 'income',
-            category: 'Project',
-            amount,
-            description: `Project Revenue: ${project.title}`,
-            status: 'pending',
-            projectId: newProject.id,
-            clientId: project.clientId,
-            isRecurring: false,
-            taxRate: totalTax,
-          });
-
-          await fetchAll();
-        }
-      }
-
       return newProject;
     } catch (err) {
       console.error('[AdminContext] addProject failed:', err);
@@ -255,6 +232,51 @@ export const AdminProvider = ({ children }) => {
     }
   };
 
+  
+  const addInvoice = async (invoiceData) => {
+    try {
+      const res = await api.post('/invoices', invoiceData);
+      setInvoices((prev) => [res.data, ...prev]);
+      return res.data;
+    } catch (err) {
+      console.error('[AdminContext] addInvoice failed:', err);
+      throw err;
+    }
+  };
+
+  const updateInvoice = async (id, updatedData) => {
+    try {
+      if (updatedData.status === 'paid') {
+        const totalTax = Object.values(taxSettings).reduce(
+          (sum, v) => sum + (parseFloat(v) || 0),
+          0,
+        );
+        updatedData.taxRate = totalTax;
+      }
+      const res = await api.put(`/invoices/${id}`, updatedData);
+      setInvoices((prev) => prev.map((i) => (i.id === id ? res.data : i)));
+      // Also refetch transactions in case a transaction was generated
+      if (updatedData.status === 'paid') {
+        const txRes = await api.get('/transactions').catch(() => ({ data: [] }));
+        setTransactions(txRes.data || []);
+      }
+      return res.data;
+    } catch (err) {
+      console.error('[AdminContext] updateInvoice failed:', err);
+      throw err;
+    }
+  };
+
+  const deleteInvoice = async (id) => {
+    try {
+      await api.del(`/invoices/${id}`);
+      setInvoices((prev) => prev.filter((i) => i.id !== id));
+    } catch (err) {
+      console.error('[AdminContext] deleteInvoice failed:', err);
+      throw err;
+    }
+  };
+
   const setTaxSettings = async (newSettings) => {
     try {
       const res = await api.put('/settings/tax', newSettings);
@@ -271,6 +293,8 @@ export const AdminProvider = ({ children }) => {
     projects,
     tasks,
     transactions,
+    invoices,
+    services,
     isLoading,
     searchTerm,
     setSearchTerm,
@@ -288,6 +312,9 @@ export const AdminProvider = ({ children }) => {
     addTransaction,
     updateTransaction,
     deleteTransaction,
+    addInvoice,
+    updateInvoice,
+    deleteInvoice,
     taxSettings,
     setTaxSettings,
     refreshData: fetchAll,

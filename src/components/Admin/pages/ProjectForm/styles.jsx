@@ -212,13 +212,13 @@ export const Button = styled.button`
     min-width: 6rem;
 
     ${({ $variant }) =>
-      $variant === 'primary'
-        ? `
+        $variant === 'primary'
+            ? `
         background-color: var(--color-primary);
         color: white;
         &:hover { background-color: var(--color-primary-50); box-shadow: var(--shadow-glow-primary); }
     `
-        : `
+            : `
         background-color: transparent;
         border: 1px solid var(--color-border);
         color: var(--color-gray-400);
@@ -306,4 +306,45 @@ export const UploadPlaceholder = styled.div`
     span {
         font-size: 0.875rem;
     }
+`;
+
+export const StageRow = styled.div`
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-background);
+    margin-bottom: 0.5rem;
+    align-items: flex-end;
+`;
+
+export const StageInputGroup = styled.div`
+    flex: ${(props) => props.$flex || 'none'};
+    width: ${(props) => props.$width || 'auto'};
+`;
+
+export const StageLabel = styled.label`
+    font-size: 0.75rem;
+    color: var(--color-gray-500);
+    margin-bottom: 0.25rem;
+    display: block;
+`;
+
+export const RemoveStageButton = styled(RemoveTag)`
+    color: var(--color-red-500);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const AddStageButton = styled(Button)`
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
 `;

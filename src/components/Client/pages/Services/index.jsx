@@ -53,20 +53,20 @@ const ClientServices = () => {
 
   const faqs = [
     {
-      q: 'How do I request a service?',
-      a: 'Simply click the "Request" button on any service card. A ticket will be created and our team will contact you to confirm details.',
+      q: t('client.services.faq.q1', 'How do I request a service?'),
+      a: t('client.services.faq.a1', 'Simply click the "Request" button on any service card. A ticket will be created and our team will contact you to confirm details.'),
     },
     {
-      q: 'What payment methods are accepted?',
-      a: 'We accept all major credit cards, bank transfers, and Pix. You can manage payment methods in the Billing section.',
+      q: t('client.services.faq.q2', 'What payment methods are accepted?'),
+      a: t('client.services.faq.a2', 'We accept all major credit cards, bank transfers, and Pix. You can manage payment methods in the Billing section.'),
     },
     {
-      q: 'Can I cancel a requested service?',
-      a: 'Yes, if the service has not started yet. Please contact support via the Dashboard widget.',
+      q: t('client.services.faq.q3', 'Can I cancel a requested service?'),
+      a: t('client.services.faq.a3', 'Yes, if the service has not started yet. Please contact support via the Dashboard widget.'),
     },
     {
-      q: 'Are these prices final?',
-      a: 'These are starting prices. Complex requirements may require a custom quote.',
+      q: t('client.services.faq.q4', 'Are these prices final?'),
+      a: t('client.services.faq.a4', 'These are starting prices. Complex requirements may require a custom quote.'),
     },
   ];
 

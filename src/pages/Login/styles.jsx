@@ -172,11 +172,6 @@ export const Input = styled.input`
     border-color: var(--color-primary-50);
     box-shadow: 0 0 0 4px var(--color-primary-10);
   }
-
-  &:focus ~ ${InputIcon},
-  &:focus + ${InputIcon} {
-    color: var(--color-white);
-  }
 `;
 
 export const PasswordToggle = styled.button`

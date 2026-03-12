@@ -7,6 +7,7 @@ import DeleteConfirmationModal from '../../../common/DeleteConfirmationModal';
 import { uploadProjectImage, uploadGalleryImage } from '../../../../services/storage.service';
 import { api } from '../../../../services/api';
 import Loader from '../../../ui/Loader';
+import BillingOptionsModal from '../../components/BillingOptionsModal';
 import * as S from './styles';
 
 const ProjectForm = () => {
@@ -42,6 +43,7 @@ const ProjectForm = () => {
     credentials: [],
     // Progress
     estimatedCompletion: '',
+    stages: [],
   });
 
   const [tagInputs, setTagInputs] = useState({
@@ -58,6 +60,8 @@ const ProjectForm = () => {
 
   const [isDeleteCredentialModalOpen, setIsDeleteCredentialModalOpen] = useState(false);
   const [credentialToDelete, setCredentialToDelete] = useState(null);
+  const [isBillingModalOpen, setIsBillingModalOpen] = useState(false);
+  const [newlyCreatedProject, setNewlyCreatedProject] = useState(null);
 
   useEffect(() => {
     if (isEditMode) {
@@ -85,10 +89,13 @@ const ProjectForm = () => {
           description: project.description || '',
           challenge: project.challenge || '',
           solution: project.solution || '',
-          projectValue: project.privateDetails?.value || '',
+          projectValue: project.privateDetails?.value 
+            ? parseFloat(project.privateDetails.value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+            : '',
           // credentials will be populated by the async fetch below if not present
           credentials: [],
           estimatedCompletion: project.estimatedCompletion || '',
+          stages: project.stages || [],
         });
 
         // Fetch credentials from subcollection
@@ -100,6 +107,18 @@ const ProjectForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCurrencyChange = (e) => {
+    const { name, value } = e.target;
+    let numericValue = value.replace(/\D/g, '');
+    if (!numericValue) {
+      setFormData((prev) => ({ ...prev, [name]: '' }));
+      return;
+    }
+    const floatValue = parseFloat(numericValue) / 100;
+    const formatted = floatValue.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    setFormData((prev) => ({ ...prev, [name]: formatted }));
   };
 
   const handleTagInputKeyDown = (e, field) => {
@@ -141,7 +160,34 @@ const ProjectForm = () => {
     }));
   };
 
+
+  // --- Stages Management ---
+  const addStage = () => {
+    setFormData((prev) => ({
+      ...prev,
+      stages: [
+        ...prev.stages,
+        { id: Date.now().toString(), name: '', date: '', completed: false },
+      ],
+    }));
+  };
+
+  const updateStage = (stageId, field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      stages: prev.stages.map((s) => (s.id === stageId ? { ...s, [field]: value } : s)),
+    }));
+  };
+
+  const removeStage = (stageId) => {
+    setFormData((prev) => ({
+      ...prev,
+      stages: prev.stages.filter((s) => s.id !== stageId),
+    }));
+  };
+
   const handleRemoveCredentialClick = (cred) => {
+
     setCredentialToDelete(cred);
     setIsDeleteCredentialModalOpen(true);
   };
@@ -157,16 +203,18 @@ const ProjectForm = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const gallery = [formData.gallery1, formData.gallery2, formData.gallery3].filter(Boolean);
+    const rawProjectValue = formData.projectValue ? String(formData.projectValue).replace(/\./g, '').replace(',', '.') : '';
 
     const projectData = {
       ...formData,
       gallery,
+      stages: formData.stages,
       privateDetails: {
-        value: formData.projectValue,
+        value: rawProjectValue,
         credentials: formData.credentials,
       },
     };
@@ -178,11 +226,17 @@ const ProjectForm = () => {
     delete projectData.credentials;
 
     if (isEditMode) {
-      updateProject(id, projectData);
+      await updateProject(id, projectData);
+      navigate('/admin/projects');
     } else {
-      addProject(projectData);
+      const newProj = await addProject(projectData);
+      if (parseFloat(projectData.privateDetails.value) > 0) {
+        setNewlyCreatedProject({ ...projectData, id: newProj.id });
+        setIsBillingModalOpen(true);
+      } else {
+        navigate('/admin/projects');
+      }
     }
-    navigate('/admin/projects');
   };
 
   return (
@@ -280,13 +334,11 @@ const ProjectForm = () => {
             <S.Label>{t('admin.projects.form.project_value')}</S.Label>
             <div style={{ position: 'relative' }}>
               <S.Input
-                type="number"
-                min="0"
-                step="0.01"
+                type="text"
                 name="projectValue"
                 value={formData.projectValue}
-                onChange={handleChange}
-                placeholder="50000.00"
+                onChange={handleCurrencyChange}
+                placeholder="50.000,00"
                 style={{ paddingLeft: '2.5rem' }}
               />
               <div
@@ -296,9 +348,10 @@ const ProjectForm = () => {
                   top: '50%',
                   transform: 'translateY(-50%)',
                   color: 'var(--color-gray-400)',
+                  fontWeight: 500,
                 }}
               >
-                $
+                R$
               </div>
             </div>
             <span
@@ -536,7 +589,49 @@ const ProjectForm = () => {
           </S.FormGroup>
         </S.Section>
 
+
+        <S.Section>
+          <S.SectionTitle>Project Stages & Timeline</S.SectionTitle>
+          <S.FormGroup>
+            <S.Label>Define Stages</S.Label>
+            {formData.stages.map((stage, index) => (
+              <S.StageRow key={stage.id}>
+                <S.StageInputGroup $flex={1}>
+                  <S.StageLabel>Stage Name</S.StageLabel>
+                  <S.Input
+                    placeholder="e.g. UX/UI Design"
+                    value={stage.name}
+                    onChange={(e) => updateStage(stage.id, 'name', e.target.value)}
+                  />
+                </S.StageInputGroup>
+                <S.StageInputGroup $width="150px">
+                  <S.StageLabel>Estimated Date</S.StageLabel>
+                  <S.Input
+                    type="date"
+                    value={stage.date}
+                    onChange={(e) => updateStage(stage.id, 'date', e.target.value)}
+                  />
+                </S.StageInputGroup>
+                <S.RemoveStageButton
+                  type="button"
+                  onClick={() => removeStage(stage.id)}
+                  title="Remove Stage"
+                >
+                  <X size={20} />
+                </S.RemoveStageButton>
+              </S.StageRow>
+            ))}
+            <S.AddStageButton
+              type="button"
+              onClick={addStage}
+            >
+              <Plus size={14} /> Add Stage
+            </S.AddStageButton>
+          </S.FormGroup>
+        </S.Section>
+
         {/* Media */}
+
         <S.Section>
           <S.SectionTitle>{t('admin.projects.form.media')}</S.SectionTitle>
           <S.FormGroup>
@@ -638,6 +733,16 @@ const ProjectForm = () => {
           message={t('admin.projects.form.delete_credential_modal.message')}
           itemName={credentialToDelete?.name || 'Credential'}
         />
+
+        {isBillingModalOpen && newlyCreatedProject && (
+          <BillingOptionsModal
+            project={newlyCreatedProject}
+            onClose={() => {
+              setIsBillingModalOpen(false);
+              navigate('/admin/projects');
+            }}
+          />
+        )}
       </S.Form>
     </S.Container>
   );

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
@@ -134,20 +134,41 @@ export const TimelineHeader = styled.div`
 
 export const Stepper = styled.div`
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     position: relative;
     margin-top: 1rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    
+    &::-webkit-scrollbar { height: 6px; }
+    &::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: 4px;
+    }
 
     &::before {
         content: '';
         position: absolute;
-        top: 15px; /* Half of circle size (30px) */
+        top: 15px;
         left: 0;
-        width: 100%;
+        right: 0;
         height: 2px;
         background-color: var(--color-border);
         z-index: 0;
+        min-width: 100%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 0;
+        height: 2px;
+        width: ${({ $progress }) => $progress ?? 0}%;
+        background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-80, #7c3aed) 100%);
+        z-index: 0;
+        transition: width 0.6s ease;
+        border-radius: 0 2px 2px 0;
     }
 `;
 
@@ -159,9 +180,18 @@ export const StepItem = styled.div`
     position: relative;
     z-index: 1;
     flex: 1;
+    min-width: 120px;
     
     &:first-child { align-items: flex-start; }
     &:last-child { align-items: flex-end; }
+`;
+
+export const EmptyTimeline = styled.p`
+    color: var(--color-gray-400);
+    font-style: italic;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1.5rem 0;
 `;
 
 export const StepCircle = styled.div`
@@ -244,8 +274,32 @@ export const TabContent = styled.div`
 // -- Credentials Tab Styles --
 export const VaultGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
     gap: 1.5rem;
+`;
+
+export const CredentialsButton = styled.button`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: fit-content;
+    margin-bottom: 1rem;
+
+    &:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+        background-color: var(--color-primary-10);
+        transform: translateY(-1px);
+    }
 `;
 
 export const CredentialCard = styled.div`
@@ -378,6 +432,22 @@ export const Section = styled.div`
     }
 `;
 
+export const SectionHeader = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+`;
+
+export const InvoiceCount = styled.span`
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    background-color: var(--color-white-5);
+    border: 1px solid var(--color-border);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+`;
+
 export const TechStack = styled.div`
     display: flex;
     flex-wrap: wrap;
@@ -395,10 +465,69 @@ export const TechStack = styled.div`
 `;
 
 // -- Financials Tab Styles --
-export const InvoiceList = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+export const InvoiceTable = styled.div`
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        @media (max-width: 768px) {
+            display: block;
+            overflow-x: auto;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 1.25rem 1.5rem;
+            color: var(--color-text);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        th {
+            background-color: var(--color-background);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--color-gray-500);
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        td.amount {
+            font-weight: 600;
+        }
+    }
+`;
+
+export const EmptyStateCell = styled.td`
+    text-align: center !important;
+    padding: 3rem !important;
+    color: var(--color-gray-500);
+    font-size: 0.9375rem;
+`;
+
+export const PayButton = styled.button`
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: var(--color-primary-20);
+        transform: translateY(-1px);
+    }
 `;
 
 export const InvoiceItem = styled.div`
@@ -493,6 +622,7 @@ export const ContractCard = styled.div`
     .actions {
         display: flex;
         gap: 1rem;
+        flex-wrap: wrap;
     }
 `;
 
@@ -547,4 +677,50 @@ export const IconRow = styled.div`
         color: var(--color-text);
         font-weight: 600;
     }
+`;
+
+export const InvoiceStatusBadge = styled.span`
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+    ${({ $status }) => {
+      switch ($status) {
+        case 'paid':
+          return css`
+                    background-color: var(--color-success-10);
+                    color: var(--color-success);
+                    border: 1px solid rgba(34, 197, 94, 0.2);
+                `;
+        case 'pending':
+          return css`
+                    background-color: var(--color-warning-10);
+                    color: var(--color-warning);
+                    border: 1px solid rgba(245, 158, 11, 0.2);
+                `;
+        case 'overdue':
+          return css`
+                    background-color: var(--color-danger-10);
+                    color: var(--color-danger);
+                    border: 1px solid rgba(239, 68, 68, 0.2);
+                `;
+        default:
+          return css`
+                    background-color: var(--color-white-5);
+                    color: var(--color-gray-400);
+                    border: 1px solid var(--color-border);
+                `;
+      }
+    }}
+`;
+
+export const PaginationWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
 `;

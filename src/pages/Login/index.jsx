@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, AlertCircle, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useTranslation } from 'react-i18next';
 import glow from '@assets/images/glow.svg';
 import logo from '@assets/images/logo.svg';
 import * as S from './styles';
@@ -14,6 +15,7 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { login } = useAuth();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,11 +39,11 @@ const Login = () => {
         code === 'auth/wrong-password' ||
         code === 'auth/user-not-found'
       ) {
-        setError('Invalid email or password.');
+        setError(t('login.errors.invalid_credentials'));
       } else if (code === 'auth/too-many-requests') {
-        setError('Too many attempts. Please try again later.');
+        setError(t('login.errors.too_many_requests'));
       } else {
-        setError('An unexpected error occurred. Please try again.');
+        setError(t('login.errors.unexpected'));
       }
     } finally {
       setIsLoading(false);
@@ -73,7 +75,7 @@ const Login = () => {
       >
         <S.LogoSection>
           <S.LogoImage src={logo} alt="Weises Logo" />
-          <S.LogoSubtext>Sign in to your account</S.LogoSubtext>
+          <S.LogoSubtext>{t('login.sign_in_account')}</S.LogoSubtext>
         </S.LogoSection>
 
         <S.Form onSubmit={handleSubmit}>
@@ -88,7 +90,7 @@ const Login = () => {
           )}
 
           <S.InputGroup>
-            <S.Label htmlFor="email">Email</S.Label>
+            <S.Label htmlFor="email">{t('login.email')}</S.Label>
             <S.InputWrapper>
               <S.Input
                 id="email"
@@ -106,7 +108,7 @@ const Login = () => {
           </S.InputGroup>
 
           <S.InputGroup>
-            <S.Label htmlFor="password">Password</S.Label>
+            <S.Label htmlFor="password">{t('login.password')}</S.Label>
             <S.InputWrapper>
               <S.Input
                 id="password"
@@ -136,7 +138,7 @@ const Login = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            {isLoading ? <S.Spinner /> : <S.ButtonContent>Sign In</S.ButtonContent>}
+            {isLoading ? <S.Spinner /> : <S.ButtonContent>{t('login.sign_in')}</S.ButtonContent>}
           </S.SubmitButton>
         </S.Form>
 
@@ -144,7 +146,7 @@ const Login = () => {
 
         <S.FooterText>
           <a href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-            <ArrowLeft size={14} /> Back to website
+            <ArrowLeft size={14} /> {t('login.back_website')}
           </a>
         </S.FooterText>
       </S.LoginCard>

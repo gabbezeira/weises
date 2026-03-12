@@ -22,6 +22,10 @@ export const Title = styled.h1`
 `;
 
 export const AddButton = styled(Link)`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     background-color: var(--color-primary);
     color: white;
     padding: 0.5rem 1rem;
@@ -87,16 +91,16 @@ export const StatusBadge = styled.span`
     white-space: nowrap;
     
     ${({ $status }) => {
-      switch ($status) {
-        case 'In Progress':
-          return `background: rgba(96, 165, 250, 0.1); color: var(--color-blue-400); border: 1px solid rgba(96, 165, 250, 0.2);`;
-        case 'Completed':
-          return `background: rgba(34, 197, 94, 0.1); color: var(--color-green-500); border: 1px solid rgba(34, 197, 94, 0.2);`;
-        case 'Planning':
-          return `background: rgba(192, 132, 252, 0.1); color: var(--color-purple-500); border: 1px solid rgba(192, 132, 252, 0.2);`;
-        default:
-          return `background: var(--color-white-5); color: var(--color-gray-400);`;
-      }
+        switch ($status) {
+            case 'In Progress':
+                return `background: rgba(96, 165, 250, 0.1); color: var(--color-blue-400); border: 1px solid rgba(96, 165, 250, 0.2);`;
+            case 'Completed':
+                return `background: rgba(34, 197, 94, 0.1); color: var(--color-green-500); border: 1px solid rgba(34, 197, 94, 0.2);`;
+            case 'Planning':
+                return `background: rgba(192, 132, 252, 0.1); color: var(--color-purple-500); border: 1px solid rgba(192, 132, 252, 0.2);`;
+            default:
+                return `background: var(--color-white-5); color: var(--color-gray-400);`;
+        }
     }}
 `;
 

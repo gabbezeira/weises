@@ -78,12 +78,12 @@ const FixedExpenseList = ({ onAddClick }) => {
             <TrendingDown size={24} />
           </div>
           <div className="info">
-            <h3>Total Fixed Monthly Costs</h3>
+            <h3>{t('financial.fixed_expenses.total')}</h3>
             <p>R$ {totalFixedCost.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
           </div>
         </S.SummaryCard>
         <S.AddButton onClick={onAddClick}>
-          <Plus size={16} /> Add Fixed Expense
+          <Plus size={16} /> {t('financial.fixed_expenses.add')}
         </S.AddButton>
       </S.Header>
 
@@ -91,11 +91,11 @@ const FixedExpenseList = ({ onAddClick }) => {
         <S.Table>
           <thead>
             <tr>
-              <S.Th>Next Due Date</S.Th>
-              <S.Th>Category</S.Th>
-              <S.Th>Description</S.Th>
-              <S.Th>Amount</S.Th>
-              <S.Th>Actions</S.Th>
+              <S.Th>{t('financial.fixed_expenses.table.next_due')}</S.Th>
+              <S.Th>{t('financial.fixed_expenses.table.category')}</S.Th>
+              <S.Th>{t('financial.fixed_expenses.table.description')}</S.Th>
+              <S.Th>{t('financial.fixed_expenses.table.amount')}</S.Th>
+              <S.Th>{t('financial.fixed_expenses.table.actions')}</S.Th>
             </tr>
           </thead>
           <tbody>
@@ -111,7 +111,7 @@ const FixedExpenseList = ({ onAddClick }) => {
                     R$ {tx.amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
                   </S.Td>
                   <S.Td>
-                    <S.ActionButton $danger onClick={() => handleDelete(tx.id)} title="Delete">
+                    <S.ActionButton $danger onClick={() => handleDelete(tx.id)} title={t('common.actions.delete')}>
                       <Trash2 size={16} />
                     </S.ActionButton>
                   </S.Td>
@@ -121,8 +121,8 @@ const FixedExpenseList = ({ onAddClick }) => {
               <tr>
                 <S.Td colSpan="5" style={{ padding: 0 }}>
                   <EmptyState
-                    title="No fixed expenses yet"
-                    description="Add recurring expenses like rent, salaries, or subscriptions to track your monthly fixed costs."
+                    title={t('financial.fixed_expenses.empty_title')}
+                    description={t('financial.fixed_expenses.empty_desc')}
                     icon={CalendarClock}
                   />
                 </S.Td>

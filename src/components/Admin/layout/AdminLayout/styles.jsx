@@ -44,4 +44,8 @@ export const Overlay = styled.div`
     opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
     pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
     transition: opacity var(--transition-normal);
+
+    @media (min-width: 1025px) {
+        display: none;
+    }
 `;

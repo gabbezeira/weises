@@ -134,7 +134,7 @@ export const Badge = styled.span`
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 500;
-    color: var(--color-gray-600);
+    color: var(--color-gray-500);
 `;
 
 /* --- Dropdown Logic (Copied from ClientList & Refined) --- */
@@ -157,9 +157,16 @@ export const StatusBadge = styled.span`
     transition: all 0.2s ease;
     border: 1px solid transparent;
 
-    ${({ $status }) => {
+    ${({ $status, $isStripe }) => {
       switch ($status) {
         case 'paid':
+          if ($isStripe) {
+            return `
+                        background-color: var(--color-primary-10);
+                        color: var(--color-primary);
+                        border-color: rgba(144, 97, 249, 0.2);
+                    `;
+          }
           return `
                     background-color: var(--color-success-10);
                     color: var(--color-success);
@@ -180,7 +187,7 @@ export const StatusBadge = styled.span`
         case 'cancelled':
           return `
                     background-color: var(--color-gray-200);
-                    color: var(--color-gray-600);
+                    color: var(--color-gray-500);
                 `;
         default:
           return `

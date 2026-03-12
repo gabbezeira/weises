@@ -66,6 +66,9 @@ const ClientLayout = () => {
           <NavLink to="/client/billing" className={({ isActive }) => (isActive ? 'active' : '')}>
             {t('client.layout.nav.billing')}
           </NavLink>
+          <NavLink to="/client/subscriptions" className={({ isActive }) => (isActive ? 'active' : '')}>
+            {t('client.layout.nav.subscriptions')}
+          </NavLink>
         </S.NavLinks>
 
         <S.HeaderActions>
@@ -137,6 +140,13 @@ const ClientLayout = () => {
             className={({ isActive }) => (isActive ? 'active' : '')}
           >
             {t('client.layout.nav.billing')}
+          </NavLink>
+          <NavLink
+            to="/client/subscriptions"
+            onClick={closeMobileMenu}
+            className={({ isActive }) => (isActive ? 'active' : '')}
+          >
+            {t('client.layout.nav.subscriptions')}
           </NavLink>
         </S.MobileNavLinks>
 

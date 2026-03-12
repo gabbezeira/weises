@@ -1,130 +1,173 @@
+import { CreditCard, FileText, ReceiptText } from 'lucide-react';
 import React, { useState } from 'react';
-import * as S from './styles';
-import { useClient } from '../../../../context/ClientContext';
-import { Download, Plus, CreditCard, ShoppingBag } from 'lucide-react';
-import Pagination from '../../../ui/Pagination';
 import { useTranslation } from 'react-i18next';
+import { useClient } from '../../../../context/ClientContext';
+import Pagination from '../../../ui/Pagination';
+import PaymentModal from '../../components/PaymentModal';
+import PaymentMethodsList from './PaymentMethodsList';
+import * as S from './styles';
+
+const TABS = [
+  { id: 'invoices', labelKey: 'client.billing.tabs.invoices', icon: ReceiptText },
+  { id: 'methods', labelKey: 'client.billing.tabs.methods', icon: CreditCard },
+];
 
 const ClientBilling = () => {
   const { clientInvoices } = useClient();
   const { t } = useTranslation();
+  const [activeTab, setActiveTab] = useState('invoices');
   const [currentPage, setCurrentPage] = useState(1);
-  const [creditCard, setCreditCard] = useState(null);
-  const itemsPerPage = 5;
+  const [selectedInvoice, setSelectedInvoice] = useState(null);
+  const itemsPerPage = 8;
 
-  const invoices = clientInvoices.filter((t) => t.type === 'income');
-  const totalPages = Math.ceil(invoices.length / itemsPerPage);
+  const invoices = clientInvoices || [];
+  const totalPages = Math.max(1, Math.ceil(invoices.length / itemsPerPage));
   const paginatedInvoices = invoices.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage,
   );
 
-  const handleDownload = (id) => alert(`Downloading invoice #${id}...`);
-  const handlePay = (id) => alert(`Redirecting to payment gateway for invoice #${id}...`);
+  const pendingCount = invoices.filter((i) => i.status === 'pending').length;
+  const overdueCount = invoices.filter((i) => i.status === 'overdue').length;
 
-  const handleAddCard = () => {
-    const mockCard = {
-      number: '•••• •••• •••• 4242',
-      holder: 'ACME CORP',
-      expiry: '12/28',
-      brand: 'VISA',
-    };
-    setCreditCard(mockCard);
-    alert('Card added successfully!');
+  const formatCurrency = (val) =>
+    new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val || 0);
+
+  const handlePay = (id) => {
+    const inv = invoices.find((i) => i.id === id);
+    setSelectedInvoice(inv);
+  };
+
+  const getStatusText = (status) => {
+    switch (status) {
+      case 'pending':
+        return t('client.billing.status.pending', 'Pendente');
+      case 'paid':
+        return t('client.billing.status.paid', 'Pago');
+      case 'overdue':
+        return t('client.billing.status.overdue', 'Vencido');
+      default:
+        return status;
+    }
   };
 
   return (
     <S.Container>
-      <S.Header>
-        <h1>{t('client.billing.title')}</h1>
-        <p>{t('client.billing.subtitle')}</p>
-      </S.Header>
+      <S.PageHeader>
+        <S.PageTitleGroup>
+          <S.PageIcon>
+            <FileText size={22} />
+          </S.PageIcon>
+          <div>
+            <h1>{t('client.billing.title', 'Faturamento')}</h1>
+            <p>{t('client.billing.subtitle', 'Gerencie faturas e métodos de pagamento.')}</p>
+          </div>
+        </S.PageTitleGroup>
 
-      <div>
-        <S.SectionTitle>
-          <CreditCard size={20} /> {t('client.billing.payment_methods')}
-        </S.SectionTitle>
-        {creditCard ? (
-          <S.CreditCard>
-            <div className="chip"></div>
-            <div className="number">{creditCard.number}</div>
-            <div className="footer">
-              <div className="holder">
-                <span>{t('client.billing.card_holder')}</span>
-                <strong>{creditCard.holder}</strong>
-              </div>
-              <div className="brand">{creditCard.brand}</div>
-            </div>
-          </S.CreditCard>
-        ) : (
-          <S.CreditCard className="empty" onClick={handleAddCard}>
-            <S.AddCardWrapper>
-              <Plus size={32} />
-              <S.AddCardText>{t('client.billing.add_card')}</S.AddCardText>
-            </S.AddCardWrapper>
-          </S.CreditCard>
-        )}
-      </div>
+        <S.StatPills>
+          {pendingCount > 0 && (
+            <S.StatPill $variant="warning">
+              <span>{pendingCount}</span>
+              {t('client.billing.stats.pending', 'pendente(s)')}
+            </S.StatPill>
+          )}
+          {overdueCount > 0 && (
+            <S.StatPill $variant="danger">
+              <span>{overdueCount}</span>
+              {t('client.billing.stats.overdue', 'vencida(s)')}
+            </S.StatPill>
+          )}
+        </S.StatPills>
+      </S.PageHeader>
 
-      <div>
-        <S.SectionTitle>{t('client.billing.invoice_history')}</S.SectionTitle>
-        <S.InvoiceTable>
-          <table>
-            <thead>
-              <tr>
-                <th>{t('client.billing.table.date')}</th>
-                <th>{t('client.billing.table.description')}</th>
-                <th>{t('client.billing.table.amount')}</th>
-                <th>{t('client.billing.table.status')}</th>
-                <th>{t('client.billing.table.actions')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {paginatedInvoices.length > 0 ? (
-                paginatedInvoices.map((inv) => (
-                  <tr key={inv.id}>
-                    <td>{new Date(inv.date).toLocaleDateString()}</td>
-                    <td>{inv.description}</td>
-                    <td className="amount">
-                      R$ {inv.amount.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
-                    </td>
-                    <td>
-                      <S.StatusBadge $status={inv.status}>{inv.status}</S.StatusBadge>
-                    </td>
-                    <td>
-                      <S.ActionWrapper>
-                        <S.DownloadButton
-                          onClick={() => handleDownload(inv.id)}
-                          title="Download PDF"
-                        >
-                          <Download size={18} />
-                        </S.DownloadButton>
-                        {inv.status === 'pending' && (
-                          <S.PayButton onClick={() => handlePay(inv.id)}>
-                            {t('client.billing.table.pay_now')}
-                          </S.PayButton>
-                        )}
-                      </S.ActionWrapper>
-                    </td>
+      <S.TabBar>
+        {TABS.map(({ id, labelKey, icon: Icon }) => (
+          <S.TabBtn key={id} $active={activeTab === id} onClick={() => setActiveTab(id)}>
+            <Icon size={16} />
+            {t(labelKey)}
+          </S.TabBtn>
+        ))}
+      </S.TabBar>
+
+      <S.TabContent>
+        {activeTab === 'invoices' && (
+          <S.Panel>
+            <S.PanelHeader>
+              <S.PanelTitle>
+                {t('client.billing.invoice_history', 'Histórico de Faturas')}
+              </S.PanelTitle>
+              <S.InvoiceCount>
+                {invoices.length} {t('client.billing.stats.total', 'fatura(s)')}
+              </S.InvoiceCount>
+            </S.PanelHeader>
+
+            <S.InvoiceTable>
+              <table>
+                <thead>
+                  <tr>
+                    <th>{t('client.billing.table.due_date', 'Vencimento')}</th>
+                    <th>{t('client.billing.table.description', 'Descrição')}</th>
+                    <th>{t('client.billing.table.amount', 'Valor')}</th>
+                    <th>{t('client.billing.table.status', 'Status')}</th>
+                    <th>{t('client.billing.table.actions', 'Ações')}</th>
                   </tr>
-                ))
-              ) : (
-                <tr>
-                  <S.EmptyStateCell colSpan="5">{t('client.billing.table.empty')}</S.EmptyStateCell>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </S.InvoiceTable>
+                </thead>
+                <tbody>
+                  {paginatedInvoices.length > 0 ? (
+                    paginatedInvoices.map((inv) => (
+                      <tr key={inv.id}>
+                        <td className="date">
+                          {inv.dueDate
+                            ? new Date(inv.dueDate).toLocaleDateString('pt-BR')
+                            : new Date(inv.date).toLocaleDateString('pt-BR')}
+                        </td>
+                        <td>{inv.description}</td>
+                        <td className="amount">{formatCurrency(inv.amount)}</td>
+                        <td>
+                          <S.StatusBadge $status={inv.status}>
+                            {getStatusText(inv.status)}
+                          </S.StatusBadge>
+                        </td>
+                        <td>
+                          {inv.status === 'pending' && (
+                            <S.PayButton onClick={() => handlePay(inv.id)}>
+                              {t('client.billing.table.pay_now', 'Pagar')}
+                            </S.PayButton>
+                          )}
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <S.EmptyStateCell colSpan="5">
+                        {t('client.billing.table.empty', 'Nenhuma fatura encontrada.')}
+                      </S.EmptyStateCell>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </S.InvoiceTable>
 
-        <S.PaginationWrapper>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
-          />
-        </S.PaginationWrapper>
-      </div>
+            {totalPages > 1 && (
+              <S.PaginationWrapper>
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  onPageChange={setCurrentPage}
+                />
+              </S.PaginationWrapper>
+            )}
+          </S.Panel>
+        )}
+
+        {activeTab === 'methods' && (
+          <S.Panel>
+            <PaymentMethodsList />
+          </S.Panel>
+        )}
+      </S.TabContent>
+
+      <PaymentModal invoice={selectedInvoice} onClose={() => setSelectedInvoice(null)} />
     </S.Container>
   );
 };

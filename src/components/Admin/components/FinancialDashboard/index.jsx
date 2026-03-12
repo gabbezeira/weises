@@ -18,10 +18,9 @@ import {
 import * as S from './styles';
 import { useAdmin } from '../../../../context/AdminContext';
 
-// --- Professional Color Palette ---
-const COLORS = ['#6366f1', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b']; // Indigo, Violet, Pink, Emerald, Amber
-const INCOME_GRADIENT = ['#10b981', '#34d399']; // Emerald
-const EXPENSE_GRADIENT = ['#ef4444', '#f87171']; // Red
+const COLORS = ['#6366f1', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b'];
+const INCOME_GRADIENT = ['#10b981', '#34d399'];
+const EXPENSE_GRADIENT = ['#ef4444', '#f87171'];
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
@@ -83,12 +82,10 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const FinancialDashboard = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { transactions } = useAdmin();
-  const [timeRange, setTimeRange] = useState('year'); // month, quarter, year, all
+  const [timeRange, setTimeRange] = useState('year');
 
-  // --- Filter Logic ---
-  // --- Filter Logic ---
   const filterTransactionsByDate = (txs) => {
     const now = new Date();
     const currentMonth = now.getMonth();
@@ -103,14 +100,12 @@ const FinancialDashboard = () => {
         return txDate.getMonth() === currentMonth && txDate.getFullYear() === currentYear;
       }
       if (timeRange === 'quarter') {
-        // Last 3 Months
         const threeMonthsAgo = new Date();
         threeMonthsAgo.setMonth(now.getMonth() - 2);
         threeMonthsAgo.setDate(1);
         return txDate >= threeMonthsAgo && txDate <= now;
       }
       if (timeRange === 'year') {
-        // Current Year
         return txDate.getFullYear() === currentYear;
       }
       if (timeRange === 'all') {
@@ -122,23 +117,88 @@ const FinancialDashboard = () => {
 
   const filteredTransactions = filterTransactionsByDate(transactions);
 
-  // --- Data Processing for Charts ---
-  // 1. Cash Flow (Grouping by Month)
   const getCashFlowData = () => {
     const data = {};
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth();
+    const currentLocale = i18n.language || 'pt-BR';
+
+    // Pre-fill ranges so Recharts draws continuous lines
+    if (timeRange === 'year') {
+      for (let i = 0; i <= 11; i++) {
+        const d = new Date(currentYear, i, 1);
+        const key = `${currentYear}-${String(i + 1).padStart(2, '0')}`;
+        data[key] = {
+          key,
+          label: d.toLocaleDateString(currentLocale, { month: 'short', year: 'numeric' }),
+          income: 0,
+          expense: 0,
+        };
+      }
+    } else if (timeRange === 'quarter') {
+      for (let i = 2; i >= 0; i--) {
+        const d = new Date(currentYear, currentMonth - i, 1);
+        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+        data[key] = {
+          key,
+          label: d.toLocaleDateString(currentLocale, { month: 'short', year: 'numeric' }),
+          income: 0,
+          expense: 0,
+        };
+      }
+    } else if (timeRange === 'month') {
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      for (let i = 1; i <= daysInMonth; i++) {
+        const key = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+        data[key] = {
+          key,
+          label: String(i).padStart(2, '0'),
+          income: 0,
+          expense: 0,
+        };
+      }
+    } else if (timeRange === 'all') {
+      // Pre-fill last 5 years to ensure a timeline exists even for fresh accounts
+      for (let i = 4; i >= 0; i--) {
+        const year = currentYear - i;
+        const key = `${year}`;
+        data[key] = {
+          key,
+          label: `${year}`,
+          income: 0,
+          expense: 0,
+        };
+      }
+    }
+
     filteredTransactions.forEach((tx) => {
       const dateObj = new Date(tx.date);
-      const key = `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, '0')}`;
-      const label = dateObj.toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' });
+      let key;
+      let label;
 
-      if (!data[key]) data[key] = { key, label, income: 0, expense: 0 };
-      if (tx.type === 'income') data[key].income += tx.amount;
-      else data[key].expense += tx.amount;
+      if (timeRange === 'month') {
+        key = `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, '0')}-${String(dateObj.getDate()).padStart(2, '0')}`;
+        label = String(dateObj.getDate()).padStart(2, '0');
+      } else if (timeRange === 'all') {
+        key = `${dateObj.getFullYear()}`;
+        label = `${dateObj.getFullYear()}`;
+        if (!data[key]) data[key] = { key, label, income: 0, expense: 0 };
+      } else {
+        key = `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2, '0')}`;
+        label = dateObj.toLocaleDateString(currentLocale, { month: 'short', year: 'numeric' });
+        if (!data[key]) data[key] = { key, label, income: 0, expense: 0 };
+      }
+
+      if (data[key]) {
+        if (tx.type === 'income') data[key].income += tx.amount;
+        else data[key].expense += tx.amount;
+      }
     });
+
     return Object.values(data).sort((a, b) => a.key.localeCompare(b.key));
   };
 
-  // 2. Revenue Mix
   const getRevenueMixData = () => {
     const data = {};
     filteredTransactions
@@ -177,7 +237,6 @@ const FinancialDashboard = () => {
         </S.FilterGroup>
       </S.Header>
 
-      {/* Main Cash Flow Chart - Takes 2 Columns */}
       <S.SpanningCard>
         <S.CardHeader>
           <S.CardTitle>{t('financial.dashboard.cash_flow_timeline')}</S.CardTitle>
@@ -207,7 +266,7 @@ const FinancialDashboard = () => {
               tick={{ fontSize: 12, fill: '#9ca3af', fontWeight: 500 }}
               tickFormatter={(value) => `R$${value / 1000}k`}
               dx={-10}
-              width={45} /* Fixed width to prevent scroll jitter */
+              width={45}
             />
             <CartesianGrid
               strokeDasharray="3 3"
@@ -241,7 +300,6 @@ const FinancialDashboard = () => {
         </ResponsiveContainer>
       </S.SpanningCard>
 
-      {/* Revenue Sources Donut - Takes 1 Column */}
       <S.ChartCard>
         <S.CardHeader>
           <S.CardTitle>{t('financial.dashboard.revenue_sources')}</S.CardTitle>

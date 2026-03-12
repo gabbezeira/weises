@@ -23,8 +23,7 @@ const Header = ({ toggleSidebar }) => {
   const getSearchPlaceholder = () => {
     const title = getPageTitle();
     if (title === t('admin.clients.title')) return t('admin.clients.search_placeholder');
-    // if (title === t('admin.projects.title')) return t('admin.projects.search_placeholder');
-    return t('admin.clients.search_placeholder').replace('clients', '...'); // Fallback
+    return t('admin.clients.search_placeholder').replace('clients', '...');
   };
 
   return (

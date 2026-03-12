@@ -68,6 +68,7 @@ const TransactionTable = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'paid':
+      case 'completed':
         return 'var(--color-success)';
       case 'pending':
         return 'var(--color-warning)';
@@ -83,7 +84,7 @@ const TransactionTable = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>Transactions</S.Title>
+        <S.Title>{t('financial.transactions.title')}</S.Title>
         <S.Filters>
           <S.FilterButton
             $active={filterType === 'all'}
@@ -92,7 +93,7 @@ const TransactionTable = () => {
               setCurrentPage(1);
             }}
           >
-            All
+            {t('financial.transactions.all')}
           </S.FilterButton>
           <S.FilterButton
             $active={filterType === 'income'}
@@ -101,7 +102,7 @@ const TransactionTable = () => {
               setCurrentPage(1);
             }}
           >
-            Income
+            {t('financial.transactions.income')}
           </S.FilterButton>
           <S.FilterButton
             $active={filterType === 'expense'}
@@ -110,7 +111,7 @@ const TransactionTable = () => {
               setCurrentPage(1);
             }}
           >
-            Expenses
+            {t('financial.transactions.expense')}
           </S.FilterButton>
         </S.Filters>
       </S.Header>
@@ -119,14 +120,14 @@ const TransactionTable = () => {
         <S.Table>
           <thead>
             <tr>
-              <S.Th>Type</S.Th>
-              <S.Th>Date</S.Th>
-              <S.Th>Category</S.Th>
-              <S.Th>Description</S.Th>
-              <S.Th>Context</S.Th>
-              <S.Th>Amount</S.Th>
-              <S.Th>Status</S.Th>
-              <S.Th>Actions</S.Th>
+              <S.Th>{t('financial.transactions.type')}</S.Th>
+              <S.Th>{t('financial.transactions.date')}</S.Th>
+              <S.Th>{t('financial.transactions.category')}</S.Th>
+              <S.Th>{t('financial.transactions.description')}</S.Th>
+              <S.Th>{t('financial.transactions.context')}</S.Th>
+              <S.Th>{t('financial.transactions.amount')}</S.Th>
+              <S.Th>{t('financial.transactions.status')}</S.Th>
+              <S.Th>{t('financial.transactions.actions')}</S.Th>
             </tr>
           </thead>
           <tbody>
@@ -166,10 +167,11 @@ const TransactionTable = () => {
                         borderColor: getStatusColor(tx.status),
                       }}
                     >
-                      <option value="pending">Pending</option>
-                      <option value="paid">Paid</option>
-                      <option value="overdue">Overdue</option>
-                      <option value="cancelled">Cancelled</option>
+                      <option value="pending">Pendente</option>
+                      <option value="paid">Pago</option>
+                      <option value="completed">Concluído</option>
+                      <option value="overdue">Atrasado</option>
+                      <option value="cancelled">Cancelado</option>
                     </S.StatusSelect>
                   </S.Td>
                   <S.Td>
@@ -187,7 +189,7 @@ const TransactionTable = () => {
                   colSpan="8"
                   style={{ textAlign: 'center', padding: '2rem', color: 'var(--color-gray-500)' }}
                 >
-                  No transactions found.
+                  {t('financial.transactions.empty.title_default')}
                 </S.Td>
               </tr>
             )}

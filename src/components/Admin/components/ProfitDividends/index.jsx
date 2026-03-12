@@ -7,9 +7,8 @@ import * as S from './styles';
 const ProfitDividends = () => {
   const { t } = useTranslation();
   const { transactions, taxSettings } = useAdmin();
-  const [timeFilter, setTimeFilter] = useState('current'); // 'current', 'quarter', 'year'
+  const [timeFilter, setTimeFilter] = useState('current');
 
-  // 0. Filter Logic
   const filterTransactions = (txs) => {
     const now = new Date();
     const currentMonth = now.getMonth();
@@ -47,31 +46,31 @@ const ProfitDividends = () => {
 
   const filteredTransactions = filterTransactions(transactions);
 
-  // 1. Calculations
   const totalRevenue = filteredTransactions
     .filter((t) => t.type === 'income')
     .reduce((acc, t) => acc + t.amount, 0);
 
   const totalExpenses = filteredTransactions
-    .filter((t) => t.type === 'expense')
+    .filter((t) => t.type === 'expense' && t.category !== 'Tax')
     .reduce((acc, t) => acc + t.amount, 0);
 
   const grossProfit = totalRevenue - totalExpenses;
 
-  // Tax Logic
+  const totalTaxPaid = filteredTransactions
+    .filter((t) => t.type === 'expense' && t.category === 'Tax')
+    .reduce((acc, t) => acc + t.amount, 0);
+
   const totalTaxRate = Object.values(taxSettings).reduce((acc, val) => acc + val, 0);
   const estimatedTax = totalRevenue * (totalTaxRate / 100);
   const hasTaxSettings = totalTaxRate > 0;
 
-  const netProfit = grossProfit - estimatedTax;
+  const actualTaxes = totalTaxPaid > 0 ? totalTaxPaid : estimatedTax;
 
-  // 2. Distribution Logic (Suggestion)
-  // Reserve: 20% of Net Profit
-  // Dividends: 80% of Net Profit
+  const netProfit = grossProfit - actualTaxes;
   const reservePercentage = 20;
   const dividendsPercentage = 80;
 
-  const reserveAmount = Math.max(0, netProfit * (reservePercentage / 100)); // Prevent negative
+  const reserveAmount = Math.max(0, netProfit * (reservePercentage / 100));
   const dividendsAmount = Math.max(0, netProfit * (dividendsPercentage / 100));
 
   const formatCurrency = (value) =>
@@ -94,7 +93,6 @@ const ProfitDividends = () => {
 
   return (
     <S.Container>
-      {/* Header & Summary */}
       <div>
         <S.Header>
           <div>
@@ -127,7 +125,6 @@ const ProfitDividends = () => {
         </S.Header>
 
         <S.SummaryGrid>
-          {/* Total Revenue */}
           <S.Card $color="var(--color-blue-500)">
             <S.CardHeader>
               <S.IconBox $bg="rgba(59, 130, 246, 0.1)" $color="var(--color-blue-500)">
@@ -144,7 +141,6 @@ const ProfitDividends = () => {
             </S.CardFooter>
           </S.Card>
 
-          {/* Total Expenses */}
           <S.Card $color="var(--color-red-500)">
             <S.CardHeader>
               <S.IconBox $bg="rgba(239, 68, 68, 0.1)" $color="var(--color-red-500)">
@@ -161,7 +157,6 @@ const ProfitDividends = () => {
             </S.CardFooter>
           </S.Card>
 
-          {/* Gross Profit */}
           <S.Card $color="var(--color-primary)">
             <S.CardHeader>
               <S.IconBox $bg="var(--color-primary-10)" $color="var(--color-primary)">
@@ -176,7 +171,6 @@ const ProfitDividends = () => {
             <S.CardFooter>{t('financial.overview.revenue_minus_expenses')}</S.CardFooter>
           </S.Card>
 
-          {/* Taxes */}
           <S.Card $color="var(--color-warning)">
             <S.CardHeader>
               <S.IconBox $bg="rgba(245, 158, 11, 0.1)" $color="var(--color-warning)">
@@ -186,7 +180,7 @@ const ProfitDividends = () => {
             </S.CardHeader>
             <S.CardValue>
               <span>R$</span>
-              {formatCurrency(estimatedTax)}
+              {formatCurrency(actualTaxes)}
             </S.CardValue>
             <S.CardFooter $color="var(--color-warning)">
               {t('financial.overview.rate')}: <strong>{totalTaxRate}%</strong>{' '}
@@ -199,7 +193,6 @@ const ProfitDividends = () => {
             )}
           </S.Card>
 
-          {/* Net Profit */}
           <S.Card $color="var(--color-success)">
             <S.CardHeader>
               <S.IconBox $bg="var(--color-success-10)" $color="var(--color-success)">
@@ -218,7 +211,6 @@ const ProfitDividends = () => {
         </S.SummaryGrid>
       </div>
 
-      {/* Distribution Suggestions */}
       <S.DistributionSection>
         <S.SectionTitle>
           <PieChart size={24} color="var(--color-primary)" />
@@ -240,7 +232,6 @@ const ProfitDividends = () => {
         </S.ProgressBar>
 
         <S.SuggestionGrid>
-          {/* Company Reserve */}
           <S.SuggestionCard $color="var(--color-blue-500)">
             <S.SuggestionLabel>
               <Building2
@@ -255,7 +246,6 @@ const ProfitDividends = () => {
             <S.SuggestionNote>{t('financial.distribution.reserve_note')}</S.SuggestionNote>
           </S.SuggestionCard>
 
-          {/* Partner Dividends */}
           <S.SuggestionCard $color="var(--color-purple-500)">
             <S.SuggestionLabel>
               <Users

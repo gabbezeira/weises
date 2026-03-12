@@ -105,7 +105,7 @@ export const Badge = styled.span`
     font-size: 0.75rem;
     font-weight: 500;
     background-color: var(--color-background);
-    color: var(--color-gray-600);
+    color: var(--color-gray-500);
     border: 1px solid var(--color-border);
 `;
 

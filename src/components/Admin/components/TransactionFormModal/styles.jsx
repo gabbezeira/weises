@@ -82,8 +82,8 @@ export const SegmentedButton = styled.button`
     overflow: hidden;
 
     ${({ $active, $type }) =>
-      $active &&
-      `
+        $active &&
+        `
         background-color: var(--color-surface);
         color: ${$type === 'income' ? 'var(--color-success)' : 'var(--color-danger)'};
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -91,7 +91,7 @@ export const SegmentedButton = styled.button`
 
     &:hover {
         color: ${({ $active, $type }) =>
-          $active
+        $active
             ? ($type === 'income' ? 'var(--color-success)' : 'var(--color-danger)')
             : 'var(--color-text)'};
     }
@@ -130,10 +130,10 @@ export const LargeAmountInput = styled.input`
     color: var(--color-text);
     width: 200px;
     outline: none;
-    text-align: left; /* Changed from center to accommodate prefix */
+    text-align: left;
 
     &::placeholder {
-        color: var(--color-gray-600);
+        color: var(--color-gray-500);
     }
     
     /* Remove arrows/spinners */

@@ -1,13 +1,18 @@
 import React from 'react';
 import { FolderOpen } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import * as S from './styles';
 
 const EmptyState = ({
-  title = 'No Items Found',
-  description = "We couldn't find any items matching your criteria.",
+  title,
+  description,
   icon: Icon = FolderOpen,
   children,
 }) => {
+  const { t } = useTranslation();
+
+  const displayTitle = title || t('common.empty_state.title', 'Nenhum item encontrado');
+  const displayDesc = description || t('common.empty_state.description', 'Não encontramos nenhum item correspondente.');
   return (
     <S.Container>
       <S.IconWrapper
@@ -25,7 +30,7 @@ const EmptyState = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
       >
-        {title}
+        {displayTitle}
       </S.Title>
 
       <S.Description
@@ -33,7 +38,7 @@ const EmptyState = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        {description}
+        {displayDesc}
       </S.Description>
 
       {children && <div style={{ marginTop: '2rem' }}>{children}</div>}

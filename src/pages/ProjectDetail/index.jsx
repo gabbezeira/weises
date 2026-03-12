@@ -23,7 +23,7 @@ const ProjectDetail = () => {
         }
       } catch (error) {
         console.error('Failed to fetch project:', error);
-        setError('Project not found');
+        setError(t('project_detail.not_found'));
       } finally {
         setLoading(false);
       }
@@ -52,10 +52,9 @@ const ProjectDetail = () => {
   }
 
   if (error || !project) {
-    return <S.NotFoundContainer>Project not found</S.NotFoundContainer>;
+    return <S.NotFoundContainer>{t('project_detail.not_found')}</S.NotFoundContainer>;
   }
 
-  // Use DB data directly, specific translation fallbacks if needed, but DB is source of truth
   const services = project.services || [];
   const stack = project.stack || [];
 

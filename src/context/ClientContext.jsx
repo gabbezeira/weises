@@ -27,29 +27,16 @@ export const ClientProvider = ({ children }) => {
       }
 
       try {
-        const [clientRes, projectsRes] = await Promise.all([
+        const [clientRes, projectsRes, invoicesRes] = await Promise.all([
           api.get(`/clients/${profile.clientId}`),
           api.get('/projects'),
+          api.get(`/invoices?clientId=${profile.clientId}`)
         ]);
 
         setCurrentClient(clientRes.data);
         setClientProjects(projectsRes.data || []);
 
-        const allInvoices = [];
-        for (const project of projectsRes.data || []) {
-          try {
-            const invoicesRes = await api.get(`/projects/${project.id}/invoices`);
-            allInvoices.push(
-              ...(invoicesRes.data || []).map((inv) => ({
-                ...inv,
-                projectTitle: project.title,
-                projectId: project.id,
-              })),
-            );
-          } catch {
-            /* empty */
-          }
-        }
+        const allInvoices = invoicesRes.data || [];
         allInvoices.sort((a, b) => new Date(b.date) - new Date(a.date));
         setClientInvoices(allInvoices);
       } catch (err) {

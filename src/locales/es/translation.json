@@ -158,7 +158,8 @@
       "message": "Mensaje",
       "message_placeholder": "Cuéntanos sobre tu proyecto...",
       "submit": "Enviar Mensaje"
-    }
+    },
+    "email_link": "hello@weises.tech"
   },
   "projects_page": {
     "hero": {
@@ -193,7 +194,8 @@
       "team_size": "Equipo",
       "platform": "Plataforma",
       "stack": "Tecnologías"
-    }
+    },
+    "not_found": "Proyecto no encontrado"
   },
   "footer": {
     "company_desc": "Pioneros en la próxima generación de experiencias digitales. Creamos software que escala con tu ambición.",
@@ -209,7 +211,11 @@
       "description": "Una revisión completa de la infraestructura bancaria heredada para soportar millones de transacciones simultáneas con latencia submilisegundo.",
       "challenge": "El cliente enfrentó importantes problemas de escalabilidad durante las horas pico, lo que provocó fallas en las transacciones y pérdida de usuarios.",
       "solution": "Diseñamos una solución basada en microservicios utilizando Node.js y Go, implementada en Kubernetes. Implementamos una arquitectura basada en eventos con Apache Kafka para el procesamiento de transacciones en tiempo real.",
-      "services": ["Ingeniería Backend", "Arquitectura en la Nube", "Sistemas de Seguridad"],
+      "services": [
+        "Ingeniería Backend",
+        "Arquitectura en la Nube",
+        "Sistemas de Seguridad"
+      ],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "6 Seniors",
@@ -223,7 +229,11 @@
       "description": "Un panel inteligente que visualiza flujos de datos complejos y utiliza modelos predictivos para pronosticar tendencias comerciales.",
       "challenge": "Los usuarios estaban abrumados por los datos sin procesar y carecían de información procesable.",
       "solution": "Creamos un panel basado en React con D3.js para la visualización e integramos modelos de ML basados en Python para proporcionar análisis predictivos en tiempo real.",
-      "services": ["Visualización de Datos", "Integración ML", "Desarrollo Frontend"],
+      "services": [
+        "Visualización de Datos",
+        "Integración ML",
+        "Desarrollo Frontend"
+      ],
       "stats_values": {
         "methodology": "Scrum",
         "team_size": "4 Expertos",
@@ -237,7 +247,11 @@
       "description": "Un motor de comercio electrónico headless diseñado para velocidad, flexibilidad y altas tasas de conversión.",
       "challenge": "Las cargas lentas de página y una arquitectura monolítica rígida estaban sofocando el crecimiento.",
       "solution": "Desarrollamos una solución headless usando Next.js y Shopify Plus, optimizando para Core Web Vitals y logrando un aumento del 40% en la conversión.",
-      "services": ["Comercio Headless", "Optimización de Rendimiento", "Diseño UX"],
+      "services": [
+        "Comercio Headless",
+        "Optimización de Rendimiento",
+        "Diseño UX"
+      ],
       "stats_values": {
         "methodology": "Kanban",
         "team_size": "5 Seniors",
@@ -251,7 +265,11 @@
       "description": "Una plataforma de telemedicina segura y compatible con HIPAA que conecta a pacientes con especialistas de todo el mundo.",
       "challenge": "La seguridad y la facilidad de uso fueron primordiales para la adopción por parte de pacientes mayores.",
       "solution": "Priorizamos la accesibilidad en el diseño UI/UX e implementamos cifrado de extremo a extremo para todas las videollamadas y el almacenamiento de datos.",
-      "services": ["Cumplimiento HIPAA", "Video en Tiempo Real", "App Móvil"],
+      "services": [
+        "Cumplimiento HIPAA",
+        "Video en Tiempo Real",
+        "App Móvil"
+      ],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "3 Expertos",
@@ -265,7 +283,11 @@
       "description": "Seguimiento de activos criptográficos en tiempo real y gestión de carteras.",
       "challenge": "Alta latencia en la obtención de datos.",
       "solution": "Conexiones WebSocket implementadas para actualizaciones de subsegundos.",
-      "services": ["Integración Web3", "Datos en Tiempo Real", "Panel de Control"],
+      "services": [
+        "Integración Web3",
+        "Datos en Tiempo Real",
+        "Panel de Control"
+      ],
       "stats_values": {
         "methodology": "Sprint",
         "team_size": "3 Devs",
@@ -279,7 +301,11 @@
       "description": "Interfaz de control de hogar inteligente para dispositivos IoT.",
       "challenge": "Soporte de protocolo de ecosistema fragmentado.",
       "solution": "Hub de integración unificado del protocolo Matter.",
-      "services": ["Protocolo IoT", "App Móvil", "UX/UI"],
+      "services": [
+        "Protocolo IoT",
+        "App Móvil",
+        "UX/UI"
+      ],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "4 Seniors",
@@ -293,7 +319,11 @@
       "description": "Expansión global de la infraestructura bancaria.",
       "challenge": "Escalando a mercados internacionales.",
       "solution": "Arquitectura de nube distribuida.",
-      "services": ["Localización", "Escalado", "Soporte"],
+      "services": [
+        "Localización",
+        "Escalado",
+        "Soporte"
+      ],
       "stats_values": {
         "methodology": "DevOps",
         "team_size": "8 Expertos",
@@ -307,7 +337,10 @@
       "description": "Extensión de visión por computadora para Nexus.",
       "challenge": "Procesamiento de video en tiempo real.",
       "solution": "Procesamiento impulsado por WebAssembly.",
-      "services": ["Visión por Computadora", "WASM"],
+      "services": [
+        "Visión por Computadora",
+        "WASM"
+      ],
       "stats_values": {
         "methodology": "I+D",
         "team_size": "3 PhDs",
@@ -321,7 +354,10 @@
       "description": "Solución de comercio electrónico de grado empresarial.",
       "challenge": "Gestión de inventario de alto volumen.",
       "solution": "Motor de inventario personalizado.",
-      "services": ["Sistema de Inventario", "Desarrollo de API"],
+      "services": [
+        "Sistema de Inventario",
+        "Desarrollo de API"
+      ],
       "stats_values": {
         "methodology": "Waterfall",
         "team_size": "6 Devs",
@@ -335,7 +371,10 @@
       "description": "Portal profesional para proveedores de atención médica.",
       "challenge": "Necesidades complejas de programación.",
       "solution": "Sistema de programación asistido por IA.",
-      "services": ["Portal de Proveedores", "Programación"],
+      "services": [
+        "Portal de Proveedores",
+        "Programación"
+      ],
       "stats_values": {
         "methodology": "Ágil",
         "team_size": "4 Seniors",
@@ -344,13 +383,391 @@
       }
     }
   },
+  "common": {
+    "delete_modal": {
+      "title": "Eliminar Elemento",
+      "message": "¿Está seguro de que desea eliminar este elemento? Esta acción no se puede deshacer.",
+      "confirm": "Eliminar",
+      "cancel": "Cancelar"
+    },
+    "pagination": {
+      "page": "Página"
+    },
+    "actions": {
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "back": "Volver",
+      "update": "Actualizar",
+      "create": "Crear",
+      "upload_image": "Subir Imagen"
+    }
+  },
+  "admin": {
+    "header": {
+      "welcome": "Bienvenido",
+      "logout": "Cerrar sesión",
+      "profile": "Perfil"
+    },
+    "sidebar": {
+      "dashboard": "Panel",
+      "clients": "Clientes",
+      "projects": "Proyectos",
+      "services": "Servicios",
+      "financial": "Finanzas",
+      "settings": "Configuración"
+    },
+    "dashboard": {
+      "active_projects": "Proyectos Activos",
+      "total_clients": "Clientes Totales",
+      "pending_tasks": "Tareas Pendientes",
+      "revenue": "Ingresos Mensuales",
+      "recent_activity": "Actividad Reciente",
+      "quick_actions": "Acciones Rápidas",
+      "new_client": "Nuevo Cliente",
+      "new_project": "Nuevo Proyecto",
+      "from_last_month": "del mes pasado"
+    },
+    "clients": {
+      "title": "Clientes",
+      "add_client": "Añadir Cliente",
+      "search_placeholder": "Buscar clientes...",
+      "status": {
+        "active": "Activo",
+        "inactive": "Inactivo",
+        "cancelled": "Cancelado"
+      },
+      "table": {
+        "client": "Cliente",
+        "contact": "Contacto",
+        "status": "Estado",
+        "actions": "Acciones"
+      },
+      "form": {
+        "edit_title": "Editar Cliente",
+        "new_title": "Nuevo Cliente",
+        "business_info": "Información del Negocio",
+        "client_name": "Nombre del Cliente",
+        "company_name": "Nombre de la Empresa",
+        "business_sector": "Sector Empresarial",
+        "contact_details": "Detalles de Contacto",
+        "email": "Correo Electrónico",
+        "phone": "Número de Teléfono",
+        "contract_metrics": "Contrato y Métricas",
+        "lead_source": "Fuente del Lead",
+        "contract_start": "Inicio del Contrato",
+        "monthly_plan": "Plan Mensual",
+        "monthly_value": "Valor Mensual (R$)",
+        "client_panel_access": "Acceso al Panel",
+        "username": "Nombre de Usuario",
+        "password": "Contraseña",
+        "cancel": "Cancelar",
+        "save": "Guardar Cliente",
+        "update": "Actualizar Cliente"
+      },
+      "billing": {
+        "back": "Volver a Clientes",
+        "title": "Facturación y Cobros",
+        "new_charge": "Nuevo Cargo",
+        "add_service": "Añadir Servicio",
+        "empty": "No hay facturas para este cliente.",
+        "mark_paid": "Marcar Pagado",
+        "mark_paid_confirm": "¿Está seguro de que desea marcar esta factura como pagada? Esto generará automáticamente una transacción de ingresos.",
+        "table": {
+          "date": "Fecha",
+          "description": "Descripción",
+          "project": "Proyecto",
+          "amount": "Monto",
+          "status": "Estado",
+          "actions": "Acciones"
+        }
+      }
+    },
+    "projects": {
+      "title": "Proyectos",
+      "add_project": "Añadir Proyecto",
+      "task_board": "Tareas",
+      "new_task": "Nueva Tarea",
+      "columns": {
+        "todo": "Por Hacer",
+        "in_progress": "En Progreso",
+        "done": "Completado"
+      },
+      "actions": {
+        "move_back": "Mover Atrás",
+        "move_forward": "Mover Adelante"
+      },
+      "delete_modal": {
+        "title": "Eliminar Tarea",
+        "message": "¿Está seguro de que desea eliminar esta tarea? Esta acción no se puede deshacer."
+      },
+      "not_found": "Proyecto no encontrado",
+      "modal": {
+        "edit_title": "Detalles de la Tarea",
+        "new_title": "Crear Nueva Tarea",
+        "input": {
+          "title": "Título de la Tarea",
+          "title_placeholder": "Ingrese el título de la tarea",
+          "priority": "Prioridad",
+          "due_date": "Fecha de Vencimiento",
+          "assignee": "Asignado a",
+          "assignee_placeholder": "Asignar a...",
+          "description": "Descripción y Notas",
+          "description_placeholder": "Añada una descripción detallada, notas o listas..."
+        },
+        "priority": {
+          "low": "Baja",
+          "medium": "Media",
+          "high": "Alta",
+          "critical": "Crítica"
+        }
+      },
+      "private_details": "Detalles Privados",
+      "delete_project_modal": {
+        "title": "Eliminar Proyecto",
+        "message": "¿Está seguro de que desea eliminar este proyecto? Todos los datos se perderán."
+      },
+      "form": {
+        "edit_title": "Editar Proyecto",
+        "new_title": "Nuevo Proyecto",
+        "core_info": "Información Principal",
+        "project_title": "Título del Proyecto",
+        "select_client": "Seleccionar Cliente",
+        "category": "Categoría",
+        "deadline": "Fecha Límite",
+        "private_info": "Información Privada (Solo Admin)",
+        "project_value": "Valor del Proyecto",
+        "credentials": "Credenciales y Acceso",
+        "credential_num": "Credencial #",
+        "add_credential": "Añadir Credencial",
+        "project_details": "Detalles del Proyecto",
+        "description": "Descripción",
+        "challenge": "Desafío",
+        "solution": "Solución",
+        "technical_specs": "Especificaciones Técnicas",
+        "methodology": "Metodología",
+        "team_size": "Tamaño del Equipo",
+        "platform": "Plataforma",
+        "year": "Año",
+        "duration": "Duración",
+        "live_link": "Enlace en Vivo",
+        "services": "Servicios",
+        "stack": "Stack Tecnológico",
+        "media": "Multimedia",
+        "cover_image": "URL de la Imagen de Portada",
+        "gallery_images": "Imágenes de la Galería",
+        "progress_timeline": "Progreso y Cronograma del Proyecto",
+        "estimated_completion": "Finalización Estimada",
+        "project_stages": "Etapas del Proyecto",
+        "stage_name_placeholder": "Nombre (ej. Diseño, Desarrollo)",
+        "add_stage": "Añadir Etapa",
+        "delete_credential_modal": {
+          "title": "Eliminar Credencial",
+          "message": "¿Está seguro de eliminar esta credencial? Deberá guardar el proyecto para aplicar los cambios."
+        }
+      },
+      "credentials_modal": {
+        "title": "Detalles Privados: {{title}}",
+        "open": "Abrir",
+        "username": "Usuario / Correo",
+        "password": "Contraseña",
+        "copy_username": "Copiar usuario",
+        "copy_password": "Copiar contraseña",
+        "hide": "Ocultar",
+        "show": "Mostrar",
+        "no_credentials": "No hay credenciales.",
+        "decrypting": "Descifrando claves..."
+      },
+      "progress_modal": {
+        "title": "Progreso del Proyecto",
+        "progress": "Progreso General",
+        "completed": "Completado",
+        "pending": "Pendiente",
+        "no_stages": "No hay etapas definidas. Edite el proyecto para añadir etapas."
+      },
+      "status": {
+        "planning": "Planificando",
+        "in_progress": "En Progreso",
+        "completed": "Completado",
+        "on_hold": "En Pausa"
+      }
+    },
+    "services": {
+      "title": "Gestión de Servicios",
+      "add_service": "Añadir Servicio",
+      "edit_service": "Editar Servicio",
+      "delete_service": "Eliminar Servicio",
+      "create_service": "Crear Servicio",
+      "status": {
+        "active": "Activo",
+        "inactive": "Inactivo"
+      },
+      "empty_title": "No se encontraron servicios",
+      "empty_desc": "Comienza añadiendo servicios predefinidos.",
+      "name": "Nombre del Servicio",
+      "description": "Descripción",
+      "price": "Precio (R$)",
+      "icon": "Ícono del Servicio",
+      "visibility": "Estado de Visibilidad",
+      "save": "Guardar Servicio",
+      "modal": {
+        "new_title": "Nuevo Servicio",
+        "edit_title": "Editar Servicio",
+        "name_placeholder": "ej: Desarrollo de Sitio Web",
+        "desc_placeholder": "Descripción detallada del servicio...",
+        "active_text": "Activo",
+        "active_desc": "Visible para todos los clientes",
+        "inactive_text": "Inactivo",
+        "inactive_desc": "Oculto para los clientes",
+        "cancel": "Cancelar"
+      },
+      "delete_modal": {
+        "title": "Eliminar Servicio",
+        "message": "¿Estás seguro? Esta acción no se puede deshacer."
+      }
+    },
+    "billing": {
+      "new_charge_title": "Nueva Factura Personalizada para",
+      "new_charge_desc": "Cree facturas a pedido para servicios adicionales. El monto se integrará automáticamente en sus finanzas una vez pagado.",
+      "add_service_title": "Añadir Servicio a",
+      "add_service_desc": "Seleccione un servicio predefinido de su catálogo y adjúntelo al ciclo de facturación de este cliente.",
+      "select_service": "Seleccionar un Servicio",
+      "generate_options_title": "Generar Cobro",
+      "generate_options_desc": "El valor del proyecto es <strong>{{value}}</strong>. ¿Cómo le gustaría facturar al cliente?",
+      "generate_btn": "Generar Factura(s)",
+      "no_project": "-- Sin proyecto vinculado --",
+      "custom_service": "-- Artículo Personalizado / Ad-hoc --",
+      "options": {
+        "payment_structure": "Estructura de Pago",
+        "single": "Pago Único",
+        "single_desc": "Generar 1 factura por el monto total inmediatamente.",
+        "split": "División 50/50",
+        "split_desc": "Genera 1 factura de anticipo ahora y 1 para la entrega final.",
+        "installments": "Cuotas Mensuales",
+        "installments_desc": "Divida equitativamente en múltiples facturas mensuales.",
+        "months_label": "Meses",
+        "no_value_title": "Opciones de Cobro",
+        "no_value_desc": "No se ha definido ningún valor financiero para este proyecto.",
+        "pix": "Pix",
+        "credit_card": "Tarjeta de Crédito"
+      },
+      "fields": {
+        "description": "Descripción / Título",
+        "amount": "Monto Total",
+        "due_date": "Fecha de Vencimiento",
+        "split_due_date": "Fecha de Pago Final",
+        "project_link": "Vincular a un Proyecto",
+        "payment_structure": "Estructura de Pago",
+        "payment_method": "Forma de Pago"
+      },
+      "placeholders": {
+        "description": "Ej: Configuración Extra de Servidor",
+        "amount": "150.00"
+      }
+    },
+    "settings": {
+      "wiki": {
+        "title": "Documentación",
+        "how_db_works": "Cómo Funciona la Base de Datos",
+        "security_section": {
+          "users_profile": "Perfil de Usuarios",
+          "full_access_users": "Acceso Total (Crear, Editar, Eliminar)",
+          "read_own_profile": "Leer Solo Perfil Propio",
+          "cannot_read_others": "No Puede Leer a Otros",
+          "projects": "Proyectos",
+          "full_access_projects": "Acceso Total a Todos los Proyectos",
+          "read_assigned_projects": "Leer Proyectos Asignados",
+          "cannot_edit_specs": "No Puede Editar Especificaciones",
+          "credentials": "Credenciales de Proyecto",
+          "decrypt_all": "Desencriptar y Ver Todo",
+          "decrypt_own": "Desencriptar (Solo Propios)",
+          "finance": "Finanzas y Facturas",
+          "full_access_finance": "Acceso Total (Crear Facturas, Editar Estado)",
+          "view_own_invoices": "Ver Propias Facturas y Transacciones",
+          "cannot_create_invoices": "No Puede Crear o Eliminar Facturas",
+          "catalog": "Catálogo de Servicios",
+          "manage_catalog": "Gestionar Catálogo (Añadir, Eliminar)",
+          "view_services": "Ver Servicios Disponibles",
+          "cannot_edit_pricing": "No Puede Editar Precios",
+          "admin_privileges": "Privilegios de Admin",
+          "admin": "Admin",
+          "client_privileges": "Privilegios de Cliente",
+          "client": "Cliente"
+        },
+        "tabs": {
+          "architecture": "Arquitectura del Sistema",
+          "database": "Base de Datos y Almacenamiento",
+          "api": "Referencia de la API",
+          "security": "Seguridad y Accesos"
+        },
+        "api": {
+          "title": "Referencia de la API del Sistema",
+          "desc1": "Documentación completa de los endpoints de la API REST del sistema. La autenticación se maneja a través de tokens de Firebase Auth enviados en el header ",
+          "desc2": ". Usa esta documentación para entender la estructura de los datos y escalar el proyecto efectivamente.",
+          "auth_group": "Autenticación y Usuarios",
+          "projects_group": "Proyectos Creativos",
+          "clients_group": "Clientes (CRM)",
+          "tasks_group": "Tareas y Gestión",
+          "finance_group": "Finanzas",
+          "services_group": "Catálogo de Servicios",
+          "stripe_group": "Integración Stripe",
+          "query_params": "Parámetros de Consulta / Ruta",
+          "required": "Requerido",
+          "no_params": "No se requieren parámetros para este endpoint.",
+          "req_body": "Cuerpo de la Petición (JSON)",
+          "res_example": "Ejemplo de Respuesta"
+        },
+        "architecture": "Arquitectura",
+        "security": "Seguridad",
+        "database": "Base de Datos",
+        "admin_panel": "Panel de Admin (React)",
+        "admin_panel_desc": "Panel administrativo para gestionar usuarios, proyectos y finanzas.",
+        "client_portal": "Portal del Cliente (React)",
+        "client_portal_desc": "Área de acceso restringido para que clientes vean proyectos y facturas.",
+        "backend_api": "API Backend (Node.js)",
+        "backend_api_desc": "Servidor Express con lógica de negocio, middleware y seguridad.",
+        "firestore": "Google Firestore",
+        "firestore_desc": "Base de datos NoSQL en tiempo real para Usuarios, Proyectos y Finanzas.",
+        "auth": "Firebase Auth",
+        "auth_desc": "Proveedor de identidad para Autenticación y JWT.",
+        "storage": "Firebase Storage",
+        "storage_desc": "Almacenamiento de objetos para Portadas, Galerías y Avatares.",
+        "tech_stack": "Pila de Tecnología e Integraciones",
+        "integrations": "Integraciones",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database_tech": "Base de Datos",
+        "rbac": "Control de Acceso (RBAC)",
+        "rbac_desc": "Definido en firestore.rules y middleware/roleGuard.js",
+        "resource": "Recurso",
+        "users": "Usuarios",
+        "projects": "Proyectos",
+        "credentials": "Credenciales Privadas",
+        "financials": "Finanzas (Transacciones)",
+        "catalog": "Catálogo de Servicios",
+        "firestore_schema": "Firestore (Esquema NoSQL)",
+        "schema_desc": "Esta base de datos (Firestore) funciona como un archivador gigante. Cada \"Carpeta\" principal se llama Colección, y dentro de ella están los \"Archivos\" llamados Documentos.",
+        "key_collections": "Colecciones Clave:",
+        "users_desc": "Perfiles de acceso y CRM. Verificamos el rol (role) del usuario aquí para saber si es un Admin o Cliente.",
+        "projects_desc": "El hub central. Los datos específicos de un proyecto (como contraseñas o etapas) viven dentro de él como Sub-colecciones.",
+        "tasks_desc": "El tablero Kanban. Documentos independientes que contienen una referencia 'projectId' vinculándolos a un proyecto.",
+        "transactions_desc": "Tu flujo de caja. Registros financieros centrales que pueden vincularse a proyectos o clientes.",
+        "search_schema": "Buscar colecciones, docs o campos...",
+        "storage_buckets": "Buckets de Almacenamiento",
+        "dev_tip": "Consejo para Devs:",
+        "dev_tip_desc": "Las consultas de Firebase actúan a nivel de colección. Siempre crea índices en la Consola de Firebase si filtras por múltiples campos simultáneamente."
+      }
+    }
+  },
   "financial": {
-    "title": "Financiero",
+    "title": "Finanzas",
     "overview": {
       "title": "Resumen Financiero",
       "total_revenue": "Ingresos Totales",
       "net_profit": "Beneficio Neto",
       "total_expenses": "Gastos Totales",
+      "expenses_paid": "Gastos Pagados",
       "gross_profit": "Beneficio Bruto",
       "estimated_taxes": "Impuestos Estimados",
       "rate": "Tasa",
@@ -364,8 +781,11 @@
     },
     "filters": {
       "current_month": "Mes Actual",
+      "current_quarter": "Trimestre Actual",
       "last_3_months": "Últimos 3 Meses",
       "last_12_months": "Últimos 12 Meses",
+      "current_year": "Año Actual",
+      "all_time": "Todo el Tiempo",
       "detailed_breakdown": "Desglose detallado para",
       "this_month": "Este Mes"
     },
@@ -420,6 +840,19 @@
         "all": "Todos"
       }
     },
+    "fixed_expenses": {
+      "total": "Costo Fijo Mensual Total",
+      "add": "Añadir Gasto Fijo",
+      "empty_title": "Aún no hay gastos fijos",
+      "empty_desc": "Agregue gastos recurrentes como alquiler, salarios o suscripciones para rastrear sus costos fijos mensuales.",
+      "table": {
+        "next_due": "Próximo Vencimiento",
+        "category": "Categoría",
+        "description": "Descripción",
+        "amount": "Monto",
+        "actions": "Acciones"
+      }
+    },
     "modals": {
       "fixed_expense": {
         "title": "Nuevo Gasto Fijo",
@@ -444,42 +877,32 @@
         "recurring": "Transacción Recurrente",
         "recurring_hint": "Repetir mensualmente",
         "tax_provision": "Provisión de Impuestos",
-        "tax_hint": "Calc. automático ({{rate}}%)",
+        "tax_hint": "Calculado ({{rate}}%)",
         "save": "Guardar {{type}}"
-      },
-      "categories": {
-        "subscription": "Suscripción",
-        "rent": "Alquiler / Oficina",
-        "server": "Servidor / Hosting",
-        "tax": "Impuestos / Gobierno",
-        "salary": "Salario / Equipo",
-        "other": "Otros",
-        "project": "Proyecto",
-        "retainer": "Retainer",
-        "consulting": "Consultoría",
-        "operational": "Operacional",
-        "freelance": "Freelance",
-        "marketing": "Marketing",
-        "software": "Software",
-        "progress_timeline": "Progreso y Cronograma del Proyecto",
-        "estimated_completion": "Finalización Estimada",
-        "project_stages": "Etapas del Proyecto",
-        "stage_name_placeholder": "Nombre de la Etapa (ej. Diseño, Desarrollo)",
-        "add_stage": "Agregar Etapa"
-      },
-      "progress_modal": {
-        "title": "Progreso del Proyecto",
-        "progress": "Progreso General",
-        "completed": "Hecho",
-        "pending": "Pendiente",
-        "no_stages": "No hay etapas definidas. Agregue etapas en el formulario del proyecto."
-      },
-      "status": {
-        "pending": "Pendiente",
-        "paid": "Pagado",
-        "overdue": "Atrasado",
-        "cancelled": "Cancelado"
       }
+    },
+    "categories": {
+      "invoice": "Factura",
+      "subscription": "Suscripción",
+      "rent": "Alquiler / Oficina",
+      "server": "Servidor / Hosting",
+      "tax": "Impuestos / Gobierno",
+      "salary": "Salario / Equipo",
+      "other": "Otros",
+      "project": "Proyecto",
+      "retainer": "Retainer",
+      "consulting": "Consultoría",
+      "operational": "Operacional",
+      "freelance": "Freelance",
+      "marketing": "Marketing",
+      "software": "Software"
+    },
+    "status": {
+      "pending": "Pendiente",
+      "paid": "Pagado",
+      "overdue": "Vencido",
+      "cancelled": "Cancelado",
+      "completed": "Completado"
     }
   },
   "client": {
@@ -503,10 +926,14 @@
       "stats": {
         "active_projects": "Proyectos Activos",
         "completed_projects": "{{count}} proyectos completados",
+        "pending": "Pago Pendiente",
+        "overdue": "Pago Vencido",
+        "billing_status": "Estado de Facturación",
+        "pending_count": "factura(s) esperando pago",
         "next_due_invoice": "Próxima Factura",
         "total_invested": "Total Invertido",
         "lifetime_value": "Valor de por vida",
-        "all_paid": "Todo Pagado",
+        "all_paid": "Todo al Día",
         "no_pending": "No hay facturas pendientes",
         "due_date": "Vence el {{date}}"
       },
@@ -547,15 +974,25 @@
           "challenge": "Desafío",
           "solution": "Solución",
           "tech_stack": "Stack Tecnológico",
-          "deliverables": "Entregables Clave"
+          "deliverables": "Entregables Clave",
+          "no_challenge": "No hay descripción del desafío disponible.",
+          "no_solution": "No hay descripción de la solución disponible.",
+          "deliverables_list": {
+            "design": "Design System",
+            "backend": "Backend API",
+            "frontend": "Interfaz Frontend"
+          }
         },
         "credentials": {
           "access": "Acceder",
           "username": "Usuario",
-          "password": "Contraseña"
+          "password": "Contraseña",
+          "open_modal": "Ver Todas las Credenciales"
         },
         "contract": {
           "title": "Acuerdo de Servicio",
+          "document_title": "Acuerdo de Desarrollo Web",
+          "document_desc": "Firmado el 10 de Enero de 2026. Este documento describe el alcance, entregables, cronograma y condiciones de pago.",
           "view": "Ver",
           "download": "Descargar PDF"
         },
@@ -570,24 +1007,131 @@
       "subtitle": "Explore servicios adicionales para hacer crecer su negocio.",
       "available_services": "Servicios Disponibles",
       "request_btn": "Solicitar",
-      "faq_title": "Preguntas Frecuentes"
+      "faq_title": "Preguntas Frecuentes",
+      "faq": {
+        "q1": "¿Cómo solicito un servicio?",
+        "a1": "Simplemente haga clic en el botón 'Solicitar' en cualquier tarjeta de servicio. Se creará un ticket y nuestro equipo se contactará para confirmar detalles.",
+        "q2": "¿Qué métodos de pago son aceptados?",
+        "a2": "Aceptamos tarjetas de crédito, transferencias y Pix. Puedes gestionar tus métodos en la sección de Facturación.",
+        "q3": "¿Puedo cancelar un servicio solicitado?",
+        "a3": "Sí, siempre que no haya comenzado. Por favor, contacta con soporte a través del Panel.",
+        "q4": "¿Son precios definitivos?",
+        "a4": "Son precios iniciales. Requisitos más complejos pueden requerir un presupuesto personalizado."
+      }
     },
     "billing": {
-      "title": "Facturas y Facturación",
-      "subtitle": "Gestione pagos, métodos y servicios adicionales.",
+      "title": "Facturación",
+      "subtitle": "Gestione sus facturas y métodos de pago.",
       "payment_methods": "Métodos de Pago",
       "card_holder": "Titular de la Tarjeta",
       "add_card": "Agregar Tarjeta de Crédito",
       "invoice_history": "Historial de Facturas",
+      "tabs": {
+        "invoices": "Facturas",
+        "methods": "Métodos de Pago"
+      },
+      "stats": {
+        "pending": "pendiente(s)",
+        "overdue": "vencida(s)",
+        "total": "factura(s)"
+      },
+      "status": {
+        "pending": "Pendiente",
+        "paid": "Pagado",
+        "overdue": "Vencido"
+      },
       "table": {
         "date": "Fecha",
+        "due_date": "Vencimiento",
         "description": "Descripción",
         "amount": "Monto",
         "status": "Estado",
         "actions": "Acciones",
         "empty": "No se encontraron facturas.",
-        "pay_now": "Pagar Ahora"
+        "pay_now": "Pagar"
+      },
+      "payment": {
+        "title": "Realizar Pago",
+        "credit_card": "Tarjeta de Crédito",
+        "stripe_error": "Error al cobrar la tarjeta.",
+        "success": "¡Pago aprobado con éxito!",
+        "processing": "Procesando Pago...",
+        "pay_now": "Pagar Ahora",
+        "select_card": "Seleccione la Tarjeta:",
+        "select_card_first": "Por favor, seleccione una tarjeta primero.",
+        "fee_hint": "Al confirmar el pago, la tarifa del proveedor se trasladará íntegramente al importe final.",
+        "no_cards": "Aún no tiene tarjetas guardadas. Cierre este modal y añada una en la pestaña \"Métodos de Pago\".",
+        "receipt": {
+          "original": "Importe Original",
+          "fee": "Tarifa de Procesamiento (Stripe)",
+          "total": "Total a Cobrar"
+        },
+        "pix": {
+          "step1": "1. Abre la app de tu banco y ve a Pix.",
+          "step2": "2. Elige la opción Pix Copia y Pega.",
+          "step3": "Después de pagar, envíe el comprobante a nuestro WhatsApp:",
+          "copy_title": "Copiar Clave Pix",
+          "copied": "¡Clave Pix copiada con éxito!"
+        }
+      },
+      "methods": {
+        "title": "Tarjetas Guardadas",
+        "subtitle_plural": "{{count}} tarjeta(s) en su cuenta",
+        "subtitle_empty": "Ninguna tarjeta registrada",
+        "add": "Agregar Tarjeta",
+        "security": "Protegido por Stripe PCI DSS",
+        "field_number": "Número de Tarjeta",
+        "field_expiry": "Vencimiento",
+        "field_cvc": "CVC",
+        "field_cep": "Código Postal de Facturación",
+        "field_cep_placeholder": "00000",
+        "save_card": "Guardar Tarjeta",
+        "saving": "Guardando...",
+        "cancel": "Cancelar",
+        "remove_confirm": "¿Eliminar esta tarjeta?",
+        "remove_error": "Error al eliminar la tarjeta",
+        "empty_title": "No hay tarjetas guardadas",
+        "empty_desc": "Haga clic para agregar una nueva tarjeta de forma segura.",
+        "success": "¡Tarjeta guardada con éxito!",
+        "card_expiry_label": "Vence",
+        "loading": "Cargando métodos de pago..."
       }
+    },
+    "subscriptions": {
+      "title": "Suscripciones",
+      "description": "Gestione sus planes de suscripción activos.",
+      "empty": "No se encontraron suscripciones.",
+      "monthly_plan": "Plan Mensual",
+      "next_billing": "Próxima facturación",
+      "payment_method": "Método de Pago",
+      "default_card": "Predeterminado de la Cuenta",
+      "cancel": "Cancelar Suscripción",
+      "canceling": "Cancelando...",
+      "confirm_cancel": "¿Está seguro de que desea cancelar esta suscripción?",
+      "interval": {
+        "month": "mes",
+        "year": "año"
+      },
+      "status": {
+        "active": "Activo",
+        "past_due": "Atrasado",
+        "canceled": "Cancelado",
+        "trialing": "En Prueba",
+        "incomplete": "Incompleto",
+        "unpaid": "No Pagado"
+      }
+    }
+  },
+  "login": {
+    "sign_in_account": "Inicie sesión en su cuenta",
+    "email": "Correo",
+    "password": "Contraseña",
+    "sign_in": "Iniciar Sesión",
+    "back_website": "Volver al sitio web",
+    "errors": {
+      "invalid_credentials": "Correo o contraseña inválidos.",
+      "too_many_requests": "Demasiados intentos. Por favor, inténtelo de nuevo más tarde.",
+      "unexpected": "Ocurrió un error inesperado. Por favor, inténtelo de nuevo."
     }
   }
 }
