@@ -2,12 +2,13 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-import WebGLBackground from './components/common/WebGLBackground';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
-import LoadingScreen from './components/ui/LoadingScreen';
 import ErrorBoundary from './utils/ErrorBoundary';
 import { AuthProvider } from './context/AuthContext';
+import LoadingScreen from './components/ui/LoadingScreen';
+
+const WebGLBackground = lazy(() => import('./components/common/WebGLBackground'));
+const Navbar = lazy(() => import('./components/layout/Navbar'));
+const Footer = lazy(() => import('./components/layout/Footer'));
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));

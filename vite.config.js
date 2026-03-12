@@ -28,4 +28,20 @@ export default defineConfig({
       '@context': path.resolve(__dirname, './src/context'),
     },
   },
+  build: {
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-stripe': ['@stripe/stripe-js', '@stripe/react-stripe-js'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-i18n': ['i18next', 'react-i18next'],
+          'vendor-styled': ['styled-components'],
+          'vendor-firebase': ['firebase/app', 'firebase/auth', 'firebase/firestore'],
+        },
+      },
+    },
+  },
 });
