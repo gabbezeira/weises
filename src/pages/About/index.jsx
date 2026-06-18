@@ -86,11 +86,14 @@ const About = () => {
                 <S.SatelliteItem
                   key={quality.id}
                   style={quality.style}
+                  isActive={hoveredQuality === quality.id}
                   onMouseEnter={() => setHoveredQuality(quality.id)}
                   onMouseLeave={() => setHoveredQuality(null)}
+                  onClick={() => setHoveredQuality(hoveredQuality === quality.id ? null : quality.id)}
                 >
                   <S.SatelliteIcon
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                     isActive={hoveredQuality === quality.id}
                   >
                     <div style={{ color: 'white' }}>
@@ -101,9 +104,10 @@ const About = () => {
                   <AnimatePresence>
                     {hoveredQuality === quality.id && (
                       <S.Tooltip
-                        initial={{ opacity: 0, scale: 0.9, y: 10 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                        placement={quality.id}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
                       >
                         <S.TooltipTitle>{quality.title}</S.TooltipTitle>
                         <S.TooltipDesc>{quality.description}</S.TooltipDesc>

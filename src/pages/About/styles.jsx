@@ -105,8 +105,8 @@ export const OrbitLines = styled.div`
 `;
 
 export const OrbitInner = styled.div`
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
     border: 1px solid var(--color-white-5);
     border-radius: 9999px;
     animation: spin 20s linear infinite;
@@ -124,8 +124,8 @@ export const OrbitInner = styled.div`
 
 export const OrbitOuter = styled.div`
     position: absolute;
-    width: 380px;
-    height: 380px;
+    width: 320px;
+    height: 320px;
     border: 1px solid var(--color-white-5);
     border-radius: 9999px;
     animation: spin-reverse 30s linear infinite;
@@ -200,8 +200,8 @@ export const SatellitesContainer = styled.div`
 
 export const SatellitesWrapper = styled.div`
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
 
     @media (min-width: 768px) {
         width: 400px;
@@ -212,6 +212,7 @@ export const SatellitesWrapper = styled.div`
 export const SatelliteItem = styled.div`
     position: absolute;
     pointer-events: auto;
+    z-index: ${({ isActive }) => (isActive ? 50 : 1)};
 `;
 
 export const SatelliteIcon = styled(motion.div)`
@@ -249,18 +250,53 @@ export const SatelliteIcon = styled(motion.div)`
 
 export const Tooltip = styled(motion.div)`
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 1rem;
-    width: 18rem;
+    width: 14rem;
     background: rgb(10 10 10 / 0.9);
     backdrop-filter: blur(24px);
     border: 1px solid var(--color-white-10);
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 1rem;
     z-index: 50;
     pointer-events: none;
+
+    @media (min-width: 768px) {
+        width: 18rem;
+        padding: 1.25rem;
+    }
+
+    ${({ placement }) => {
+        switch (placement) {
+            case 2:
+                return `
+                    top: 50%;
+                    right: 100%;
+                    transform: translateY(-50%);
+                    margin-right: 1rem;
+                `;
+            case 3:
+                return `
+                    bottom: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: 1rem;
+                `;
+            case 4:
+                return `
+                    top: 50%;
+                    left: 100%;
+                    transform: translateY(-50%);
+                    margin-left: 1rem;
+                `;
+            case 1:
+            default:
+                return `
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-top: 1rem;
+                `;
+        }
+    }}
 `;
 
 export const TooltipTitle = styled.h4`
