@@ -23,7 +23,6 @@ export const ModalContent = styled.div`
     max-height: 90vh;
     overflow-y: auto;
     padding: 1.5rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
     @media (max-width: 480px) {
         padding: 1rem;
@@ -87,7 +86,6 @@ export const Input = styled.input`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -105,7 +103,6 @@ export const TextArea = styled.textarea`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -122,7 +119,6 @@ export const Select = styled.select`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 

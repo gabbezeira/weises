@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import glow from '@assets/images/glow.svg';
 import steveJobsImg from '@assets/images/steve-jobs.webp';
 import * as S from './styles';
 
@@ -10,13 +9,9 @@ const Testimonial = () => {
   return (
     <S.Section>
       <S.GlowImage
-        src={glow}
-        alt=""
         style={{ top: '-40%', left: '-35%', transform: 'rotate(-20deg)' }}
       />
       <S.GlowImage
-        src={glow}
-        alt=""
         style={{ bottom: '-30%', right: '-40%', transform: 'rotate(180deg)' }}
       />
 

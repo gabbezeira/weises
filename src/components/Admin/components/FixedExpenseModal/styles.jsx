@@ -13,7 +13,6 @@ export const ModalContainer = styled.div`
     width: 95%;
     max-width: 500px;
     z-index: 70;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
 `;
 
 export const Header = styled.div`
@@ -78,7 +77,6 @@ export const Input = styled.input`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
     
     &::placeholder { color: var(--color-gray-500); }
@@ -151,6 +149,5 @@ export const ButtonType = styled.button`
     &:hover {
         background-color: var(--color-primary-hover);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(105, 50, 226, 0.3);
     }
 `;

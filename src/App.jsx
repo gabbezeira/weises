@@ -194,7 +194,7 @@ const App = () => {
 
   return (
     <S.AppLayout>
-      <WebGLBackground />
+      {!isAdminRoute && !isAuthRoute && <WebGLBackground />}
       {!isAdminRoute && !isAuthRoute && <Navbar />}
       <S.Main>
         <ErrorBoundary

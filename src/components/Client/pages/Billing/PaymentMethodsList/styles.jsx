@@ -222,11 +222,10 @@ export const StripeFieldWrapper = styled.div`
   background-color: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast);
 
   &:focus-within {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px var(--color-primary-20);
   }
 
   .StripeElement { width: 100%; }
@@ -241,11 +240,10 @@ export const CepInput = styled.input`
   font-size: 0.9375rem;
   outline: none;
   width: 100%;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast);
 
   &:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px var(--color-primary-20);
   }
 
   &::placeholder { color: var(--color-gray-500); }
@@ -313,7 +311,6 @@ export const SubmitBtn = styled.button`
 
   &:hover:not(:disabled) {
     background: var(--color-primary-80);
-    box-shadow: 0 0 14px var(--color-primary-50);
     transform: translateY(-1px);
   }
   &:disabled { opacity: 0.45; cursor: not-allowed; }
@@ -341,7 +338,6 @@ export const cardBase = css`
   position: relative;
   overflow: hidden;
   background: ${({ $brand }) => getBrandGradient($brand)};
-  box-shadow:
     0 12px 32px -6px rgba(0, 0, 0, 0.5),
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 `;
@@ -416,11 +412,10 @@ export const SavedCardVisual = styled.div`
   width: 100%;
   max-width: 320px;
   aspect-ratio: 1.586;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast);
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow:
       0 20px 40px -8px rgba(0, 0, 0, 0.55),
       inset 0 0 0 1px rgba(255, 255, 255, 0.12);
   }

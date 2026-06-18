@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAdmin } from '../../../../context/AdminContext';
+import Modal from '../../../../components/common/Modal';
 import * as S from './styles';
 
 const BillingOptionsModal = ({ project, onClose }) => {
@@ -84,37 +85,37 @@ const BillingOptionsModal = ({ project, onClose }) => {
 
     if (projectValue <= 0) {
         return (
-            <S.ModalOverlay>
-                <S.ModalContent>
-                    <S.ModalHeader>
-                        <S.ModalTitle>{t('admin.billing.options.no_value_title', 'Billing Options')}</S.ModalTitle>
-                        <S.CloseButton type="button" onClick={onClose}><X size={20} /></S.CloseButton>
-                    </S.ModalHeader>
-                    <S.ModalBody>
+            <Modal.Overlay>
+                <Modal.Content $maxWidth="500px">
+                    <Modal.Header>
+                        <Modal.Title>{t('admin.billing.options.no_value_title', 'Billing Options')}</Modal.Title>
+                        <Modal.CloseButton type="button" onClick={onClose}><X size={20} /></Modal.CloseButton>
+                    </Modal.Header>
+                    <Modal.Body>
                         <S.HelperText>
                             {t('admin.billing.options.no_value_desc', 'No financial value set for this project.')}
                         </S.HelperText>
-                    </S.ModalBody>
-                    <S.ModalFooter>
+                    </Modal.Body>
+                    <Modal.Footer>
                         <S.Button type="button" $secondary onClick={onClose}>{t('common.actions.cancel', 'Cancel')}</S.Button>
-                    </S.ModalFooter>
-                </S.ModalContent>
-            </S.ModalOverlay>
+                    </Modal.Footer>
+                </Modal.Content>
+            </Modal.Overlay>
         );
     }
 
     return (
-        <S.ModalOverlay onClick={(e) => e.target === e.currentTarget && onClose()}>
-            <S.ModalContent>
-                <S.ModalHeader>
-                    <S.ModalTitle>{t('admin.billing.generate_options_title', 'Generate Billing')}</S.ModalTitle>
-                    <S.CloseButton type="button" onClick={onClose} disabled={isProcessing}>
+        <Modal.Overlay onClick={(e) => e.target === e.currentTarget && onClose()}>
+            <Modal.Content $maxWidth="500px">
+                <Modal.Header>
+                    <Modal.Title>{t('admin.billing.generate_options_title', 'Generate Billing')}</Modal.Title>
+                    <Modal.CloseButton type="button" onClick={onClose} disabled={isProcessing}>
                         <X size={24} />
-                    </S.CloseButton>
-                </S.ModalHeader>
+                    </Modal.CloseButton>
+                </Modal.Header>
 
-                <S.FormContainer>
-                    <S.ModalBody>
+                <Modal.FormContainer>
+                    <Modal.Body>
                         <S.HelperText dangerouslySetInnerHTML={{ __html: t('admin.billing.generate_options_desc', { value: formatCurrency(projectValue) }) }} />
 
                         <S.BillingOptions>
@@ -160,19 +161,19 @@ const BillingOptionsModal = ({ project, onClose }) => {
                                 )}
                             </S.OptionCard>
                         </S.BillingOptions>
-                    </S.ModalBody>
+                    </Modal.Body>
 
-                    <S.ModalFooter>
+                    <Modal.Footer>
                         <S.Button type="button" $secondary onClick={onClose} disabled={isProcessing}>
                             {t('common.actions.cancel', 'Cancel')}
                         </S.Button>
                         <S.Button type="button" onClick={handleGenerate} disabled={isProcessing}>
                             {isProcessing ? t('common.actions.generating', 'Generating...') : t('admin.billing.generate_btn', 'Generate Invoices')}
                         </S.Button>
-                    </S.ModalFooter>
-                </S.FormContainer>
-            </S.ModalContent>
-        </S.ModalOverlay>
+                    </Modal.Footer>
+                </Modal.FormContainer>
+            </Modal.Content>
+        </Modal.Overlay>
     );
 };
 

@@ -14,7 +14,6 @@ export const Introduction = styled.div`
     border-radius: var(--radius-lg);
     padding: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
     h3 {
         color: var(--color-white);
@@ -50,7 +49,6 @@ export const ResourceCard = styled.div`
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 `;

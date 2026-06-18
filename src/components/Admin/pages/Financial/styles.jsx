@@ -69,7 +69,6 @@ export const Tabs = styled.div`
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
     width: fit-content;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
     @media (max-width: 600px) {
         width: 100%;

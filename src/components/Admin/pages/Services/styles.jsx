@@ -58,7 +58,6 @@ export const Card = styled.div`
     flex-direction: column;
     gap: 1rem;
     transition: border-color var(--transition-fast);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     height: 100%;
 
     &:hover {
@@ -186,7 +185,6 @@ export const ModalContent = styled.div`
     max-height: 90vh;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.3s ease-out;
 
     @keyframes slideUp {
@@ -266,7 +264,6 @@ export const Input = styled.input`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px var(--color-primary-10);
     }
 
     &::placeholder {
@@ -289,7 +286,6 @@ export const TextArea = styled.textarea`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px var(--color-primary-10);
     }
 `;
 
@@ -357,7 +353,6 @@ export const ToggleSlider = styled.div`
         top: 3px;
         left: ${(props) => (props.$checked ? '25px' : '3px')};
         transition: left 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 `;
 

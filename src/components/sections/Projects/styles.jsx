@@ -8,12 +8,12 @@ export const Section = styled.section`
     overflow: hidden;
 `;
 
-export const GlowImage = styled(motion.img)`
+export const GlowImage = styled(motion.div)`
     position: absolute;
     width: 800px;
     height: 800px;
     opacity: 0.3;
-    filter: blur(80px);
+    background: radial-gradient(circle at center, rgba(160, 105, 255, 0.4) 0%, transparent 60%);
     pointer-events: none;
     user-select: none;
     z-index: 0;

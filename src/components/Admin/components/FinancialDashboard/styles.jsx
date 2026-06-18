@@ -17,14 +17,11 @@ export const ChartCard = styled.div`
     border: 1px solid var(--color-border);
     border-radius: 16px;
     padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     min-height: 400px; /* Taller charts */
-    transition: box-shadow 0.3s ease;
 
     &:hover {
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
     }
 `;
 
@@ -105,7 +102,6 @@ export const FilterGroup = styled.div`
         &.active {
             background-color: var(--color-surface);
             color: var(--color-primary);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
     }
 `;

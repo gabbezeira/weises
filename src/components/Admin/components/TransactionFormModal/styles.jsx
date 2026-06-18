@@ -12,7 +12,6 @@ export const ModalContainer = styled.div`
     width: 95%;
     max-width: 550px;
     z-index: 70;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     max-height: 90vh;
     overflow-y: auto;
     animation: slideUp 0.3s ease-out;
@@ -86,7 +85,6 @@ export const SegmentedButton = styled.button`
         `
         background-color: var(--color-surface);
         color: ${$type === 'income' ? 'var(--color-success)' : 'var(--color-danger)'};
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     `}
 
     &:hover {
@@ -111,7 +109,6 @@ export const AmountContainer = styled.div`
 
     &:focus-within {
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -181,7 +178,6 @@ export const Input = styled.input`
     &:focus {
         border-color: var(--color-primary);
         outline: none;
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -198,7 +194,6 @@ export const Select = styled.select`
     &:focus {
         border-color: var(--color-primary);
         outline: none;
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -249,7 +244,6 @@ export const ToggleSlider = styled.span`
         background-color: white;
         transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         border-radius: 50%;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 `;
 
@@ -276,7 +270,6 @@ export const ToggleInput = styled.input`
     }
     
     &:focus + ${ToggleSlider} {
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -288,7 +281,6 @@ export const SubmitButton = styled.button`
     font-weight: 600;
     color: white;
     background-color: var(--color-primary); /* Always primary */
-    box-shadow: 0 4px 12px var(--color-primary-30);
     transition: all 0.2s ease;
     margin-top: 1.5rem;
     display: flex;
@@ -299,7 +291,6 @@ export const SubmitButton = styled.button`
     &:hover {
         transform: translateY(-2px);
         filter: brightness(1.1);
-        box-shadow: 0 8px 16px var(--color-primary-40);
         background-color: var(--color-primary);
     }
 

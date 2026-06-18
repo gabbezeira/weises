@@ -52,9 +52,7 @@
   --color-panel-bg: #0f0f0f;
   --color-panel-border: rgb(255 255 255 / 0.1);
 
-  /* Shadows */
-  --shadow-glow-primary: 0 0 15px var(--color-primary-50);
-  --shadow-glow-white: 0 0 20px var(--color-white-30);
+
 
   /* Z-Index Layers */
   --z-index-mobile-overlay: 40;

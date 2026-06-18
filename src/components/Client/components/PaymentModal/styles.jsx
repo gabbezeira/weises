@@ -1,66 +1,6 @@
 import styled from 'styled-components';
 
-export const ModalOverlay = styled.div`
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-`;
 
-export const ModalContent = styled.div`
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-`;
-
-export const ModalHeader = styled.div`
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--color-border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h2 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: var(--color-text);
-        margin: 0;
-    }
-`;
-
-export const CloseButton = styled.button`
-    background: none;
-    border: none;
-    color: var(--color-gray-500);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.25rem;
-    border-radius: var(--radius-sm);
-    transition: all 0.2s;
-
-    &:hover {
-        background: var(--color-background);
-        color: var(--color-text);
-    }
-`;
-
-export const ModalBody = styled.div`
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-`;
 
 export const Tabs = styled.div`
     display: flex;
@@ -240,7 +180,7 @@ export const CardSelect = styled.select`
     background-repeat: no-repeat;
     background-position: right 0.875rem center;
     background-size: 16px;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    transition: border-color var(--transition-fast);
 
     &:disabled {
         opacity: 0.5;
@@ -249,7 +189,6 @@ export const CardSelect = styled.select`
 
     &:focus {
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 
     option {
@@ -333,9 +272,8 @@ export const CardDropdownTrigger = styled.button`
     font-family: inherit;
     cursor: pointer;
     text-align: left;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    transition: border-color var(--transition-fast);
 
-    ${({ $open }) => $open && `box-shadow: 0 0 0 2px var(--color-primary-20);`}
 
     &:disabled {
         opacity: 0.5;
@@ -367,7 +305,6 @@ export const CardDropdownMenu = styled.div`
     border-radius: var(--radius-md);
     overflow: hidden;
     z-index: 50;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     animation: dropIn 0.15s ease-out;
 
     @keyframes dropIn {

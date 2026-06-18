@@ -31,7 +31,6 @@ export const Flowchart = styled.div`
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
     @media (max-width: 1024px) {
         grid-template-columns: 1fr;
@@ -80,7 +79,6 @@ export const Node = styled.div`
         transform: translateY(-3px);
         background: rgba(30, 41, 59, 0.7);
         border-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 
         &::before {
             opacity: 1;

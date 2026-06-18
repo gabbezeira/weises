@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Modal from '../../../../components/common/Modal';
 import * as S from './styles';
 
 const ProgressModal = ({ project, onClose, onSave }) => {
@@ -37,16 +38,16 @@ const ProgressModal = ({ project, onClose, onSave }) => {
   };
 
   return (
-    <S.Overlay onClick={onClose}>
-      <S.Modal onClick={(e) => e.stopPropagation()}>
-        <S.Header>
-          <S.Title>{t('admin.projects.progress_modal.title')}</S.Title>
-          <S.CloseButton onClick={onClose}>
+    <Modal.Overlay onClick={onClose}>
+      <Modal.Content $maxWidth="560px" onClick={(e) => e.stopPropagation()}>
+        <Modal.Header>
+          <Modal.Title>{t('admin.projects.progress_modal.title')}</Modal.Title>
+          <Modal.CloseButton onClick={onClose}>
             <X size={20} />
-          </S.CloseButton>
-        </S.Header>
+          </Modal.CloseButton>
+        </Modal.Header>
 
-        <S.Content>
+        <Modal.Body>
           <S.ProgressText>
             <span>{t('admin.projects.progress_modal.progress') || 'Progress'}</span>
             <span>{progressPercent}%</span>
@@ -89,14 +90,14 @@ const ProgressModal = ({ project, onClose, onSave }) => {
               </S.StageRow>
             ))}
           </S.StagesList>
-        </S.Content>
+        </Modal.Body>
 
-        <S.Footer>
+        <Modal.Footer>
           <S.CancelButton onClick={onClose}>{t('common.actions.cancel')}</S.CancelButton>
           <S.SaveButton onClick={handleSave}>{t('common.actions.save')}</S.SaveButton>
-        </S.Footer>
-      </S.Modal>
-    </S.Overlay>
+        </Modal.Footer>
+      </Modal.Content>
+    </Modal.Overlay>
   );
 };
 

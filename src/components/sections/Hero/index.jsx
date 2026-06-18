@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import glow from '@assets/images/glow.svg';
 import * as S from './styles';
 
 const Hero = () => {
   const { t } = useTranslation();
   return (
     <S.Section>
-      <S.GlowImageTop src={glow} alt="" />
-      <S.GlowImageBottom src={glow} alt="" />
+      <S.GlowImageTop />
+      <S.GlowImageBottom />
 
       <S.Grid />
 

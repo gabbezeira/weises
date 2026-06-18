@@ -20,7 +20,6 @@ export const Section = styled.div`
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 `;
 
 export const Header = styled.div`
@@ -186,7 +185,6 @@ export const DidacticSection = styled.div`
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     height: fit-content;
 
     @media (max-width: 768px) {

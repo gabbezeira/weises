@@ -1,47 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
-const fadeIn = keyframes`
-    from { opacity: 0; }
-    to { opacity: 1; }
-`;
 
-const slideUp = keyframes`
-    from { opacity: 0; transform: translate(-50%, -40%) scale(0.95); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-`;
-
-export const Backdrop = styled.div`
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
-    z-index: 9999;
-    animation: ${fadeIn} 0.2s ease-out forwards;
-`;
-
-export const ModalContainer = styled.div`
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 400px;
-    z-index: 10000;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    animation: ${slideUp} 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-`;
-
-export const ModalContent = styled.div`
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-`;
 
 export const IconWrapper = styled.div`
     width: 3.5rem;
@@ -120,7 +79,6 @@ export const DeleteButton = styled.button`
     font-weight: 600;
     font-size: 0.875rem;
     transition: all var(--transition-fast);
-    box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.2);
 
     &:hover {
         background: var(--color-red-600);

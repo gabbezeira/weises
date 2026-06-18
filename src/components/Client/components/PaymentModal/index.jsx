@@ -23,6 +23,7 @@ import UnionpayIcon from '../../../../assets/images/card-icons/unionpay.svg';
 import VisaIcon from '../../../../assets/images/card-icons/visa.svg';
 import { useAuth } from '../../../../context/AuthContext';
 import { api } from '../../../../services/api';
+import Modal from '../../../../components/common/Modal';
 import * as S from './styles';
 
 const CARD_ICONS = {
@@ -139,14 +140,14 @@ const PaymentModal = ({ invoice, onClose }) => {
   };
 
   return (
-    <S.ModalOverlay onClick={(e) => e.target === e.currentTarget && onClose()}>
-      <S.ModalContent>
-        <S.ModalHeader>
-          <h2>{t('client.billing.payment.title')}</h2>
-          <S.CloseButton onClick={onClose}>
+    <Modal.Overlay onClick={(e) => e.target === e.currentTarget && onClose()}>
+      <Modal.Content $maxWidth="500px">
+        <Modal.Header>
+          <Modal.Title>{t('client.billing.payment.title')}</Modal.Title>
+          <Modal.CloseButton onClick={onClose}>
             <X size={24} />
-          </S.CloseButton>
-        </S.ModalHeader>
+          </Modal.CloseButton>
+        </Modal.Header>
 
         <S.Tabs>
           <S.FirstTab $active={activeTab === 'pix'} onClick={() => setActiveTab('pix')}>
@@ -157,7 +158,7 @@ const PaymentModal = ({ invoice, onClose }) => {
           </S.Tab>
         </S.Tabs>
 
-        <S.ModalBody>
+        <Modal.Body>
           {activeTab === 'pix' && (
             <S.PixContainer>
               <S.PixAmountBox>
@@ -294,9 +295,9 @@ const PaymentModal = ({ invoice, onClose }) => {
               </S.PayActionButton>
             </S.PixContainer>
           )}
-        </S.ModalBody>
-      </S.ModalContent>
-    </S.ModalOverlay>
+        </Modal.Body>
+      </Modal.Content>
+    </Modal.Overlay>
   );
 };
 

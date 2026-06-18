@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useAdmin } from '../../../../context/AdminContext';
+import Modal from '../../../../components/common/Modal';
 import * as S from './styles';
 
 const NewChargeModal = ({ client, projects, onClose }) => {
@@ -130,17 +131,17 @@ const NewChargeModal = ({ client, projects, onClose }) => {
     const parsedAmount = parseFloat(formData.amount) || 0;
 
     return (
-        <S.ModalOverlay onClick={(e) => e.target === e.currentTarget && onClose()}>
-            <S.ModalContent>
-                <S.ModalHeader>
-                    <S.ModalTitle>{t('admin.billing.new_charge_title', 'New Ad-hoc Charge for')} {client.name}</S.ModalTitle>
-                    <S.CloseButton type="button" onClick={onClose} disabled={isProcessing}>
+        <Modal.Overlay onClick={(e) => e.target === e.currentTarget && onClose()}>
+            <Modal.Content $maxWidth="500px">
+                <Modal.Header>
+                    <Modal.Title>{t('admin.billing.new_charge_title', 'New Ad-hoc Charge for')} {client.name}</Modal.Title>
+                    <Modal.CloseButton type="button" onClick={onClose} disabled={isProcessing}>
                         <X size={24} />
-                    </S.CloseButton>
-                </S.ModalHeader>
+                    </Modal.CloseButton>
+                </Modal.Header>
 
-                <S.FormContainer onSubmit={handleGenerate}>
-                    <S.ModalBody>
+                <Modal.FormContainer onSubmit={handleGenerate}>
+                    <Modal.Body>
                         <S.HelperText>
                             {t('admin.billing.new_charge_desc', 'Generate a new invoice manually. Once marked as paid, it will become an income transaction.')}
                         </S.HelperText>
@@ -263,19 +264,19 @@ const NewChargeModal = ({ client, projects, onClose }) => {
                             </S.DateGroup>
                         )}
 
-                    </S.ModalBody>
+                    </Modal.Body>
 
-                    <S.ModalFooter>
+                    <Modal.Footer>
                         <S.Button type="button" $secondary onClick={onClose} disabled={isProcessing}>
                             {t('common.actions.cancel', 'Cancel')}
                         </S.Button>
                         <S.Button type="submit" disabled={isProcessing}>
                             {isProcessing ? t('common.actions.generating', 'Generating...') : t('admin.billing.generate_btn', 'Generate Invoice')}
                         </S.Button>
-                    </S.ModalFooter>
-                </S.FormContainer>
-            </S.ModalContent>
-        </S.ModalOverlay>
+                    </Modal.Footer>
+                </Modal.FormContainer>
+            </Modal.Content>
+        </Modal.Overlay>
     );
 };
 

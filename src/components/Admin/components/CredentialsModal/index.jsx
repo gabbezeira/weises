@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { api } from '../../../../services/api';
+import Modal from '../../../../components/common/Modal';
 import * as S from './styles';
 
 const CredentialsModal = ({ project, onClose }) => {
@@ -64,15 +65,15 @@ const CredentialsModal = ({ project, onClose }) => {
   };
 
   return createPortal(
-    <S.Overlay onClick={onClose}>
-      <S.Modal onClick={(e) => e.stopPropagation()}>
-        <S.Header>
-          <S.Title>{t('admin.projects.credentials_modal.title', { title: project.title })}</S.Title>
-          <S.CloseButton onClick={onClose}>
+    <Modal.Overlay onClick={onClose}>
+      <Modal.Content $maxWidth="600px" onClick={(e) => e.stopPropagation()}>
+        <Modal.Header>
+          <Modal.Title>{t('admin.projects.credentials_modal.title', { title: project.title })}</Modal.Title>
+          <Modal.CloseButton onClick={onClose}>
             <X size={20} />
-          </S.CloseButton>
-        </S.Header>
-        <S.Content>
+          </Modal.CloseButton>
+        </Modal.Header>
+        <Modal.Body>
           <S.Section>
             <S.SectionTitle>
               {t('admin.projects.form.credentials')} ({fetchedCredentials.length || 0})
@@ -159,9 +160,9 @@ const CredentialsModal = ({ project, onClose }) => {
               </p>
             )}
           </S.Section>
-        </S.Content>
-      </S.Modal>
-    </S.Overlay>,
+        </Modal.Body>
+      </Modal.Content>
+    </Modal.Overlay>,
     document.body,
   );
 };

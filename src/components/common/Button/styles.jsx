@@ -28,7 +28,6 @@ export const Container = styled(motion.button)`
         border: 1px solid transparent;
 
         &:hover {
-            box-shadow: var(--shadow-glow-primary);
         }
     `}
 
@@ -51,7 +50,6 @@ export const Container = styled(motion.button)`
         color: black;
 
         &:hover {
-            box-shadow: var(--shadow-glow-white);
         }
     `}
 `;

@@ -46,7 +46,6 @@ export const FilterButton = styled.button`
     color: ${({ $active }) => ($active ? 'var(--color-primary)' : 'var(--color-gray-400)')};
     background-color: ${({ $active }) => ($active ? 'var(--color-surface)' : 'transparent')};
     border-radius: var(--radius-sm);
-    box-shadow: ${({ $active }) => ($active ? '0 1px 2px rgba(0,0,0,0.1)' : 'none')};
     transition: all 0.2s ease;
 
     &:hover {

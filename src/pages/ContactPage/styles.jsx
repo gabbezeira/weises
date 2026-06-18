@@ -272,7 +272,6 @@ export const Input = styled.input`
     &:focus {
         outline: none;
         border-color: rgb(105 50 226 / 0.5);
-        box-shadow: 0 0 0 1px rgb(105 50 226 / 0.5);
     }
 `;
 
@@ -293,6 +292,5 @@ export const TextArea = styled.textarea`
     &:focus {
         outline: none;
         border-color: rgb(105 50 226 / 0.5);
-        box-shadow: 0 0 0 1px rgb(105 50 226 / 0.5);
     }
 `;

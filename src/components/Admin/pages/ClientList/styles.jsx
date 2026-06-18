@@ -65,7 +65,6 @@ export const TableWrapper = styled.div`
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     overflow-x: auto; /* Enable horizontal scroll on mobile */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 `;
 
 export const Table = styled.table`

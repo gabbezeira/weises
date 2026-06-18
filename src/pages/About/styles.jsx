@@ -153,7 +153,6 @@ export const CentralCore = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 80px rgba(105, 50, 226, 0.25);
 
     @media (min-width: 768px) {
         width: 16rem;
@@ -226,7 +225,6 @@ export const SatelliteIcon = styled(motion.div)`
     justify-content: center;
     background: var(--color-surface);
     border: 1px solid var(--color-white-10);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
     transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
@@ -240,13 +238,11 @@ export const SatelliteIcon = styled(motion.div)`
         ? `
             border-color: #6932E2;
             background: var(--color-primary-20);
-            box-shadow: 0 0 25px var(--color-primary);
         `
         : `
             &:hover {
                 border-color: #6932E2;
                 background: var(--color-primary-20);
-                box-shadow: 0 0 25px var(--color-primary);
             }
         `}
 `;
@@ -263,7 +259,6 @@ export const Tooltip = styled(motion.div)`
     border: 1px solid var(--color-white-10);
     padding: 1.25rem;
     border-radius: 1rem;
-    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     z-index: 50;
     pointer-events: none;
 `;

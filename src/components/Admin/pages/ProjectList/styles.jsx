@@ -58,7 +58,6 @@ export const ProjectCard = styled.div`
     flex-direction: column;
     gap: 1rem;
     transition: border-color var(--transition-fast);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
     &:hover {
         border-color: var(--color-gray-500);

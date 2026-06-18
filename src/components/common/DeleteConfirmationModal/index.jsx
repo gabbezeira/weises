@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AnimatePresence } from 'framer-motion';
 import { AlertTriangle } from 'lucide-react';
+import Modal from '../Modal';
 import * as S from './styles';
 
 const DeleteConfirmationModal = ({
@@ -17,9 +18,8 @@ const DeleteConfirmationModal = ({
 
   return ReactDOM.createPortal(
     <>
-      <S.Backdrop onClick={onClose} />
-      <S.ModalContainer>
-        <S.ModalContent>
+      <Modal.Overlay onClick={onClose}>
+        <Modal.Content $maxWidth="400px" onClick={(e) => e.stopPropagation()}>
           <S.IconWrapper>
             <S.WarningIcon>
               <AlertTriangle size={32} />
@@ -36,8 +36,8 @@ const DeleteConfirmationModal = ({
             <S.CancelButton onClick={onClose}>Cancel</S.CancelButton>
             <S.DeleteButton onClick={onConfirm}>Delete</S.DeleteButton>
           </S.ButtonGroup>
-        </S.ModalContent>
-      </S.ModalContainer>
+        </Modal.Content>
+      </Modal.Overlay>
     </>,
     document.body,
   );

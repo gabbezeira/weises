@@ -5,7 +5,6 @@ export const Container = styled.div`
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 `;
 
 export const Header = styled.div`
@@ -67,14 +66,12 @@ export const Th = styled.th`
 export const Tr = styled.tr`
     background-color: var(--color-background);
     transition: all var(--transition-fast);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     
     & td:first-child { border-top-left-radius: var(--radius-md); border-bottom-left-radius: var(--radius-md); }
     & td:last-child { border-top-right-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md); }
 
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         background-color: var(--color-surface);
         z-index: 1;
         position: relative;
@@ -151,7 +148,6 @@ export const StatusSelect = styled.select`
 
     &:focus {
         outline: none;
-        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
     }
     
     option {

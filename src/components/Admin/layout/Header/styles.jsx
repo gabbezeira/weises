@@ -53,7 +53,6 @@ export const SearchWrapper = styled.div`
 
     &:focus-within {
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 
     @media (max-width: 768px) {

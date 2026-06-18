@@ -11,7 +11,6 @@ export const Introduction = styled.div`
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
     h3 {
         color: var(--color-white);
@@ -72,7 +71,6 @@ export const EndpointCard = styled.div`
     border-radius: var(--radius-lg);
     margin-bottom: 1.5rem;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 `;
 
 export const HeaderRow = styled.div`

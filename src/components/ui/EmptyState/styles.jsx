@@ -28,7 +28,6 @@ export const IconWrapper = styled(motion.div)`
     border-radius: 9999px;
     background: var(--color-white-5);
     border: 1px solid var(--color-white-10);
-    box-shadow: 0 0 30px var(--color-primary-10);
     position: relative;
 `;
 

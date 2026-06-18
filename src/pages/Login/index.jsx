@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Mail, Lock, Eye, EyeOff, AlertCircle, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
-import glow from '@assets/images/glow.svg';
-import logo from '@assets/images/logo.svg';
-import * as S from './styles';
+import AuthLayout from '../../components/common/AuthLayout';
+import * as S from '../../components/common/AuthLayout/styles';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -51,106 +50,82 @@ const Login = () => {
   };
 
   return (
-    <S.LoginPage>
-      <S.Grid />
-      <S.GlowImageTop
-        src={glow}
-        alt=""
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
-        transition={{ duration: 1 }}
-      />
-      <S.GlowImageBottom
-        src={glow}
-        alt=""
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
-        transition={{ duration: 1 }}
-      />
-
-      <S.LoginCard
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-      >
-        <S.LogoSection>
-          <S.LogoImage src={logo} alt="Weises Logo" />
-          <S.LogoSubtext>{t('login.sign_in_account')}</S.LogoSubtext>
-        </S.LogoSection>
-
-        <S.Form onSubmit={handleSubmit}>
-          {error && (
-            <S.ErrorMessage
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-            >
-              <AlertCircle size={16} />
-              {error}
-            </S.ErrorMessage>
-          )}
-
-          <S.InputGroup>
-            <S.Label htmlFor="email">{t('login.email')}</S.Label>
-            <S.InputWrapper>
-              <S.Input
-                id="email"
-                type="email"
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                autoComplete="email"
-              />
-              <S.InputIcon>
-                <Mail size={18} />
-              </S.InputIcon>
-            </S.InputWrapper>
-          </S.InputGroup>
-
-          <S.InputGroup>
-            <S.Label htmlFor="password">{t('login.password')}</S.Label>
-            <S.InputWrapper>
-              <S.Input
-                id="password"
-                type={showPassword ? 'text' : 'password'}
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                autoComplete="current-password"
-              />
-              <S.InputIcon>
-                <Lock size={18} />
-              </S.InputIcon>
-              <S.PasswordToggle
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                tabIndex={-1}
-              >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-              </S.PasswordToggle>
-            </S.InputWrapper>
-          </S.InputGroup>
-
-          <S.SubmitButton
-            type="submit"
-            disabled={isLoading}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+    <AuthLayout
+      title="Weises"
+      subtitle={t('login.sign_in_account')}
+    >
+      <S.Form onSubmit={handleSubmit}>
+        {error && (
+          <S.ErrorMessage
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
           >
-            {isLoading ? <S.Spinner /> : <S.ButtonContent>{t('login.sign_in')}</S.ButtonContent>}
-          </S.SubmitButton>
-        </S.Form>
+            <AlertCircle size={16} />
+            {error}
+          </S.ErrorMessage>
+        )}
 
-        <S.Divider />
+        <S.InputGroup>
+          <S.Label htmlFor="email">{t('login.email')}</S.Label>
+          <S.InputWrapper>
+            <S.Input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              autoComplete="email"
+            />
+            <S.InputIcon>
+              <Mail size={18} />
+            </S.InputIcon>
+          </S.InputWrapper>
+        </S.InputGroup>
 
-        <S.FooterText>
-          <a href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-            <ArrowLeft size={14} /> {t('login.back_website')}
-          </a>
-        </S.FooterText>
-      </S.LoginCard>
-    </S.LoginPage>
+        <S.InputGroup>
+          <S.Label htmlFor="password">{t('login.password')}</S.Label>
+          <S.InputWrapper>
+            <S.Input
+              id="password"
+              type={showPassword ? 'text' : 'password'}
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              autoComplete="current-password"
+            />
+            <S.InputIcon>
+              <Lock size={18} />
+            </S.InputIcon>
+            <S.PasswordToggle
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              tabIndex={-1}
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </S.PasswordToggle>
+          </S.InputWrapper>
+        </S.InputGroup>
+
+        <S.SubmitButton
+          type="submit"
+          disabled={isLoading}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          {isLoading ? <S.Spinner /> : <S.ButtonContent>{t('login.sign_in')}</S.ButtonContent>}
+        </S.SubmitButton>
+      </S.Form>
+
+      <S.Divider />
+
+      <S.FooterText>
+        <a href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+          <ArrowLeft size={14} /> {t('login.back_website')}
+        </a>
+      </S.FooterText>
+    </AuthLayout>
   );
 };
 

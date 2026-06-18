@@ -80,7 +80,6 @@ export const Input = styled.input`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
     
     &:disabled {
@@ -109,7 +108,6 @@ export const Select = styled.select`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 

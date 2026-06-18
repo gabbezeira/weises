@@ -8,16 +8,16 @@ export const Section = styled.section.attrs({ id: 'inspiration' })`
     overflow: hidden;
 `;
 
-export const GlowImage = styled.img`
+export const GlowImage = styled.div`
     position: absolute;
     width: 60vw;
     max-width: 900px;
-    height: auto;
+    height: 900px;
     pointer-events: none;
     z-index: 0;
     opacity: 0.3; 
     mix-blend-mode: screen;
-    filter: blur(80px); 
+    background: radial-gradient(circle at center, rgba(160, 105, 255, 0.4) 0%, transparent 60%);
     user-select: none;
 `;
 

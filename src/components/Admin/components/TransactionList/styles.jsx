@@ -4,7 +4,6 @@ export const Container = styled.div`
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 16px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     overflow: hidden; /* Contains the internal table */
     animation: fadeIn 0.4s ease-in-out;
 `;
@@ -63,7 +62,6 @@ export const FilterButton = styled.button`
     color: ${({ $active }) => ($active ? 'var(--color-primary)' : 'var(--color-gray-500)')};
     background-color: ${({ $active }) => ($active ? 'var(--color-surface)' : 'transparent')};
     border-radius: var(--radius-md);
-    box-shadow: ${({ $active }) => ($active ? '0 1px 2px rgba(0,0,0,0.1)' : 'none')};
     transition: all 0.2s ease;
 
     &:hover {
@@ -200,7 +198,6 @@ export const StatusBadge = styled.span`
     &:hover {
         transform: translateY(-1px);
         filter: brightness(0.97);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     &::after {
@@ -216,7 +213,6 @@ export const Dropdown = styled.div`
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     z-index: 9999;
     min-width: 150px;
     padding: 0.5rem;

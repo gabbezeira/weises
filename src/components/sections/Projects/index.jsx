@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { api } from '../../../services/api';
-import glow from '@assets/images/glow.svg';
 import EmptyState from '@ui/EmptyState';
 import * as S from './styles';
 
@@ -71,8 +70,8 @@ const Projects = () => {
 
   return (
     <S.Section id="projects">
-      <S.GlowImageTop src={glow} alt="" />
-      <S.GlowImageBottom src={glow} alt="" />
+      <S.GlowImageTop />
+      <S.GlowImageBottom />
 
       <S.Separator />
       <S.BackgroundGrid />

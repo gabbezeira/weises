@@ -18,7 +18,6 @@ export const Nav = styled.nav`
             backdrop-filter: blur(40px);
             border-color: var(--color-white-5);
             padding: 1rem 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         `
         : `
             background: transparent;

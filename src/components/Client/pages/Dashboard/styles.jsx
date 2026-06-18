@@ -88,14 +88,13 @@ export const StatCard = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
     user-select: none;
     position: relative;
     overflow: hidden;
 
     &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     }
 
     .header {
@@ -248,7 +247,6 @@ export const ActionCard = styled(Link)`
 
     &:hover {
         border-color: var(--color-primary);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         transform: translateX(2px);
 
         &::after { opacity: 1; }
@@ -374,7 +372,6 @@ export const SupportCard = styled.div`
         &:hover {
             background-color: rgba(255, 255, 255, 0.25);
             transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
         }
     }
 `;

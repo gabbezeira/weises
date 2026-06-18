@@ -214,7 +214,6 @@ export const MobileMenu = styled.div`
     flex-direction: column;
     transform: ${({ $isOpen }) => ($isOpen ? 'translateX(0)' : 'translateX(100%)')};
     transition: transform var(--transition-normal);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
 `;
 
 export const MobileMenuHeader = styled.div`

@@ -87,11 +87,9 @@ export const ProjectCard = styled(motion.div)`
     overflow: hidden;
     border: 1px solid rgb(255 255 255 / 0.1);
     background: var(--color-surface);
-    box-shadow: 0 8px 30px rgb(0 0 0 / 0.12);
     transition: all 500ms ease;
 
     &:hover {
-        box-shadow: 0 8px 30px rgb(105 50 226 / 0.15);
     }
 `;
 

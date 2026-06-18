@@ -83,7 +83,6 @@ export const Input = styled.input`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 
     &::placeholder {
@@ -106,7 +105,6 @@ export const TextArea = styled.textarea`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -130,7 +128,6 @@ export const Select = styled.select`
     &:focus {
         outline: none;
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
     
     &:hover {
@@ -152,7 +149,6 @@ export const TagContainer = styled.div`
 
     &:focus-within {
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px var(--color-primary-20);
     }
 `;
 
@@ -216,7 +212,7 @@ export const Button = styled.button`
             ? `
         background-color: var(--color-primary);
         color: white;
-        &:hover { background-color: var(--color-primary-50); box-shadow: var(--shadow-glow-primary); }
+        &:hover { background-color: var(--color-primary-50); }
     `
             : `
         background-color: transparent;
